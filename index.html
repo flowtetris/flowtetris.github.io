@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html>
-<body>
-  <form action="https://formspree.io/f/xgeppajy" method="POST">
-	<input name="glevel" id="glevel" type="text" value="">
-	<br>
-	<input name="allquestions" id="allquestions" type="text" value="">
-	<br>
-	<input name="allrates" id="allrates" type="text" value="">
-	<br>
-	<input name="allresponses" id="allresponses" type="text" value="">
-	<br>
-	<input name="allanswer3s" id="allanswer3s" type="text" value="">
-	<br>
-	<input name="allcorrects3" id="allcorrects3" type="text" value="">
-	<br>
-	<input name="lineCleareds" id="lineCleareds" type="text" value="">
-	<br>
-	<input name="gameLevels" id="gameLevels" type="text" value="">
-	<br>
-	<input name="lineCleareds2" id="lineCleareds2" type="text" value="">
-	<br>
-	<input name="gameOverTimes" id="gameOverTimes" type="text" value="">
-	<br>
-	<input name="gameOverCnt" id="gameOverCnt" type="text" value="">
-	<br>
-	<input name="alltimeouts" id="alltimeouts" type="text" value="">
-	<br>
-	<input name="alltimeoutstimes" id="alltimeoutstimes" type="text" value="">
-	<br>
-	<input name="allmovespregame" id="allmovespregame" type="text" value="">
-	<br>
-	<input name="allmovestimespregame" id="allmovestimespregame" type="text" value="">
-	<br>
-	<input name="allmoves" id="allmoves" type="text" value="">
-	<br>
-	<input name="allmovestimes" id="allmovestimes" type="text" value="">
-  <br>
-  <button type="submit">Submit</button>
-  </form>	
-<script>
+  <body>
+    <!-- <form action="https://formspree.io/f/xgeppajy" method="POST"> -->
+    <input name="participantID" id="participantID" type="text" value="">
+    <br>
+    <input name="glevel" id="glevel" type="text" value="">
+    <br>
+    <input name="allquestions" id="allquestions" type="text" value="">
+    <br>
+    <input name="allrates" id="allrates" type="text" value="">
+    <br>
+    <input name="allresponses" id="allresponses" type="text" value="">
+    <br>
+    <input name="allanswer3s" id="allanswer3s" type="text" value="">
+    <br>
+    <input name="allcorrects3" id="allcorrects3" type="text" value="">
+    <br>
+    <input name="lineCleareds" id="lineCleareds" type="text" value="">
+    <br>
+    <input name="gameLevels" id="gameLevels" type="text" value="">
+    <br>
+    <input name="lineCleareds2" id="lineCleareds2" type="text" value="">
+    <br>
+    <input name="gameOverTimes" id="gameOverTimes" type="text" value="">
+    <br>
+    <input name="gameOverCnt" id="gameOverCnt" type="text" value="">
+    <br>
+    <input name="alltimeouts" id="alltimeouts" type="text" value="">
+    <br>
+    <input name="alltimeoutstimes" id="alltimeoutstimes" type="text" value="">
+    <br>
+    <input name="allmovespregame" id="allmovespregame" type="text" value="">
+    <br>
+    <input name="allmovestimespregame" id="allmovestimespregame" type="text" value="">
+    <br>
+    <input name="allmoves" id="allmoves" type="text" value="">
+    <br>
+    <input name="allmovestimes" id="allmovestimes" type="text" value="">
+    <br>
+    <button type="submit">Submit</button>
+    <!-- <input onclick="window.location.href = 'https://google.com';" type="submit" value="Submit request" /> -->
+    <input onclick="window.location.href = completionURL" type="submit" value="Submit request" />
+    </form>	
+  <script>
 //--------------------------------------------------//
 //    PAGE OBJECT & LOGIC                           //
 //--------------------------------------------------//
+
+var URL = window.location.href
+var participantID = URL.slice(-5);
+
+var completionURL = "https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=611&credit_token=b26eee699b3d44c6ac2c9493185524b1&survey_code="+participantID
 
 var Page = {  
   IsSetup: false, // These are objects.
@@ -1494,22 +1503,24 @@ async function Loop() {
 	   } else {
 			//document.getElementById("allquestions").setAttribute('value', allquestions);
 			console.log("allmoves="+allmoves)
-			document.getElementById("allquestions").value = "allquestions,"+allquestions;
-			document.getElementById("allrates").value = "allrates,"+allrates;
-			document.getElementById("allresponses").value = "allresponsestime,"+allresponses;
-			document.getElementById("allcorrects3").value = "allcorrects3,"+allcorrects3;
-			document.getElementById("allanswer3s").value = "allanswer3s,"+allanswer3s;
-			document.getElementById("lineCleareds").value = "lineCleareds,"+lineCleareds; 
-			document.getElementById("gameLevels").value = "gameLevels,"+gameLevels;
-			document.getElementById("lineCleareds2").value = "lineCleareds2,"+lineCleareds2;  
-			document.getElementById("gameOverTimes").value = "gameOverTimes,"+gameOverTimes;   		
-			document.getElementById("gameOverCnt").value = "gameOverCnt,"+gameOverCnt;
-			document.getElementById("alltimeouts").value = "alltimeouts,"+alltimeouts;
-			document.getElementById("alltimeoutstimes").value = "alltimeoutstimes,"+alltimeoutstimes;
-			document.getElementById("allmovespregame").value = "allmovespregame,"+allmovespregame;
-			document.getElementById("allmovestimespregame").value = "allmovestimespregame,"+allmovestimespregame;
-			document.getElementById("allmoves").value = "allmoves,"+allmoves;
-			document.getElementById("allmovestimes").value = "allmovestimes,"+allmovestimes;
+      document.getElementById("participantID").value = "participantID: "+participantID;
+      document.getElementById("glevel").value = "glevel: "+glevel;
+			document.getElementById("allquestions").value = "allquestions: "+allquestions;
+			document.getElementById("allrates").value = "allrates: "+allrates;
+			document.getElementById("allresponses").value = "allresponsestime: "+allresponses;
+			document.getElementById("allcorrects3").value = "allcorrects3: "+allcorrects3;
+			document.getElementById("allanswer3s").value = "allanswer3s: "+allanswer3s;
+			document.getElementById("lineCleareds").value = "lineCleareds: "+lineCleareds; 
+			document.getElementById("gameLevels").value = "gameLevels: "+gameLevels;
+			document.getElementById("lineCleareds2").value = "lineCleareds2: "+lineCleareds2;  
+			document.getElementById("gameOverTimes").value = "gameOverTimes: "+gameOverTimes;   		
+			document.getElementById("gameOverCnt").value = "gameOverCnt: "+gameOverCnt;
+			document.getElementById("alltimeouts").value = "alltimeouts: "+alltimeouts;
+			document.getElementById("alltimeoutstimes").value = "alltimeoutstimes: "+alltimeoutstimes;
+			document.getElementById("allmovespregame").value = "allmovespregame: "+allmovespregame;
+			document.getElementById("allmovestimespregame").value = "allmovestimespregame: "+allmovestimespregame;
+			document.getElementById("allmoves").value = "allmoves: "+allmoves;
+			document.getElementById("allmovestimes").value = "allmovestimes: "+allmovestimes;
 			//document.getElementById("gameNos").value = "gameNos,"+gameNos; 		  		
 			// save survey data
 			//window.localStorage.setItem('allquestions', allquestions);
