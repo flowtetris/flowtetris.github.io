@@ -38,7 +38,7 @@ div.a {
   line-height: 1.6;
 }
 
-/* Next button */
+/* Next and Previous buttons */
 
 a {
   text-decoration: none;
@@ -51,6 +51,11 @@ a:hover {
   color: black;
 }
 
+.previous {
+  background-color: #ffffff;
+  color: black;
+}
+
 .next {
   background-color: #ffffff;
   color: #000000;
@@ -60,11 +65,13 @@ a:hover {
   border-radius: 100%;
 }
 
-.nextButton {
+.Button {
 display: flex;
 justify-content: center;
 align-items: center;
 }
+
+a {font-size: 30px}
 
 </style>
 </head>
@@ -77,10 +84,11 @@ align-items: center;
     <p>To answer these questions, you will be using the top row number keys (1-7).</p>
   </div>
   <hr style="height:2px; visibility:hidden;" />
-  <div class="nextButton">
+  <div class="Button">
+    <a href="index6.html" class="previous round">&#8249; Previous</a>
+    &nbsp; &nbsp;
    <a href="index8.html" class="next round">Next &#8250;</a>
   </div>
-
 </body>
 </html>
 
