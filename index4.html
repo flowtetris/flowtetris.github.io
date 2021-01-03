@@ -38,7 +38,7 @@ div.a {
   line-height: 1.6;
 }
 
-/* Next button */
+/* Next and Previous buttons */
 
 a {
   text-decoration: none;
@@ -51,6 +51,11 @@ a:hover {
   color: black;
 }
 
+.previous {
+  background-color: #ffffff;
+  color: black;
+}
+
 .next {
   background-color: #ffffff;
   color: #000000;
@@ -60,17 +65,18 @@ a:hover {
   border-radius: 100%;
 }
 
-.nextButton {
+.Button {
 display: flex;
 justify-content: center;
 align-items: center;
 }
 
+a {font-size: 30px}
+
 </style>
 </head>
 <body>
   <div class="a">
-    <hr style="height:1px; visibility:hidden;" />
     <p><i>Example Animation</i></p>
     <img src="Tetris1.gif" alt="Tetris" style="width:350px;height:450px;">
     <hr style="height:1px; visibility:hidden;" />
@@ -83,7 +89,9 @@ align-items: center;
   </div>
   </div>
   <hr style="height:2px; visibility:hidden;" />
-  <div class="nextButton">
+  <div class="Button">
+    <a href="index3.html" class="previous round">&#8249; Previous</a>
+    &nbsp; &nbsp;
    <a href="index5.html" class="next round">Next &#8250;</a>
   </div>
 
