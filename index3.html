@@ -38,7 +38,7 @@ div.a {
   line-height: 1.6;
 }
 
-/* Next button */
+/* Next and Previous buttons */
 
 a {
   text-decoration: none;
@@ -51,6 +51,11 @@ a:hover {
   color: black;
 }
 
+.previous {
+  background-color: #ffffff;
+  color: black;
+}
+
 .next {
   background-color: #ffffff;
   color: #000000;
@@ -60,24 +65,27 @@ a:hover {
   border-radius: 100%;
 }
 
-.nextButton {
+.Button {
 display: flex;
 justify-content: center;
 align-items: center;
 }
 
+a {font-size: 30px}
+
 </style>
 </head>
 <body>
   <div class="a">
-    <br>
     <p><i>Example Animation</i></p>
     <img src="Tetris1.gif" alt="Tetris" style="width:350px;height:500px;">
     <p>In Tetris, your objective is to arrange the falling Tetris blocks into complete horizontal lines.</p>
     <p>The more lines you clear, the greater your score. Your job is to obtain the highest possible score you can. </p>
   </div>
 
-  <div class="nextButton">
+  <div class="Button">
+    <a href="index2.html" class="previous round">&#8249; Previous</a>
+    &nbsp; &nbsp;
    <a href="index4.html" class="next round">Next &#8250;</a>
   </div>
 
