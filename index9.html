@@ -38,7 +38,7 @@ div.a {
   line-height: 1.6;
 }
 
-/* Next button */
+/* Next and Previous buttons */
 
 a {
   text-decoration: none;
@@ -51,6 +51,11 @@ a:hover {
   color: black;
 }
 
+.previous {
+  background-color: #ffffff;
+  color: black;
+}
+
 .next {
   background-color: #ffffff;
   color: #000000;
@@ -60,11 +65,13 @@ a:hover {
   border-radius: 100%;
 }
 
-.nextButton {
+.Button {
 display: flex;
 justify-content: center;
 align-items: center;
 }
+
+a {font-size: 30px}
 
 </style>
 </head>
@@ -81,9 +88,11 @@ align-items: center;
     <p><span style="display:inline-block; width: 400px;"></span>- Right hand: arrow keys</p>
   <hr style="height:2px; visibility:hidden;" />
  </div>
-  <div class="nextButton">
-   <a href="index10.html" class="next round">Next &#8250;</a>
-  </div>
+ <div class="Button">
+  <a href="index8.html" class="previous round">&#8249; Previous</a>
+  &nbsp; &nbsp;
+ <a href="index10.html" class="next round">Next &#8250;</a>
+</div>
 
 </body>
 </html>
