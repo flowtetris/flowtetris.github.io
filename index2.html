@@ -99,5 +99,14 @@ a {font-size: 27px}
    <a href="index3.html" class="next round">Next &#8250;</a>
   </div>
 
+  <!-- Submit into form --> 
+  <input name="participantID" id="participantID" type="text" value="">
+
 </body>
+
+<script>
+// Retrieve from session storage
+let participantID = sessionStorage.getItem('participantIDstorage');
+document.getElementById("participantID").value = "participantID: "+participantID;
+</script>
 </html>
