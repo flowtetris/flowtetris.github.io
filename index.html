@@ -84,6 +84,7 @@ a {font-size: 27px}
 */
 
 </style>
+
 </head>
 <body>
   <div class="a">
@@ -111,5 +112,13 @@ a {font-size: 27px}
 -->
 </body>
 
+<script>
+var URL = window.location.href
+var participantIDurl = URL.slice(-5);
+
+// Store in session storage
+sessionStorage.setItem('participantIDstorage', participantIDurl);
+
+</script>
 
 </html>
