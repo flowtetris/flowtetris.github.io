@@ -1357,12 +1357,12 @@ async function Loop() {
     // assessing game level
 	if (assess) {
 	   if (!displayDone) {
-	       drawMyText("Part 1","Press spacebar to start","","");
-	       await waitUserInputSpace();
+	       /* drawMyText("Part 1","Press spacebar to start","","");
+	       await waitUserInputSpace(); */
 	       displayDone=true;
-	       myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 10000);
+	       myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 0);
 	   }
-	   Page.Update();
+	   /* Page.Update(); */
 	
 	   // only need to update GM if the player is alive
 	   if (GM.IsAlive){
@@ -1389,7 +1389,7 @@ async function Loop() {
 	    if (assessGameCnt>0) {
 		   GM.Level = Math.floor(assessLevelSum / assessGameCnt)
 	    }
-	    drawMyText("Part 2","Press spacebar to start","","");
+	    drawMyText("","Press spacebar to start","","");
 	    await waitUserInputSpace();
 	    myGameOverTimeout=setTimeout(setGameOverTimeout, 25 * 60000);	
 	    glevel=GM.Level
