@@ -27,7 +27,6 @@ a:hover {
   position: absolute;
   right: 13%;
   top: 50%;
-  display: block;
 }
 
 a {font-size: 27px}
@@ -81,9 +80,9 @@ a {font-size: 27px}
     </form>	
 
     <!-- Button -->
-    <div class="nextButton">
+    <div class="nextButton" style="display: none">
       <a href="2index1.html" class="next round">Next &#8250;</a>
-     </div>
+    </div>
      
 <script>
 //--------------------------------------------------//
@@ -94,6 +93,7 @@ var URL = window.location.href
 var participantID = URL.slice(-5);
 
 var completionURL = "https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=612&credit_token=d6892d7ff76f49c3a1116133948e6a03&survey_code="+participantID
+
 
 var Page = {  
   IsSetup: false, // These are objects.
@@ -1315,6 +1315,7 @@ var allmovestimes = [];
 var	allmovespregame = [];
 var	allmovestimespregame = [];
 
+
 /*
 O - 1
 I - 2
@@ -1388,6 +1389,7 @@ async function Loop() {
        GM.Level = Math.floor(assessLevelSum / assessGameCnt)
 	    }
       drawMyText("Good job!","End of Part 1","","");
+      document.getElementsByClassName('nextButton').style.display = block;
       return
       /*
 	    myGameOverTimeout=setTimeout(setGameOverTimeout, 25 * 60000);	
