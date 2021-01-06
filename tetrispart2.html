@@ -332,8 +332,7 @@ Page.Game = new DrawAreaObj(0,0,10,20,function(){
    
   // if the player is dead, draw the game over text
   if (!GM.IsAlive){
-    DrawText("GAME OVER",'rgb(255,255,255)','500',
-             'center',uDrawSize,this.W/2,this.H/4);
+    drawMyText("Good job!","End of Part 2","","");
   }
 });
 
