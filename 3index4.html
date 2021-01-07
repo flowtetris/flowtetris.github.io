@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Instructions</title>
+  <title>Part 3</title>
 <style>
     
 /* Colour */
@@ -23,7 +23,7 @@ body {
 /* Font size */
 
 body {
-  font-size: 195%;
+  font-size: 160%;
 }
 h1 {
   font-size: 1.5em;
@@ -33,9 +33,6 @@ h2 {
 }
 p {
   font-size: 0.875em;
-}
-div.a {
-  line-height: 1.6;
 }
 
 /* Next and Previous buttons */
@@ -73,37 +70,76 @@ align-items: center;
 
 a {font-size: 27px}
 
+/* Questionnaire */
+
+.first-col {
+    width: 30%;
+    text-align: left;
+    border-right: solid #b9b9b9;
+    }
+table {
+    width: 100%;
+    }
+
+th, td {
+    width: 8%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 400;
+    word-break: keep-all;
+    }   
+form {
+    width: 98%;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    line-height: normal;
+    }
 </style>
+
 </head>
 <body>
   <div class="a">
-    <hr style="height:150px; visibility:hidden;" />
+    <hr style="height:10px; visibility:hidden;" />
   </div>
   <body>
-    <h4>Name</h4>
-    <input class="first-name" type="text" name="name" placeholder="First" />
-    <input type="text" name="name" placeholder="Last" />
-    <h4>Email<span>*</span></h4>
-    <input type="text"/>
-    <h4>How satisfied were you with:<span>*</span></h4>
+    <form>
     <table>
       <tr>
         <th class="first-col"></th>
-        <th>Very Satisfied</th>
-        <th>Satisfied</th>
-        <th>Unsatisfied</th>
-        <th>Very Unsatisfied</th>
+        <th>Strongly disagree</th>
+        <th>Disagree</th>
+        <th>Neutral</th>
+        <th>Agree</th>
+        <th>Strongly agree</th>
       </tr>
       <tr>
-        <td class="first-col">Key point #1</td>
-        <td><input type="radio" value="none" name="point#1" /></td>
-        <td><input type="radio" value="none" name="point#1" /></td>
-        <td><input type="radio" value="none" name="point#1" /></td>
-        <td><input type="radio" value="none" name="point#1" /></td>
+        <td class="first-col">I found myself mind wandering during the Tetris task</td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
       </tr>
-      </table>
-      <h4>Do you have any comments about the task?</h4>
-      <textarea rows="5"></textarea>
+      <tr>
+        <td class="first-col">I have difficulty maintaining focus on simple or repetitive work</td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
+      </tr>
+      <tr>
+        <td class="first-col">While reading, I find I haven't been thinking about the text and must
+          therefore read it again</td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
+      </tr>
+    </table>
+  </form>
   </body>
 
   <hr style="height:20px; visibility:hidden;" />
