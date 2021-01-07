@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Instructions</title>
+  <title>Part 3</title>
 <style>
     
 /* Colour */
@@ -16,6 +16,7 @@ body {
   h1 {text-align: center;}
   h1 {font-weight: bold;}
   h1 {text-decoration: underline;}
+  h3 {text-align: center;}
   p {text-align: center;}
   div {text-align: center;}
   p {font-family: Georgia, Garamond, sans-serif;}
@@ -23,7 +24,7 @@ body {
 /* Font size */
 
 body {
-  font-size: 195%;
+  font-size: 160%;
 }
 h1 {
   font-size: 1.5em;
@@ -31,11 +32,11 @@ h1 {
 h2 {
   font-size: 1.875em;
 }
+h3 {
+  font-size: 1.2em;
+}
 p {
   font-size: 0.875em;
-}
-div.a {
-  line-height: 1.6;
 }
 
 /* Next and Previous buttons */
@@ -73,18 +74,61 @@ align-items: center;
 
 a {font-size: 27px}
 
+/* Questionnaire */
+
+.first-col {
+    width: 30%;
+    text-align: left;
+    border-right: solid #b9b9b9;
+    }
+table {
+    width: 100%;
+    }
+
+th, td {
+    width: 8%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 400;
+    word-break: keep-all;
+    }   
+form {
+    width: 98%;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    line-height: normal;
+    }
+h4 {
+    margin: 15px 0 4px;
+    }
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(75%)
+    }
+
 </style>
+
 </head>
 <body>
   <div class="a">
-    <hr style="height:50px; visibility:hidden;" />
     <hr style="height:10px; visibility:hidden;" />
-    <p>Thank you for your participation in this task!</p>
-    </p>Click submit to finish.</p>
   </div>
+  <body>
+    <form>
+      <h3>Did you have any comments or issues with the task?</h3>
+      <textarea rows="2" style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center"></textarea>
+  </form>
+  </body>
+
   <hr style="height:20px; visibility:hidden;" />
   <div class="Button">
-   <a href="3index2.html" class="next round">Submit &#8250;</a>
+    <a href="3index4.html" class="previous round">&#8249; Previous</a>
+    &nbsp; &nbsp;
+   <a href="3index6.html" class="next round">Next &#8250;</a>
   </div>
 </body>
 </html>
