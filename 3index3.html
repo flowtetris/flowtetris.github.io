@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Instructions</title>
+  <title>Part 3</title>
 <style>
     
 /* Colour */
@@ -23,7 +23,7 @@ body {
 /* Font size */
 
 body {
-  font-size: 195%;
+  font-size: 160%;
 }
 h1 {
   font-size: 1.5em;
@@ -33,9 +33,6 @@ h2 {
 }
 p {
   font-size: 0.875em;
-}
-div.a {
-  line-height: 1.6;
 }
 
 /* Next and Previous buttons */
@@ -73,74 +70,101 @@ align-items: center;
 
 a {font-size: 27px}
 
+/* Questionnaire */
+
+.first-col {
+    width: 30%;
+    text-align: left;
+    border-right: solid #b9b9b9;
+    }
+table {
+    width: 100%;
+    }
+
+th, td {
+    width: 8%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 400;
+    word-break: keep-all;
+    }   
+form {
+    width: 98%;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    line-height: normal;
+    }
 </style>
+
 </head>
 <body>
   <div class="a">
     <hr style="height:150px; visibility:hidden;" />
   </div>
   <body>
+    <form>
     <table>
       <tr>
         <th class="first-col"></th>
-        <th>Strongly agree</th>
-        <th>Agree</th>
-        <th>Neutral</th>
-        <th>Disagree</th>
         <th>Strongly disagree</th>
+        <th>Disagree</th>
+        <th>Neutral</th>
+        <th>Agree</th>
+        <th>Strongly agree</th>
       </tr>
       <tr>
         <td class="first-col">I found myself mind wandering during the Tetris task</td>
-        <td><input type="radio" value="none" name="rate" /></td>
-        <td><input type="radio" value="none" name="rate" /></td>
-        <td><input type="radio" value="none" name="rate" /></td>
-        <td><input type="radio" value="none" name="rate" /></td>
-        <td><input type="radio" value="none" name="rate" /></td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
+        <td><input type="radio" value="none" name="MWTetris" /></td>
       </tr>
       <tr>
         <td class="first-col">I have difficulty maintaining focus on simple or repetitive work</td>
-        <td><input type="radio" value="none" name="rate" /></td>
-        <td><input type="radio" value="none" name="rate" /></td>
-        <td><input type="radio" value="none" name="rate" /></td>
-        <td><input type="radio" value="none" name="rate" /></td>
-        <td><input type="radio" value="none" name="rate" /></td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
+        <td><input type="radio" value="none" name="MWQ1" /></td>
       </tr>
       <tr>
         <td class="first-col">While reading, I find I haven't been thinking about the text and must
           therefore read it again</td>
-        <td><input type="radio" value="none" name="satisfied" /></td>
-        <td><input type="radio" value="none" name="satisfied" /></td>
-        <td><input type="radio" value="none" name="satisfied" /></td>
-        <td><input type="radio" value="none" name="satisfied" /></td>
-        <td><input type="radio" value="none" name="satisfied" /></td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
+        <td><input type="radio" value="none" name="MWQ2" /></td>
       </tr>
       <tr>
         <td class="first-col">I do things without paying full attention</td>
-        <td><input type="radio" value="none" name="prices" /></td>
-        <td><input type="radio" value="none" name="prices" /></td>
-        <td><input type="radio" value="none" name="prices" /></td>
-        <td><input type="radio" value="none" name="prices" /></td>
-        <td><input type="radio" value="none" name="prices" /></td>
+        <td><input type="radio" value="none" name="MWQ3" /></td>
+        <td><input type="radio" value="none" name="MWQ3" /></td>
+        <td><input type="radio" value="none" name="MWQ3" /></td>
+        <td><input type="radio" value="none" name="MWQ3" /></td>
+        <td><input type="radio" value="none" name="MWQ3" /></td>
       </tr>
       <tr>
         <td class="first-col">I find myself listening with one ear, thinking about something else at
           the same time</td>
-        <td><input type="radio" value="none" name="timeliness" /></td>
-        <td><input type="radio" value="none" name="timeliness" /></td>
-        <td><input type="radio" value="none" name="timeliness" /></td>
-        <td><input type="radio" value="none" name="timeliness" /></td>
-        <td><input type="radio" value="none" name="timeliness" /></td>
+          <td><input type="radio" value="none" name="MWQ4" /></td>
+          <td><input type="radio" value="none" name="MWQ4" /></td>
+          <td><input type="radio" value="none" name="MWQ4" /></td>
+          <td><input type="radio" value="none" name="MWQ4" /></td>
+          <td><input type="radio" value="none" name="MWQ4" /></td>
       </tr>
       <tr>
-        <td class="first-col">I mind-wander during lecture of presentations</td>
-        <td><input type="radio" value="none" name="name" /></td>
-        <td><input type="radio" value="none" name="name" /></td>
-        <td><input type="radio" value="none" name="name" /></td>
-        <td><input type="radio" value="none" name="name" /></td>
-        <td><input type="radio" value="none" name="name" /></td>
+        <td class="first-col">I mind-wander during the presentations of lectures</td>
+        <td><input type="radio" value="none" name="MWQ5" /></td>
+        <td><input type="radio" value="none" name="MWQ5" /></td>
+        <td><input type="radio" value="none" name="MWQ5" /></td>
+        <td><input type="radio" value="none" name="MWQ5" /></td>
+        <td><input type="radio" value="none" name="MWQ5" /></td>
       </tr>
     </table>
-
+  </form>
   </body>
 
   <hr style="height:20px; visibility:hidden;" />
