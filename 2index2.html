@@ -1,92 +1,142 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Part 2 Instructions</title>
-<style>
-    
-/* Colour */
+  <style>
+    /* Colour */
 
-body {
-  background-color: #000000;
-  color: white;}
-  h1 {color: rgb(255, 255, 255);}
+    body {
+      background-color: #000000;
+      color: white;
+    }
 
-/* Font and formatting */
+    h1 {
+      color: rgb(255, 255, 255);
+    }
 
-  h1 {text-align: center;}
-  h1 {font-weight: bold;}
-  h1 {text-decoration: underline;}
-  p {text-align: center;}
-  div {text-align: center;}
-  p {font-family: Georgia, Garamond, sans-serif;}
+    /* Font and formatting */
 
-/* Font size */
+    h1 {
+      text-align: center;
+    }
 
-body {
-  font-size: 195%;
-}
-h1 {
-  font-size: 1.5em;
-}
-h2 {
-  font-size: 1.875em;
-}
-p {
-  font-size: 0.875em;
-}
-div.a {
-  line-height: 1.6;
-}
+    h1 {
+      font-weight: bold;
+    }
 
-/* Next and Previous buttons */
+    h1 {
+      text-decoration: underline;
+    }
 
-a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
+    p {
+      text-align: center;
+    }
 
-a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    div {
+      text-align: center;
+    }
 
-.previous {
-  background-color: #ffffff;
-  color: black;
-}
+    p {
+      font-family: Georgia, Garamond, sans-serif;
+    }
 
-.next {
-  background-color: #ffffff;
-  color: #000000;
-}
+    .outer {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 95%;
+      width: 100%;
+    }
 
-.round {
-  border-radius: 100%;
-}
+    .middle {
+      display: table-cell;
+      vertical-align: middle;
+    }
 
-.Button {
-display: flex;
-justify-content: center;
-align-items: center;
-}
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-a {font-size: 27px}
+    /* Font size */
 
-</style>
+    body {
+      font-size: 195%;
+    }
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    h2 {
+      font-size: 1.875em;
+    }
+
+    p {
+      font-size: 0.875em;
+    }
+
+    div.a {
+      line-height: 1.6;
+    }
+
+    /* Next and Previous buttons */
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .previous {
+      background-color: #ffffff;
+      color: black;
+    }
+
+    .next {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .round {
+      border-radius: 100%;
+    }
+
+    .Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      font-size: 27px
+    }
+  </style>
 </head>
-<body>
-  <div class="a">
-    <hr style="height:150px; visibility:hidden;" />
-    <img src="numberkeys.jpeg" alt="NumberKeys" style="width:500px;height:200px;">
-    <p>To answer these questions, you will be using the top row number keys (1-7).</p>
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+      <body>
+        <div class="a">
+          <img src="numberkeys.jpeg" alt="NumberKeys" style="width:500px;height:200px;">
+          <p>To answer these questions, you will be using the top row number keys (1-7).</p>
+        </div>
+        <hr style="height:20px; visibility:hidden;" />
+        <div class="Button">
+          <a href="2index1.html" class="previous round">&#8249; Previous</a>
+          &nbsp; &nbsp;
+          <a href="2index3.html" class="next round">Next &#8250;</a>
+        </div>
+      </body>
+    </div>
   </div>
-  <hr style="height:20px; visibility:hidden;" />
-  <div class="Button">
-    <a href="2index1.html" class="previous round">&#8249; Previous</a>
-    &nbsp; &nbsp;
-   <a href="2index3.html" class="next round">Next &#8250;</a>
-  </div>
-</body>
-</html>
+</div>
 
+</html>
