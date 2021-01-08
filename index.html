@@ -1,73 +1,112 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Welcome</title>
-<style>
+  <style>
+    /* Colour */
 
-/* Colour */
+    body {
+      background-color: #000000;
+      color: white;
+    }
 
-body {
-  background-color: #000000;
-  color: white;
-}
+    /* Font and formatting */
 
-/* Font and formatting */
+    h1 {
+      text-align: center;
+    }
 
-  h1 {text-align: center;}
-  h1 {font-weight: bold;}
-  p {text-align: center;}
-  div {text-align: center;}
-  p {font-family: Georgia, Garamond, sans-serif;}
+    h1 {
+      font-weight: bold;
+    }
 
-/* Font size */
+    p {
+      text-align: center;
+    }
 
-body {
-  font-size: 195%;
-}
-h1 {
-  font-size: 1.7em;
-}
-h2 {
-  font-size: 1.875em;
-}
-p {
-  font-size: 0.875em;
-}
-div.a {
-  line-height: 1.6;
-}
+    div {
+      text-align: center;
+    }
 
-/* Next button */
+    p {
+      font-family: Georgia, Garamond, sans-serif;
+    }
 
-a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
+    .outer {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
 
-a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    .middle {
+      display: table-cell;
+      vertical-align: middle;
+    }
 
-.next {
-  background-color: #ffffff;
-  color: #000000;
-}
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.round {
-  border-radius: 100%;
-}
+    /* Font size */
 
-.nextButton {
-display: flex;
-justify-content: center;
-align-items: center;
-}
+    body {
+      font-size: 195%;
+    }
 
-a {font-size: 27px}
+    h1 {
+      font-size: 1.7em;
+    }
 
-/* Logos 
+    h2 {
+      font-size: 1.875em;
+    }
+
+    p {
+      font-size: 0.875em;
+    }
+
+    div.a {
+      line-height: 1.6;
+    }
+
+    /* Next button */
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .next {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .round {
+      border-radius: 100%;
+    }
+
+    .nextButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      font-size: 27px
+    }
+
+    /* Logos 
 
 .UNSW{
   position: absolute;
@@ -81,27 +120,29 @@ a {font-size: 27px}
   top: 0px;
 }
 */
-
-</style>
+  </style>
 
 </head>
-<body>
-  <div class="a">
-    <hr style="height:30px; visibility:hidden;" />
-    <h1>Welcome!</h1>
-    <hr style="height:30px; visibility:hidden;" />
-    <p>In this task, you will be playing a game of Tetris and answering some questions.</p>
-    <br>
-    <p>This task will take approximately 30 minutes.</p>
-    <br>
-    <p>To ensure Tetris runs properly, enter full screen mode by pressing F11 (Windows) or control+command+F (Mac).</p>
-    <p>Please do this now.</p>
-  </div>
-  <hr style="height:50px; visibility:hidden;" />
-  <div class="nextButton">
-   <a href="index1.html" class="next round">Next &#8250;</a>
-  </div>
- <!--
+<div class="outer">
+  <div class="middle">
+    <div class="inner"></div>
+    <body>
+      <div class="a">
+        <h1><u>Welcome!</u></h1>
+        <hr style="height:30px; visibility:hidden;" />
+        <p>In this task, you will be playing a game of Tetris and answering some questions.</p>
+        <br>
+        <p>This task will take approximately 30 minutes.</p>
+        <br>
+        <p>To ensure Tetris runs properly, enter full screen mode by pressing F11 (Windows) or control+command+F (Mac).
+        </p>
+        <p>Please do this now.</p>
+      </div>
+      <hr style="height:50px; visibility:hidden;" />
+      <div class="nextButton">
+        <a href="index1.html" class="next round">Next &#8250;</a>
+      </div>
+      <!--
   <div id="UNSW" class="UNSW">
   <img src="UNSWlogo.png" alt="UNSW" style="width:250px;height:150px;">
 </div>
@@ -109,14 +150,17 @@ a {font-size: 27px}
   <img src="FMLabLogo.png" alt="Future Minds Lab" style="width:250px;height:150px;">
 </div> 
 -->
-</body>
+    </body>
+  </div>
+</div>
+</div>
 
 <script>
-var URL = window.location.href
-var participantIDurl = URL.slice(-5);
+  var URL = window.location.href
+  var participantIDurl = URL.slice(-5);
 
-// Store in session storage
-sessionStorage.setItem('participantIDstorage', participantIDurl);
+  // Store in session storage
+  sessionStorage.setItem('participantIDstorage', participantIDurl);
 
 </script>
 
