@@ -92,7 +92,7 @@
     }
 
     /* Next and Previous buttons */
-
+    
     a {
       text-decoration: none;
       display: inline-block;
@@ -115,7 +115,7 @@
     }
 
     .round {
-      border-radius: 100%;
+      border-radius: 200%;
     }
 
     .Button {
@@ -137,26 +137,27 @@
         <form>
           <p>Please enter your initials:</p>
           <input type="text" id="initials" name="initials"
-            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center"><br><br>
+            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center" required><br><br>
           <p>Please enter your age:</p>
           <input type="text" id="age" name="age"
-            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center"><br><br>
+            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center" required><br><br>
           <p>Please select your gender:</p>
           <div class="Gender">
-            <input type="radio" id="male" name="gender" value="male">
+            <input type="radio" id="male" name="gender" value="male" required>
             <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value="female">
+            <input type="radio" id="female" name="gender" value="female" required>
             <label for="female">Female</label><br>
-            <input type="radio" id="other" name="gender" value="other">
+            <input type="radio" id="other" name="gender" value="other" required>
             <label for="other">Other</label>
           </div>
-        </form>
         <hr style="height:25px; visibility:hidden;" />
         <div class="Button">
           <a href="index.html" class="previous round">&#8249; Previous</a>
           &nbsp; &nbsp;
-          <a href="index2.html" class="next round">Next &#8250;</a>
+          <a href="index2.html"> <button type="submit" class="next round" style="text-decoration: none;
+            display: inline-block; padding: 8px 16px;border-radius: 200%;font-size: 27px">Next &#8250; </button></a>
         </div>
+      </form>
       </body>
     </div>
   </div>
