@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <title>Part 2</title>
+
 <style>
   /* Next button */
 
@@ -21,13 +22,6 @@
 
   .round {
     border-radius: 100%;
-  }
-
-  .nextButton {
-    position: absolute;
-    right: 13%;
-    top: 50%;
-    display: block;
   }
 
   a {
@@ -85,7 +79,7 @@
   </form>
 
   <!-- Button -->
-  <div class="nextButton">
+  <div id="nextButton" style="display: none; position: absolute; right: 15%; top: 50%;">
     <a href="3index1.html" class="next round">Next &#8250;</a>
   </div>
 
@@ -335,7 +329,8 @@
 
       // if the player is dead, draw the game over text
       if (!GM.IsAlive) {
-        drawMyText("Good job!", "End of Part 2", "", "");
+        drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
+        document.getElementById('nextButton').style.display = 'block';
       }
     });
 
@@ -1266,19 +1261,19 @@
       fup4:"Unintentional             Intentional"},
     */
     {
-      ln1: "How immersed were you in",
-      ln2: "      the game?      ",
+      ln1: "Is the difficulty of the game",
+      ln2: "      are well matched to my ability?      ",
       ln3: "1  ---------------  4",
-      ln4: "Very little                  Very much",
+      ln4: "Strongly disagree                 Strongly agree",
       fk: 0,
       fup1: "",
       fup2: ""
     },
     {
-      ln1: "Were you enjoying",
-      ln2: "      the game?      ",
+      ln1: "Are you enjoying",
+      ln2: "      the game?     ",
       ln3: "1  ---------------  4",
-      ln4: "Very little                  Very much",
+      ln4: "Strongly disagree                  Strongly agree",
       fk: 0,
       fup1: "",
       fup2: ""
@@ -1728,8 +1723,6 @@
       DrawText(ln3, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1, this.W / 2, this.H / 1.7);
       DrawText(ln4, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1.4, this.W / 2, this.H / 1.55);
 
-
-
     }
 
     function drawMyTextObj(ln1, ln2, ln3, ln4) {
@@ -1875,6 +1868,28 @@
       //function pad ( val ) { return val > 9 ? val : "0" + val; }
       function pad(val) { return val > 9 ? val : val; }
     }	
+
+    function drawMyTextend(ln1, ln2, ln3, ln4) {
+      if (exit) return;
+
+
+      var uDrawSize = Page.unitSize - 2;
+      this.W = 10 * Page.unitSize;
+      this.H = 20 * Page.unitSize;
+      //this.left = 0 * Page.unitSize;
+      //this.top = 0 * Page.unitSize;
+      Page.ctx.fillStyle = "rgba(28, 30, 34, 1)";
+      Page.ctx.fillRect(0, 5, this.W, this.H);
+      //Page.ctx.fillStyle = 'rgb(28,30,34)';
+      //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
+
+
+      DrawText(ln1, 'rgb(255,255,255)', '510', 'center', uDrawSize / 0.95, this.W / 2, this.H / 2.3);
+      DrawText(ln2, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1.3, this.W / 2, this.H / 2.0);
+      DrawText(ln3, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1.3, this.W / 2, this.H / 1.7);
+      DrawText(ln4, 'rgb(255,255,255)', '100', 'center', uDrawSize / 1.3, this.W / 2, this.H / 1.55);
+
+    }
   </script>
 </body>
 
