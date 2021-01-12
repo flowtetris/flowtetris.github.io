@@ -35,47 +35,47 @@
 <body>
   <!-- <form action="https://formspree.io/f/xgeppajy" method="POST"> -->
   <!-- <form action="https://formsubmit.co/d0673ba2f4c1647f9443fee096709081" method="POST">
-    <input type="hidden" name="_next" value="https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=612&credit_token=d6892d7ff76f49c3a1116133948e6a03&survey_code="+participantID> -->
+      <input type="hidden" name="_next" value="https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=612&credit_token=d6892d7ff76f49c3a1116133948e6a03&survey_code="+participantID> -->
   <input type="hidden" name="_captcha" value="false">
-  <input name="participantID" id="participantID" type="text" value="">
+  <input name="participantID" id="participantID" type="hidden" value="">
   <br>
-  <input name="glevel" id="glevel" type="text" value="">
+  <input name="glevel" id="glevel" type="hidden" value="">
   <br>
-  <input name="allquestions" id="allquestions" type="text" value="">
+  <input name="allquestions" id="allquestions" type="hidden" value="">
   <br>
-  <input name="allrates" id="allrates" type="text" value="">
+  <input name="allrates" id="allrates" type="hidden" value="">
   <br>
-  <input name="allresponses" id="allresponses" type="text" value="">
+  <input name="allresponses" id="allresponses" type="hidden" value="">
   <br>
-  <input name="allanswer3s" id="allanswer3s" type="text" value="">
+  <input name="allanswer3s" id="allanswer3s" type="hidden" value="">
   <br>
-  <input name="allcorrects3" id="allcorrects3" type="text" value="">
+  <input name="allcorrects3" id="allcorrects3" type="hidden" value="">
   <br>
-  <input name="lineCleareds" id="lineCleareds" type="text" value="">
+  <input name="lineCleareds" id="lineCleareds" type="hidden" value="">
   <br>
-  <input name="gameLevels" id="gameLevels" type="text" value="">
+  <input name="gameLevels" id="gameLevels" type="hidden" value="">
   <br>
-  <input name="lineCleareds2" id="lineCleareds2" type="text" value="">
+  <input name="lineCleareds2" id="lineCleareds2" type="hidden" value="">
   <br>
-  <input name="gameOverTimes" id="gameOverTimes" type="text" value="">
+  <input name="gameOverTimes" id="gameOverTimes" type="hidden" value="">
   <br>
-  <input name="gameOverCnt" id="gameOverCnt" type="text" value="">
+  <input name="gameOverCnt" id="gameOverCnt" type="hidden" value="">
   <br>
-  <input name="alltimeouts" id="alltimeouts" type="text" value="">
+  <input name="alltimeouts" id="alltimeouts" type="hidden" value="">
   <br>
-  <input name="alltimeoutstimes" id="alltimeoutstimes" type="text" value="">
+  <input name="alltimeoutstimes" id="alltimeoutstimes" type="hidden" value="">
   <br>
-  <input name="allmovespregame" id="allmovespregame" type="text" value="">
+  <input name="allmovespregame" id="allmovespregame" type="hidden" value="">
   <br>
-  <input name="allmovestimespregame" id="allmovestimespregame" type="text" value="">
+  <input name="allmovestimespregame" id="allmovestimespregame" type="hidden" value="">
   <br>
-  <input name="allmoves" id="allmoves" type="text" value="">
+  <input name="allmoves" id="allmoves" type="hidden" value="">
   <br>
-  <input name="allmovestimes" id="allmovestimes" type="text" value="">
+  <input name="allmovestimes" id="allmovestimes" type="hidden" value="">
   <br>
-  <button type="submit">Submit</button>
-  <!-- <input onclick="window.location.href = 'https://google.com';" type="submit" value="Submit request" /> -->
-  <input onclick="window.location.href = completionURL" type="submit" value="Submit request" />
+  <!-- <button type="submit">Submit</button>
+    <input onclick="window.location.href = 'https://google.com';" type="submit" value="Submit request" /> 
+    <input onclick="window.location.href = completionURL" type="submit" value="Submit request" /> -->
   </form>
 
   <!-- Button -->
@@ -1867,7 +1867,7 @@
 
       //function pad ( val ) { return val > 9 ? val : "0" + val; }
       function pad(val) { return val > 9 ? val : val; }
-    }	
+    }
 
     function drawMyTextend(ln1, ln2, ln3, ln4) {
       if (exit) return;
@@ -1884,7 +1884,7 @@
       //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
 
 
-      DrawText(ln1, 'rgb(255,255,255)', '510', 'center', uDrawSize / 0.95, this.W / 2, this.H / 2.3);
+      DrawText(ln1, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1, this.W / 2, this.H / 2.3);
       DrawText(ln2, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1.3, this.W / 2, this.H / 2.0);
       DrawText(ln3, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1.3, this.W / 2, this.H / 1.7);
       DrawText(ln4, 'rgb(255,255,255)', '100', 'center', uDrawSize / 1.3, this.W / 2, this.H / 1.55);
