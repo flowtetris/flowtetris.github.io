@@ -29,10 +29,6 @@
       text-decoration: underline;
     }
 
-    h3 {
-      text-align: center;
-    }
-
     p {
       text-align: center;
     }
@@ -76,10 +72,6 @@
 
     h2 {
       font-size: 1.875em;
-    }
-
-    h3 {
-      font-size: 1.2em;
     }
 
     p {
@@ -151,17 +143,6 @@
       background: rgb(0, 0, 0);
       line-height: normal;
     }
-
-    h4 {
-      margin: 15px 0 4px;
-    }
-
-    textarea {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: calc(75%)
-    }
   </style>
 
 </head>
@@ -170,12 +151,42 @@
     <div class="inner">
       <body>
         <form>
-          <h3>Did you have any comments about the task?</h3>
-          <textarea rows="2"
-            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center"></textarea>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">I play Tetris a lot</td>
+              <td><input type="radio" value="none" name="PostQ1" /></td>
+              <td><input type="radio" value="none" name="PostQ1" /></td>
+              <td><input type="radio" value="none" name="PostQ1" /></td>
+              <td><input type="radio" value="none" name="PostQ1" /></td>
+              <td><input type="radio" value="none" name="PostQ1" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I play games a lot</td>
+              <td><input type="radio" value="none" name="PostQ2" /></td>
+              <td><input type="radio" value="none" name="PostQ2" /></td>
+              <td><input type="radio" value="none" name="PostQ2" /></td>
+              <td><input type="radio" value="none" name="PostQ2" /></td>
+              <td><input type="radio" value="none" name="PostQ2" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">The environment I completed this task in was free of distractions (e.g. sounds, people, other open applications)</td>
+              <td><input type="radio" value="none" name="PostQ3" /></td>
+              <td><input type="radio" value="none" name="PostQ3" /></td>
+              <td><input type="radio" value="none" name="PostQ3" /></td>
+              <td><input type="radio" value="none" name="PostQ3" /></td>
+              <td><input type="radio" value="none" name="PostQ3" /></td>
+            </tr>
+          </table>
         </form>
       </body>
-
       <hr style="height:20px; visibility:hidden;" />
       <div class="Button">
         <a href="3index4.html" class="previous round">&#8249; Previous</a>
