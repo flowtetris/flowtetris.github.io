@@ -29,6 +29,10 @@
       text-decoration: underline;
     }
 
+    h3 {
+      text-align: center;
+    }
+
     p {
       text-align: center;
     }
@@ -60,11 +64,10 @@
       margin-right: auto;
     }
 
-
     /* Font size */
 
     body {
-      font-size: 195%;
+      font-size: 160%;
     }
 
     h1 {
@@ -75,12 +78,12 @@
       font-size: 1.875em;
     }
 
-    p {
-      font-size: 0.875em;
+    h3 {
+      font-size: 1.2em;
     }
 
-    div.a {
-      line-height: 1.6;
+    p {
+      font-size: 0.875em;
     }
 
     /* Next and Previous buttons */
@@ -119,6 +122,46 @@
     a {
       font-size: 27px
     }
+
+    /* Questionnaire */
+
+    .first-col {
+      width: 30%;
+      text-align: left;
+      border-right: solid #b9b9b9;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      width: 8%;
+      padding: 15px 0;
+      border-bottom: 1px solid rgb(255, 255, 255);
+      text-align: center;
+      font-weight: 400;
+      word-break: keep-all;
+    }
+
+    form {
+      width: 98%;
+      padding: 20px;
+      background: rgb(0, 0, 0);
+      line-height: normal;
+    }
+
+    h4 {
+      margin: 15px 0 4px;
+    }
+
+    textarea {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: calc(75%)
+    }
   </style>
 
 </head>
@@ -126,15 +169,19 @@
   <div class="middle">
     <div class="inner">
       <body>
-        <div class="a">
-          <p>Thank you for your participation!</p>
-          </p>Please click submit to finish.</p>
-        </div>
-        <hr style="height:20px; visibility:hidden;" />
-        <div class="Button">
-          <a href="3index2.html" class="next round">Submit &#8250;</a>
-        </div>
+        <form>
+          <h3>Did you have any comments about the task?</h3>
+          <textarea rows="2"
+            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center"></textarea>
+        </form>
       </body>
+
+      <hr style="height:20px; visibility:hidden;" />
+      <div class="Button">
+        <a href="3index5.html" class="previous round">&#8249; Previous</a>
+        &nbsp; &nbsp;
+        <a href="3index7.html" class="next round">Next &#8250;</a>
+      </div>
     </div>
   </div>
 </div>
