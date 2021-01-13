@@ -328,9 +328,10 @@
       }
 
       // if the player is dead, draw the game over text
-      if (!GM.IsAlive) {
+      if (!GM.IsAlive && timeouts.length <= 0) {
         drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
         document.getElementById('nextButton').style.display = 'block';
+
       }
     });
 
@@ -735,7 +736,8 @@
 
       // decrease level, recalculate TickRate, reset pieces remaining
       DecreaseLevel: function () {
-        if (this.Level != 1) {
+        if (this.Level > 1) {
+          console.log("level=" + this.Level)
           this.Level--;
           LinesClearedCounter = 15;
           //console.log(this.TickRate = previousTickRate);
@@ -744,7 +746,9 @@
           Page.ScoreBarCur.IsDirty = true;
         } else {
           this.SameLevel();
+          this.Level = 1;
         }
+        GM.Level = this.Level;
       },
 
 
@@ -1209,9 +1213,14 @@
 
       // if player not alive, reset the game
       else {
-        glevel = GM.Level
-        Init();
-        GM.Level = glevel
+        //jk
+        if (!exit) {
+          glevel = GM.Level
+          Init();
+          GM.Level = glevel
+        } else {
+
+        }
       }
 
     }, false);
@@ -1248,8 +1257,8 @@
 
 
     questions = [{
-      ln1: "Where was your attention",
-      ln2: "just before this question?",
+      ln1: "Where was your attention just",
+      ln2: "before these set of questions?",
       ln3: "1  ---------------  4",
       ln4: "Off-game                  On-game"
     },
@@ -1261,19 +1270,19 @@
       fup4:"Unintentional             Intentional"},
     */
     {
-      ln1: "Is the difficulty of the game",
-      ln2: "      are well matched to my ability?      ",
+      ln1: "The difficulty of the game",
+      ln2: "matches my ability",
       ln3: "1  ---------------  4",
-      ln4: "Strongly disagree                 Strongly agree",
+      ln4: "Disagree                     Agree",
       fk: 0,
       fup1: "",
       fup2: ""
     },
     {
-      ln1: "Are you enjoying",
-      ln2: "      the game?     ",
+      ln1: "My thoughts and movements",
+      ln2: "feel fluid and smooth",
       ln3: "1  ---------------  4",
-      ln4: "Strongly disagree                  Strongly agree",
+      ln4: "Disagree                     Agree",
       fk: 0,
       fup1: "",
       fup2: ""
@@ -1282,19 +1291,27 @@
       ln1: "",
       ln2: "",
       ln3: "What is the shape of the",
-      ln4: "current Tetris block?",
+      ln4: "falling Tetris block?",
       fk: 0,
       fup1: "",
       fup2: ""
-    }
-
+    },
+    {
+      ln1: "",
+      ln2: "I am enjoying the game",
+      ln3: "1  ---------------  4",
+      ln4: "Disagree                     Agree",
+      fk: 0,
+      fup1: "",
+      fup2: ""
+    },
     ]
     //{ln1:"What shape was the last block", ln2:"qn4 ln2"}]
 
 
     //var gQns = [[0,1,2],[3,4,5],[6,7],[8,9]]
     //var gQns = [[0],[1],[2],[3],[4],[5],[6],[7],[8],[9]]
-    var gQns = [[0, 1, 2, 3]]
+    var gQns = [[0, 1, 2, 3, 4]]
     var lineCleareds = [];
     var gameLevels = [];
     var lineCleareds2 = [];
@@ -1395,7 +1412,7 @@
             GM.Level = Math.floor(assessLevelSum / assessGameCnt)
           }
           drawMyText("", "Press spacebar to start", "", "");
-          await waitUserInputSpace();
+          //await waitUserInputSpace();
           myGameOverTimeout = setTimeout(setGameOverTimeout, 25 * 60000);
           glevel = GM.Level
           Init();
@@ -1424,6 +1441,9 @@
             //game over by player 
             //window.clearTimeout(myInterval);
             GM.Level--;
+            if (GM.Level < 1) {
+              GM.Level = 1
+            }
             gameOverCnt++;
             gameNos.push(gameOverCnt)
             gameOverT2 = new Date()
@@ -1470,6 +1490,7 @@
             if (m != 3) {
               drawMyText(questions[m].ln1, questions[m].ln2, questions[m].ln3, questions[m].ln4);
             } else {
+              // ask the previous shape
               drawMyTextObj(questions[m].ln1, questions[m].ln2, questions[m].ln3, questions[m].ln4);
             }
             t1 = new Date();
@@ -1571,6 +1592,12 @@
           document.getElementById("allmovestimespregame").value = "allmovestimespregame: " + allmovestimespregame;
           document.getElementById("allmoves").value = "allmoves: " + allmoves;
           document.getElementById("allmovestimes").value = "allmovestimes: " + allmovestimes;
+          document.removeEventListener('keydown');
+          //for (key in getEventListeners(document)) {
+          //  getEventListeners(document)[key].forEach(function(c) {
+          //    c.remove()
+          //  })  
+          //}   
           //document.getElementById("gameNos").value = "gameNos,"+gameNos; 		  		
           // save survey data
           //window.localStorage.setItem('allquestions', allquestions);
