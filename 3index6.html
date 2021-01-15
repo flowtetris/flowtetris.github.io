@@ -123,6 +123,24 @@
       font-size: 27px
     }
 
+    input[type=submit] {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 200%;
+      font-size: 27px;
+      font-family: Georgia, Garamond, sans-serif;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
     /* Questionnaire */
 
     .first-col {
@@ -168,21 +186,19 @@
 <div class="outer">
   <div class="middle">
     <div class="inner">
-
       <body>
-        <form>
+        <form action="3index7.html">
           <h3>Did you have any comments about the task?</h3>
           <textarea rows="2" id="comments"
             style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center"></textarea>
+          <hr style="height:20px; visibility:hidden;" />
+          <div class="Button">
+            <a href="3index5.html" class="previous round">&#8249; Previous</a>
+            &nbsp; &nbsp;
+            <input type="submit" value="Next &#8250;" onclick="variables()">
+          </div>
         </form>
       </body>
-
-      <hr style="height:20px; visibility:hidden;" />
-      <div class="Button">
-        <a href="3index5.html" class="previous round">&#8249; Previous</a>
-        &nbsp; &nbsp;
-        <a href="3index7.html" class="next round" onclick="variables()">Next &#8250;</a>
-      </div>
     </div>
   </div>
 </div>
