@@ -126,7 +126,7 @@
       padding: 8px 16px;
       background-color: #ffffff;
       color: #000000;
-      border-radius: 200%;
+      border-radius: 100%;
       font-size: 27px;
       font-family: Georgia, Garamond, sans-serif;
       border: none;
@@ -136,20 +136,6 @@
     input[type=submit]:hover {
       background-color: #ddd;
       color: black;
-    }
-
-    /* Disable number input spin box */
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      /* display: none; <- Crashes Chrome on hover */
-      -webkit-appearance: none;
-      margin: 0;
-      /* <-- Apparently some margin are still there even though it's hidden */
-    }
-
-    input[type=number] {
-      -moz-appearance: textfield;
-      /* Firefox */
     }
   </style>
 
