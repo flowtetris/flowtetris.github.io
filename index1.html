@@ -127,6 +127,38 @@
     a {
       font-size: 27px
     }
+
+    input[type=submit] {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 200%;
+      font-size: 27px;
+      font-family: Georgia, Garamond, sans-serif;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Disable number input spin box */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0;
+      /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+      /* Firefox */
+    }
   </style>
 
 </head>
@@ -135,25 +167,26 @@
     <div class="inner">
 
       <body>
-        <form>
+        <form action="index2.html">
           <p>Please enter your initials:</p>
           <input type="text" id="initials" name="initials"
-            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center"><br><br>
+            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center" required><br><br>
           <p>Please enter your age:</p>
-          <input type="text" id="age" name="age"
-            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center"><br><br>
+          <input type="number" id="age" name="age"
+            style="font-size: 18pt;font-family: Georgia, Garamond, sans-serif;text-align: center" required><br><br>
           <p>Please select your gender:</p>
           <div class="gender">
-            <input type="radio" id="male" name="gender" value="male">
+            <input type="radio" id="male" name="gender" value="male" required>
             <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value="female">
+            <input type="radio" id="female" name="gender" value="female" required>
             <label for="female">Female</label><br>
           </div>
           <hr style="height:25px; visibility:hidden;" />
           <div class="Button">
             <a href="index.html" class="previous round">&#8249; Previous</a>
             &nbsp; &nbsp;
-            <a href="index2.html" class="next round" onclick="variables1()">Next &#8250;</a>
+            <!-- <a href="index2.html" class="next round" onclick="variables()">Next &#8250;</a> -->
+            <input type="submit" value="Next &#8250;" onclick="variables()">
           </div>
         </form>
       </body>
@@ -162,24 +195,10 @@
 </div>
 
 <script>
-  function variables1() {
+  function variables() {
     var initials = document.getElementById("initials").value;
     var age = document.getElementById("age").value;
     var gender = document.querySelector('input[name="gender"]:checked').value;
-
-/*    if (document.querySelector('input[id="initials"]').value == "")
-      alert("Please input a Value");
-
-    document.querySelector('input[id="age"]').value == ""
-    document.querySelector('input[name="gender"]:checked').value
-
-    function required() {
-      var empt = document.forms["form1"]["text1"].value;
-      if (empt == "") {
-        alert("Please input a Value");
-        return false;
-      }
-    } */
 
     // Store in session storage
     sessionStorage.setItem('initialsStorage', initials);
@@ -187,7 +206,14 @@
     sessionStorage.setItem('genderStorage', gender);
   }
 
-  //sessionStorage.getItem('initialsStorage');
+  /*
+  if (document.querySelector('input[id="initials"]').value == ""
+  || document.querySelector('input[id="age"]').value == ""
+  || document.querySelector('input[name="gender"]:checked').value === null || undefined){
+    alert("Please complete all questions");
+  }
+  */
+
 </script>
 
 </html>
