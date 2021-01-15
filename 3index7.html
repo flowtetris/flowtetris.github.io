@@ -119,6 +119,38 @@
     a {
       font-size: 27px
     }
+
+    input[type=submit] {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 200%;
+      font-size: 27px;
+      font-family: Georgia, Garamond, sans-serif;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Disable number input spin box */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0;
+      /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+      /* Firefox */
+    }
   </style>
 
 </head>
@@ -132,39 +164,46 @@
           </p>Please click submit to finish.</p>
         </div>
         <hr style="height:20px; visibility:hidden;" />
-        <div class="Button">
-          <a href="3index6.html" class="previous round">&#8249; Previous</a>
-          &nbsp; &nbsp;
-          <a href="3index8.html" class="next round">Submit &#8250;</a>
-        </div>
+        <!-- The form with the data-->
+        <form action="https://formsubmit.co/d0673ba2f4c1647f9443fee096709081" method="POST">
+          <input name="participantID" id="participantID" type="text" value="">
+          <br>
+          <input name="initials" id="initials" type="text" value="">
+          <br>
+          <input name="age" id="age" type="text" value="">
+          <br>
+          <input name="gender" id="gender" type="text" value="">
+          <br>
+          <input name="allmovespregame" id="allmovespregame" type="text" value="">
+          <br>
+          <input name="allmovestimespregame" id="allmovestimespregame" type="text" value="">
+          <br>
+          <input name="allmoves" id="allmoves" type="text" value="">
+          <br>
+          <input name="allmovestimes" id="allmovestimes" type="text" value="">
+          <br>
+          <input name="flowS" id="flowS" type="text" value="">
+          <br>
+          <input name="comments" id="comments" type="hidden" value="">
+          <br>
+
+          <input type="hidden" name="_next"
+            value="https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=612&credit_token=d6892d7ff76f49c3a1116133948e6a03&survey_code="
+            +participantID>
+
+          <!-- The buttons-->
+          <div class="Button">
+            <a href="3index6.html" class="previous round">&#8249; Previous</a>
+            &nbsp; &nbsp;
+            <input type="submit" value="Submit &#8250;">
+          </div>
+        </form>
       </body>
     </div>
   </div>
 </div>
 
-<!-- The form with the data-->
-<form>
-<input name="participantID" id="participantID" type="text" value="">
-<br>
-<input name="initials" id="initials" type="text" value="">
-<br>
-<input name="age" id="age" type="text" value="">
-<br>
-<input name="gender" id="gender" type="text" value="">
-<br>
-<input name="allmovespregame" id="allmovespregame" type="text" value="">
-<br>
-<input name="allmovestimespregame" id="allmovestimespregame" type="text" value="">
-<br>
-<input name="allmoves" id="allmoves" type="text" value="">
-<br>
-<input name="allmovestimes" id="allmovestimes" type="text" value="">
-<br>
-<input name="flowS" id="flowS" type="text" value="">
-<br>
-<input name="comments" id="comments" type="text" value="">
-<br>
-</form>
+
 
 <script>
   // Retrieve from session storage
@@ -192,4 +231,4 @@
   document.getElementById("comments").value = "comments: " + comments;
 </script>
 
-</html> 
+</html>
