@@ -79,7 +79,7 @@
   </form>
 
   <!-- Button -->
-  <div id="nextButton" style="display: none; position: absolute; right: 15%; top: 50%;">
+  <div id="nextButton" style="display: none; position: absolute; right: 11%; top: 50%;">
     <a href="3index1.html" class="next round">Next &#8250;</a>
   </div>
 
@@ -328,12 +328,12 @@
       }
 
       // if the player is dead, draw the game over text
-      if (!GM.IsAlive && timeouts.length == 0) {
+      /* if (!GM.IsAlive && timeouts.length == 0) {
         document.getElementById('nextButton').style.display = 'block';
-      }
+      } 
       if (!GM.IsAlive) {
         drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
-      }
+      } */
     });
 
 
@@ -1111,7 +1111,7 @@
     // in GM.Pc based on user inputs. If manipulation is successful,
     // the page is marked as dirty.
 
-    document.addEventListener('keydown', function (evt) {
+    xfunc = document.addEventListener('keydown', function (evt) {
       var key = event.keyCode || event.which;
 
       if (GM.IsAlive) {
@@ -1243,6 +1243,7 @@
     // the Page and GM objects, then starts the main game loop.
 
     //var pause=0;
+    var xfunc
     var pause = false;
     var userInput;
     var myInterval;
@@ -1255,6 +1256,7 @@
     var gameNos = [];
     var gameOverT1;
     var gameOverT2;
+    var breakTimeFactor = 2;
 
 
     questions = [{
@@ -1271,8 +1273,8 @@
       fup4:"Unintentional             Intentional"},
     */
     {
-      ln1: "The difficulty of the game",
-      ln2: "matched my ability",
+      ln1: "I felt the right amount",
+      ln2: "of challenge",
       ln3: "1  ---------------  4",
       ln4: "Disagree                     Agree",
       fk: 0,
@@ -1292,7 +1294,7 @@
       ln1: "",
       ln2: "",
       ln3: "What is the shape of the",
-      ln4: "falling Tetris block?",
+      ln4: "currently falling Tetris block?",
       fk: 0,
       fup1: "",
       fup2: ""
@@ -1319,7 +1321,7 @@
     var groups = [];
     var askeds = [];
     var toi;
-    var timeouts = [10000, 20000, 30000, 40000, 50000]
+    var timeouts = [500, 500, 500, 500, 500]
     var tocnt = [0, 0, 0, 0, 0]
     var allquestions = [];
     var allrates = [];
@@ -1354,9 +1356,6 @@
     var upcomingShape = []
     var allcorrects3 = []
     var allanswer3s = []
-
-
-
 
     function Init() {
 
@@ -1475,12 +1474,16 @@
         else { // begin if pause
           console.log("curShape=" + curShape);
           if (timeouts.length == 0) {
-            pause = false;
+            pause = true;
             GM.IsAlive = false
-            if (!exit) {
-              window.requestAnimationFrame(Loop);
-            }
+            exit = true
+            //if (!exit) {
+            //  window.requestAnimationFrame(Loop);
+           // } else {
+           //    
+           // }
           }
+            if (!exit) {
           g = getNextGroup()
           cnt = 0;
           while (cnt < gQns[g].length) {
@@ -1556,7 +1559,11 @@
           console.log("tocnt=" + tocnt)
           console.log("timeouts=" + timeouts)
           console.log("alltimeouts=" + alltimeouts)
-
+                    // break time
+                    if ((timeouts.length+1)%breakTimeFactor == 0 && timeouts.length!=0) {
+            drawMyTextend("", "Please have a short break", "~30 seconds", "Press spacebar to continue");
+            await waitUserInputSpace();
+          }
 
           pause = false;
           lineCleareds.push(LinesCleared);
@@ -1567,13 +1574,15 @@
           LinesCleared2 = 0
           toi = getTimeOut()
           myInterval = setTimeout(setPause, timeouts[toi]);
-
+        } // if !exit
         } //end if pause
 
 
         if (!exit) {
           window.requestAnimationFrame(Loop);
         } else {
+          drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
+          document.getElementById('nextButton').style.display = 'block';
           //document.getElementById("allquestions").setAttribute('value', allquestions);
           console.log("allmoves=" + allmoves)
           document.getElementById("participantID").value = "participantID: " + participantID;
@@ -1594,7 +1603,17 @@
           document.getElementById("allmovestimespregame").value = "allmovestimespregame: " + allmovestimespregame;
           document.getElementById("allmoves").value = "allmoves: " + allmoves;
           document.getElementById("allmovestimes").value = "allmovestimes: " + allmovestimes;
-          document.removeEventListener('keydown');
+                    //document.removeEventListener('keydown');
+          xfunc=document.removeEventListener('keydown',()=>{
+            console.log("remove listener y")
+          });
+          //y1.document.removeEventListener('keydown',()=>{
+          //  console.log("remove listener y1")
+          //});
+          //y2.document.removeEventListener('keydown',()=>{
+          //  console.log("remove listener y1")
+          //});
+
           //for (key in getEventListeners(document)) {
           //  getEventListeners(document)[key].forEach(function(c) {
           //    c.remove()
@@ -1658,6 +1677,7 @@
 
     function setGameOverTimeout() {
       gameOverTimeout = true;
+      exit=true
     }
 
     function setGameAssessTimeout() {
@@ -1733,7 +1753,7 @@
     }
 
     function drawMyText(ln1, ln2, ln3, ln4) {
-      if (exit) return;
+      //if (exit) return;
 
 
       var uDrawSize = Page.unitSize - 2;
@@ -1755,7 +1775,7 @@
     }
 
     function drawMyTextObj(ln1, ln2, ln3, ln4) {
-      if (exit) return;
+      //if (exit) return;
       var uDrawSize = Page.unitSize - 2;
       this.W = 10 * Page.unitSize;
       this.H = 20 * Page.unitSize;
@@ -1799,9 +1819,12 @@
 
     function waitUserInput(m) {
       var endkey
+      if (!GM.IsAlive) {
+        return
+      }
       if (m == 3) { endkey = 6 } else { endkey = 3 }
       return new Promise(resolve =>
-        document.addEventListener('keydown', (event) => {
+      y2=document.addEventListener('keydown', (event) => {
           if ((event.keyCode >= 49 && event.keyCode <= 49 + endkey) || (event.keyCode >= 97 && event.keyCode <= 97 + endkey)) {
 
 
@@ -1822,8 +1845,11 @@
     }
 
     function waitUserInputSpace() {
+      if (!GM.IsAlive) {
+        return
+      }
       return new Promise(resolve =>
-        document.addEventListener('keydown', (event) => {
+      y1=document.addEventListener('keydown', (event) => {
           if (event.keyCode == 32) {
 
 
@@ -1899,7 +1925,7 @@
     }
 
     function drawMyTextend(ln1, ln2, ln3, ln4) {
-      if (exit) return;
+      //if (exit) return;
 
 
       var uDrawSize = Page.unitSize - 2;
