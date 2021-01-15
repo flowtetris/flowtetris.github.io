@@ -35,41 +35,41 @@
   <!-- <form action="https://formsubmit.co/d0673ba2f4c1647f9443fee096709081" method="POST">
     <input type="hidden" name="_next" value="https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=612&credit_token=d6892d7ff76f49c3a1116133948e6a03&survey_code="+participantID> -->
   <input type="hidden" name="_captcha" value="false">
-  <input name="participantID" id="participantID" type="hidden" value="">
+  <input name="participantID" id="participantID" type="text" value="">
   <br>
-  <input name="glevel" id="glevel" type="hidden" value="">
+  <input name="glevel" id="glevel" type="text" value="">
   <br>
-  <input name="allquestions" id="allquestions" type="hidden" value="">
+  <input name="allquestions" id="allquestions" type="text" value="">
   <br>
-  <input name="allrates" id="allrates" type="hidden" value="">
+  <input name="allrates" id="allrates" type="text" value="">
   <br>
-  <input name="allresponses" id="allresponses" type="hidden" value="">
+  <input name="allresponses" id="allresponses" type="text" value="">
   <br>
-  <input name="allanswer3s" id="allanswer3s" type="hidden" value="">
+  <input name="allanswer3s" id="allanswer3s" type="text" value="">
   <br>
-  <input name="allcorrects3" id="allcorrects3" type="hidden" value="">
+  <input name="allcorrects3" id="allcorrects3" type="text" value="">
   <br>
-  <input name="lineCleareds" id="lineCleareds" type="hidden" value="">
+  <input name="lineCleareds" id="lineCleareds" type="text" value="">
   <br>
-  <input name="gameLevels" id="gameLevels" type="hidden" value="">
+  <input name="gameLevels" id="gameLevels" type="text" value="">
   <br>
-  <input name="lineCleareds2" id="lineCleareds2" type="hidden" value="">
+  <input name="lineCleareds2" id="lineCleareds2" type="text" value="">
   <br>
-  <input name="gameOverTimes" id="gameOverTimes" type="hidden" value="">
+  <input name="gameOverTimes" id="gameOverTimes" type="text" value="">
   <br>
-  <input name="gameOverCnt" id="gameOverCnt" type="hidden" value="">
+  <input name="gameOverCnt" id="gameOverCnt" type="text" value="">
   <br>
-  <input name="alltimeouts" id="alltimeouts" type="hidden" value="">
+  <input name="alltimeouts" id="alltimeouts" type="text" value="">
   <br>
-  <input name="alltimeoutstimes" id="alltimeoutstimes" type="hidden" value="">
+  <input name="alltimeoutstimes" id="alltimeoutstimes" type="text" value="">
   <br>
-  <input name="allmovespregame" id="allmovespregame" type="hidden" value="">
+  <input name="allmovespregame" id="allmovespregame" type="text" value="">
   <br>
-  <input name="allmovestimespregame" id="allmovestimespregame" type="hidden" value="">
+  <input name="allmovestimespregame" id="allmovestimespregame" type="text" value="">
   <br>
-  <input name="allmoves" id="allmoves" type="hidden" value="">
+  <input name="allmoves" id="allmoves" type="text" value="">
   <br>
-  <input name="allmovestimes" id="allmovestimes" type="hidden" value="">
+  <input name="allmovestimes" id="allmovestimes" type="text" value="">
   <br>
   <!-- <button type="submit">Submit</button>
   <input onclick="window.location.href = 'https://google.com';" type="submit" value="Submit request" /> 
@@ -77,7 +77,7 @@
   </form>
 
   <!-- Button -->
-  <div id="nextButton" style="display: none; position: absolute; right: 15%; top: 50%;">
+  <div id="nextButton" style="display: none; position: absolute; right: 11%; top: 50%;">
     <a href="2index1.html" class="next round">Next &#8250;</a>
   </div>
 
@@ -1364,7 +1364,7 @@
           drawMyText("", "Press spacebar to start", "", "");
           await waitUserInputSpace();
           displayDone = true;
-          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 30000);
+          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 5000);
         }
         Page.Update();
 
@@ -1395,6 +1395,32 @@
           }
           drawMyText("Good job!", "End of Part 1", "", "Click Next to continue");
           document.getElementById('nextButton').style.display = 'block';
+
+          // Store in session storage
+          sessionStorage.setItem('allmovespregameStorage', allmovespregame);
+          sessionStorage.setItem('allmovestimespregrameStorage', allmovestimespregrame);
+
+          /*
+          document.getElementById("participantID").value = "participantID: " + participantID;
+          document.getElementById("glevel").value = "glevel: " + glevel;
+          document.getElementById("allquestions").value = "allquestions: " + allquestions;
+          document.getElementById("allrates").value = "allrates: " + allrates;
+          document.getElementById("allresponses").value = "allresponsestime: " + allresponses;
+          document.getElementById("allcorrects3").value = "allcorrects3: " + allcorrects3;
+          document.getElementById("allanswer3s").value = "allanswer3s: " + allanswer3s;
+          document.getElementById("lineCleareds").value = "lineCleareds: " + lineCleareds;
+          document.getElementById("gameLevels").value = "gameLevels: " + gameLevels;
+          document.getElementById("lineCleareds2").value = "lineCleareds2: " + lineCleareds2;
+          document.getElementById("gameOverTimes").value = "gameOverTimes: " + gameOverTimes;
+          document.getElementById("gameOverCnt").value = "gameOverCnt: " + gameOverCnt;
+          document.getElementById("alltimeouts").value = "alltimeouts: " + alltimeouts;
+          document.getElementById("alltimeoutstimes").value = "alltimeoutstimes: " + alltimeoutstimes;
+          document.getElementById("allmovespregame").value = "allmovespregame: " + allmovespregame;
+          document.getElementById("allmovestimespregame").value = "allmovestimespregame: " + allmovestimespregame;
+          document.getElementById("allmoves").value = "allmoves: " + allmoves;
+          document.getElementById("allmovestimes").value = "allmovestimes: " + allmovestimes;
+          */
+
           return
       /*
 	    myGameOverTimeout=setTimeout(setGameOverTimeout, 25 * 60000);	
