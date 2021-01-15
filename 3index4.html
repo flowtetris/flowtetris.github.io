@@ -115,6 +115,24 @@
       font-size: 27px
     }
 
+    input[type=submit] {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 200%;
+      font-size: 27px;
+      font-family: Georgia, Garamond, sans-serif;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
     /* Questionnaire */
 
     .first-col {
@@ -149,80 +167,94 @@
 <div class="outer">
   <div class="middle">
     <div class="inner">
-        <body>
-          <form>
-            <table>
-              <tr>
-                <th class="first-col"></th>
-                <th>Strongly disagree</th>
-                <th>Disagree</th>
-                <th>Neutral</th>
-                <th>Agree</th>
-                <th>Strongly agree</th>
-              </tr>
-              <tr>
-                <td class="first-col">I found myself mind wandering during the Tetris task</td>
-                <td><input type="radio" value="none" name="MWTetris" /></td>
-                <td><input type="radio" value="none" name="MWTetris" /></td>
-                <td><input type="radio" value="none" name="MWTetris" /></td>
-                <td><input type="radio" value="none" name="MWTetris" /></td>
-                <td><input type="radio" value="none" name="MWTetris" /></td>
-              </tr>
-              <tr>
-                <td class="first-col">In everyday life, I have difficulty maintaining focus on simple or repetitive work</td>
-                <td><input type="radio" value="none" name="MWQ1" /></td>
-                <td><input type="radio" value="none" name="MWQ1" /></td>
-                <td><input type="radio" value="none" name="MWQ1" /></td>
-                <td><input type="radio" value="none" name="MWQ1" /></td>
-                <td><input type="radio" value="none" name="MWQ1" /></td>
-              </tr>
-              <tr>
-                <td class="first-col">While reading, I find I haven't been thinking about the text and must
-                  therefore read it again</td>
-                <td><input type="radio" value="none" name="MWQ2" /></td>
-                <td><input type="radio" value="none" name="MWQ2" /></td>
-                <td><input type="radio" value="none" name="MWQ2" /></td>
-                <td><input type="radio" value="none" name="MWQ2" /></td>
-                <td><input type="radio" value="none" name="MWQ2" /></td>
-              </tr>
-              <tr>
-                <td class="first-col">I do things without paying full attention</td>
-                <td><input type="radio" value="none" name="MWQ3" /></td>
-                <td><input type="radio" value="none" name="MWQ3" /></td>
-                <td><input type="radio" value="none" name="MWQ3" /></td>
-                <td><input type="radio" value="none" name="MWQ3" /></td>
-                <td><input type="radio" value="none" name="MWQ3" /></td>
-              </tr>
-              <tr>
-                <td class="first-col">I find myself listening with one ear, thinking about something else at
-                  the same time</td>
-                <td><input type="radio" value="none" name="MWQ4" /></td>
-                <td><input type="radio" value="none" name="MWQ4" /></td>
-                <td><input type="radio" value="none" name="MWQ4" /></td>
-                <td><input type="radio" value="none" name="MWQ4" /></td>
-                <td><input type="radio" value="none" name="MWQ4" /></td>
-              </tr>
-              <tr>
-                <td class="first-col">I mind-wander during the presentations of lectures</td>
-                <td><input type="radio" value="none" name="MWQ5" /></td>
-                <td><input type="radio" value="none" name="MWQ5" /></td>
-                <td><input type="radio" value="none" name="MWQ5" /></td>
-                <td><input type="radio" value="none" name="MWQ5" /></td>
-                <td><input type="radio" value="none" name="MWQ5" /></td>
-              </tr>
-            </table>
-          </form>
-        </body>
-
-        <hr style="height:20px; visibility:hidden;" />
-        <div class="Button">
-          <a href="3index3.html" class="previous round">&#8249; Previous</a>
-          &nbsp; &nbsp;
-          <a href="3index5.html" class="next round">Next &#8250;</a>
-        </div>
+      <body>
+        <form action="3index5.html">
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">I found myself mind wandering during the Tetris task</td>
+              <td><input type="radio" value="SD" name="MWTetris" required /></td>
+              <td><input type="radio" value="D" name="MWTetris" required /></td>
+              <td><input type="radio" value="N" name="MWTetris" required /></td>
+              <td><input type="radio" value="A" name="MWTetris" required /></td>
+              <td><input type="radio" value="SA" name="MWTetris" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">In everyday life, I have difficulty maintaining focus on simple or repetitive work
+              </td>
+              <td><input type="radio" value="SD" name="MWQ1" required /></td>
+              <td><input type="radio" value="D" name="MWQ1" required /></td>
+              <td><input type="radio" value="N" name="MWQ1" required /></td>
+              <td><input type="radio" value="A" name="MWQ1" required /></td>
+              <td><input type="radio" value="SA" name="MWQ1" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">While reading, I find I haven't been thinking about the text and must
+                therefore read it again</td>
+                <td><input type="radio" value="SD" name="MWQ2" required /></td>
+                <td><input type="radio" value="D" name="MWQ2" required /></td>
+                <td><input type="radio" value="N" name="MWQ2" required /></td>
+                <td><input type="radio" value="A" name="MWQ2" required /></td>
+                <td><input type="radio" value="SA" name="MWQ2" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I do things without paying full attention</td>
+              <td><input type="radio" value="SD" name="MWQ3" required /></td>
+              <td><input type="radio" value="D" name="MWQ3" required /></td>
+              <td><input type="radio" value="N" name="MWQ3" required /></td>
+              <td><input type="radio" value="A" name="MWQ3" required /></td>
+              <td><input type="radio" value="SA" name="MWQ3" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I find myself listening with one ear, thinking about something else at
+                the same time</td>
+                <td><input type="radio" value="SD" name="MWQ4" required /></td>
+                <td><input type="radio" value="D" name="MWQ4" required /></td>
+                <td><input type="radio" value="N" name="MWQ4" required /></td>
+                <td><input type="radio" value="A" name="MWQ4" required /></td>
+                <td><input type="radio" value="SA" name="MWQ4" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I mind-wander during the presentations of lectures</td>
+              <td><input type="radio" value="SD" name="MWQ5" required /></td>
+              <td><input type="radio" value="D" name="MWQ5" required /></td>
+              <td><input type="radio" value="N" name="MWQ5" required /></td>
+              <td><input type="radio" value="A" name="MWQ5" required /></td>
+              <td><input type="radio" value="SA" name="MWQ5" required /></td>
+            </tr>
+          </table>
+          <hr style="height:20px; visibility:hidden;" />
+          <div class="Button">
+            <a href="3index3.html" class="previous round">&#8249; Previous</a>
+            &nbsp; &nbsp;
+            <input type="submit" value="Next &#8250;" onclick="variables()">
+          </div>
+        </form>
+      </body>
     </div>
   </div>
 </div>
 
+<script>
+  function variables() {
+    var MW = document.querySelector('input[name="MWTetris"]:checked').value
+      + "," + document.querySelector('input[name="MWQ1"]:checked').value
+      + "," + document.querySelector('input[name="MWQ2"]:checked').value
+      + "," + document.querySelector('input[name="MWQ3"]:checked').value
+      + "," + document.querySelector('input[name="MWQ4"]:checked').value
+      + "," + document.querySelector('input[name="MWQ5"]:checked').value
+
+
+    // Store in session storage
+    sessionStorage.setItem('MWStorage', MW);
+  }
+</script>
 
 </html>
