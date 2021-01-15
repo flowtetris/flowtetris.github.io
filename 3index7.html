@@ -143,7 +143,6 @@
 <div class="outer">
   <div class="middle">
     <div class="inner">
-
       <body>
         <div class="a">
           <p><b>Thank you for your participation!</b></p>
@@ -170,14 +169,19 @@
           <br>
           <input name="flowS" id="flowS" type="text" value="">
           <br>
-          <input name="comments" id="comments" type="hidden" value="">
+          <input name="flowD" id="flowD" type="text" value="">
+          <br>
+          <input name="MW" id="MW" type="text" value="">
+          <br>
+          <input name="postQ" id="postQ" type="text" value="">
+          <br>
+          <input name="comments" id="comments" type="text" value="">
           <br>
 
 
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next"
-            value="https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=612&credit_token=d6892d7ff76f49c3a1116133948e6a03&survey_code="
-            +participantID>
+            value="https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=612&credit_token=d6892d7ff76f49c3a1116133948e6a03&survey_code="+participantID>
 
           <!-- The buttons-->
           <div class="Button">
@@ -204,6 +208,9 @@
   let allmoves = sessionStorage.getItem('allmovesStorage');
   let allmovestimes = sessionStorage.getItem('allmovestimesStorage');
   let flowS = sessionStorage.getItem('flowSStorage');
+  let flowD = sessionStorage.getItem('flowDStorage');
+  let MW = sessionStorage.getItem('MWStorage');
+  let postQ = sessionStorage.getItem('postQStorage');
   let comments = sessionStorage.getItem('commentsStorage');
 
   // Put into form
@@ -216,6 +223,9 @@
   document.getElementById("allmoves").value = "allmoves: " + allmoves;
   document.getElementById("allmovestimes").value = "allmovestimes: " + allmovestimes;
   document.getElementById("flowS").value = "flowS: " + flowS;
+  document.getElementById("flowD").value = "flowD: " + flowD;
+  document.getElementById("MW").value = "MW: " + MW;
+  document.getElementById("postQ").value = "postQ: " + postQ;
   document.getElementById("comments").value = "comments: " + comments;
 </script>
 
