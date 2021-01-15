@@ -125,6 +125,7 @@
 <div class="outer">
   <div class="middle">
     <div class="inner">
+
       <body>
         <div class="a">
           <p><b>Thank you for your participation!</b></p>
@@ -140,5 +141,39 @@
     </div>
   </div>
 </div>
+
+<!-- The form with the data-->
+<form>
+<input name="participantID" id="participantID" type="text" value="">
+<br>
+<input name="initials" id="initials" type="text" value="">
+<br>
+<input name="age" id="age" type="text" value="">
+<br>
+<input name="gender" id="gender" type="text" value="">
+<br>
+<input name="allmovespregame" id=" allmovespregame" type="text" value="">
+<br>
+<input name="allmovestimespregrame" id="allmovestimespregrame" type="text" value="">
+<br>
+</form>
+
+<script>
+  // Retrieve from session storage
+  let participantID = sessionStorage.getItem('participantIDStorage');
+  let initials = sessionStorage.getItem('initialsStorage');
+  let age = sessionStorage.getItem('ageStorage');
+  let gender = sessionStorage.getItem('genderStorage');
+  let allmovespregame = sessionStorage.getItem('allmovespregameStorage');
+  let allmovestimespregrame = sessionStorage.getItem('allmovestimespregrameStorage');
+
+  // Put into form
+  document.getElementById("participantID").value = "participantID: " + participantID;
+  document.getElementById("initials").value = "initials: " + initials;
+  document.getElementById("age").value = "age: " + age;
+  document.getElementById("gender").value = "gender: " + gender;
+  document.getElementById("allmovespregame").value = "allmovespregame: " + allmovestimespregrame;
+  document.getElementById("allmovestimespregrame").value = "allmovestimespregrame: " + allmovestimespregrame;
+</script>
 
 </html>
