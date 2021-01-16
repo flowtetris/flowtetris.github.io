@@ -4,6 +4,14 @@
 <head>
   <title>Part 3</title>
   <style>
+    body,
+    html {
+      height: 100%;
+      background-position: center;
+      background-size: 100% 100%;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%), url(56.jpg);
+    }
+
     /* Colour */
 
     body {
@@ -149,7 +157,7 @@
     th,
     td {
       width: 8%;
-      padding: 15px 0;
+      padding: 15px 2px;
       border-bottom: 1px solid rgb(255, 255, 255);
       text-align: center;
       font-weight: 400;
@@ -159,7 +167,7 @@
     form {
       width: 98%;
       padding: 20px;
-      background: rgb(0, 0, 0);
+      background: transparent;
       line-height: normal;
     }
   </style>
@@ -168,97 +176,98 @@
 <div class="outer">
   <div class="middle">
     <div class="inner">
+
       <body>
         <form action="3index4.html">
-        <table>
-          <tr>
-            <th class="first-col"></th>
-            <th>Strongly disagree</th>
-            <th>Disagree</th>
-            <th>Neutral</th>
-            <th>Agree</th>
-            <th>Strongly agree</th>
-          </tr>
-          <tr>
-            <td class="first-col">During day-to-day activities, I usually feel the right amount of challenge (i.e. not
-              too hard, nor too easy)</td>
-            <td><input type="radio" value="SD" name="FlowD1" required /></td>
-            <td><input type="radio" value="D" name="FlowD1" required /></td>
-            <td><input type="radio" value="N" name="FlowD1" required /></td>
-            <td><input type="radio" value="A" name="FlowD1" required /></td>
-            <td><input type="radio" value="SA" name="FlowD1" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">During day-to-day activities, my thoughts and actions feel fluid and smooth</td>
-            <td><input type="radio" value="SD" name="FlowD2" required /></td>
-            <td><input type="radio" value="D" name="FlowD2" required /></td>
-            <td><input type="radio" value="N" name="FlowD2" required /></td>
-            <td><input type="radio" value="A" name="FlowD2" required /></td>
-            <td><input type="radio" value="SA" name="FlowD2" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">I have a clear idea of what to do during day-to-day activities</td>
-            <td><input type="radio" value="SD" name="FlowD3" required /></td>
-            <td><input type="radio" value="D" name="FlowD3" required /></td>
-            <td><input type="radio" value="N" name="FlowD3" required /></td>
-            <td><input type="radio" value="A" name="FlowD3" required /></td>
-            <td><input type="radio" value="SD" name="FlowD3" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">I am aware of how well I am doing/performing during day-to-day activities</td>
-            <td><input type="radio" value="SD" name="FlowD4" required /></td>
-            <td><input type="radio" value="D" name="FlowD4" required /></td>
-            <td><input type="radio" value="N" name="FlowD4" required /></td>
-            <td><input type="radio" value="A" name="FlowD4" required /></td>
-            <td><input type="radio" value="SD" name="FlowD4" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">I am focused during day-to-day activities</td>
-            <td><input type="radio" value="SD" name="FlowD5" required /></td>
-            <td><input type="radio" value="D" name="FlowD5" required /></td>
-            <td><input type="radio" value="N" name="FlowD5" required /></td>
-            <td><input type="radio" value="A" name="FlowD5" required /></td>
-            <td><input type="radio" value="SD" name="FlowD5" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">I feel in control during day-to-day activities</td>
-            <td><input type="radio" value="SD" name="FlowD6" required /></td>
-            <td><input type="radio" value="D" name="FlowD6" required /></td>
-            <td><input type="radio" value="N" name="FlowD6" required /></td>
-            <td><input type="radio" value="A" name="FlowD6" required /></td>
-            <td><input type="radio" value="SD" name="FlowD6" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">I feel self-conscious during day-to-day activities</td>
-            <td><input type="radio" value="SD" name="FlowD7" required /></td>
-            <td><input type="radio" value="D" name="FlowD7" required /></td>
-            <td><input type="radio" value="N" name="FlowD7" required /></td>
-            <td><input type="radio" value="A" name="FlowD7" required /></td>
-            <td><input type="radio" value="SD" name="FlowD7" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">I usually lose track of time during day-to-day activities</td>
-            <td><input type="radio" value="SD" name="FlowD8" required /></td>
-            <td><input type="radio" value="D" name="FlowD8" required /></td>
-            <td><input type="radio" value="N" name="FlowD8" required /></td>
-            <td><input type="radio" value="A" name="FlowD8" required /></td>
-            <td><input type="radio" value="SD" name="FlowD8" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">I find day-to-day activities rewarding and enjoyable</td>
-            <td><input type="radio" value="SD" name="FlowD9" required /></td>
-            <td><input type="radio" value="D" name="FlowD9" required /></td>
-            <td><input type="radio" value="N" name="FlowD9" required /></td>
-            <td><input type="radio" value="A" name="FlowD9" required /></td>
-            <td><input type="radio" value="SD" name="FlowD9" required /></td>
-          </tr>
-        </table>
-        <hr style="height:20px; visibility:hidden;" />
-        <div class="Button">
-          <a href="3index2.html" class="previous round">&#8249; Previous</a>
-          &nbsp; &nbsp;
-          <input type="submit" value="Next &#8250;" onclick="variables()">
-        </div>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">During day-to-day activities, I usually feel the right amount of challenge (i.e. not
+                too hard, nor too easy)</td>
+              <td><input type="radio" value="SD" name="FlowD1" required /></td>
+              <td><input type="radio" value="D" name="FlowD1" required /></td>
+              <td><input type="radio" value="N" name="FlowD1" required /></td>
+              <td><input type="radio" value="A" name="FlowD1" required /></td>
+              <td><input type="radio" value="SA" name="FlowD1" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">During day-to-day activities, my thoughts and actions feel fluid and smooth</td>
+              <td><input type="radio" value="SD" name="FlowD2" required /></td>
+              <td><input type="radio" value="D" name="FlowD2" required /></td>
+              <td><input type="radio" value="N" name="FlowD2" required /></td>
+              <td><input type="radio" value="A" name="FlowD2" required /></td>
+              <td><input type="radio" value="SA" name="FlowD2" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I have a clear idea of what to do during day-to-day activities</td>
+              <td><input type="radio" value="SD" name="FlowD3" required /></td>
+              <td><input type="radio" value="D" name="FlowD3" required /></td>
+              <td><input type="radio" value="N" name="FlowD3" required /></td>
+              <td><input type="radio" value="A" name="FlowD3" required /></td>
+              <td><input type="radio" value="SD" name="FlowD3" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I am aware of how well I am doing/performing during day-to-day activities</td>
+              <td><input type="radio" value="SD" name="FlowD4" required /></td>
+              <td><input type="radio" value="D" name="FlowD4" required /></td>
+              <td><input type="radio" value="N" name="FlowD4" required /></td>
+              <td><input type="radio" value="A" name="FlowD4" required /></td>
+              <td><input type="radio" value="SD" name="FlowD4" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I am focused during day-to-day activities</td>
+              <td><input type="radio" value="SD" name="FlowD5" required /></td>
+              <td><input type="radio" value="D" name="FlowD5" required /></td>
+              <td><input type="radio" value="N" name="FlowD5" required /></td>
+              <td><input type="radio" value="A" name="FlowD5" required /></td>
+              <td><input type="radio" value="SD" name="FlowD5" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I feel in control during day-to-day activities</td>
+              <td><input type="radio" value="SD" name="FlowD6" required /></td>
+              <td><input type="radio" value="D" name="FlowD6" required /></td>
+              <td><input type="radio" value="N" name="FlowD6" required /></td>
+              <td><input type="radio" value="A" name="FlowD6" required /></td>
+              <td><input type="radio" value="SD" name="FlowD6" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I feel self-conscious during day-to-day activities</td>
+              <td><input type="radio" value="SD" name="FlowD7" required /></td>
+              <td><input type="radio" value="D" name="FlowD7" required /></td>
+              <td><input type="radio" value="N" name="FlowD7" required /></td>
+              <td><input type="radio" value="A" name="FlowD7" required /></td>
+              <td><input type="radio" value="SD" name="FlowD7" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I usually lose track of time during day-to-day activities</td>
+              <td><input type="radio" value="SD" name="FlowD8" required /></td>
+              <td><input type="radio" value="D" name="FlowD8" required /></td>
+              <td><input type="radio" value="N" name="FlowD8" required /></td>
+              <td><input type="radio" value="A" name="FlowD8" required /></td>
+              <td><input type="radio" value="SD" name="FlowD8" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I find day-to-day activities rewarding and enjoyable</td>
+              <td><input type="radio" value="SD" name="FlowD9" required /></td>
+              <td><input type="radio" value="D" name="FlowD9" required /></td>
+              <td><input type="radio" value="N" name="FlowD9" required /></td>
+              <td><input type="radio" value="A" name="FlowD9" required /></td>
+              <td><input type="radio" value="SD" name="FlowD9" required /></td>
+            </tr>
+          </table>
+          <hr style="height:20px; visibility:hidden;" />
+          <div class="Button">
+            <a href="3index2.html" class="previous round">&#8249; Previous</a>
+            &nbsp; &nbsp;
+            <input type="submit" value="Next &#8250;" onclick="variables()">
+          </div>
         </form>
       </body>
     </div>
