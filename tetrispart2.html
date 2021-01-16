@@ -2,6 +2,14 @@
 <title>Part 2</title>
 
 <style>
+  body,
+  html {
+    height: 100%;
+    background-position: center;
+    background-size: 100% 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%), url(56.jpg);
+  }
+
   /* Next button */
 
   a {
@@ -1479,102 +1487,102 @@
             exit = true
             //if (!exit) {
             //  window.requestAnimationFrame(Loop);
-           // } else {
-           //    
-           // }
+            // } else {
+            //    
+            // }
           }
-            if (!exit) {
-          g = getNextGroup()
-          cnt = 0;
-          while (cnt < gQns[g].length) {
-            m = getNextQuestion(g)
-            // skip question 3 if it is not the first question
-            //if (m==3 && cnt != 0) {
-            //	continue;
-            //}	
-            if (m != 3) {
-              drawMyText(questions[m].ln1, questions[m].ln2, questions[m].ln3, questions[m].ln4);
-            } else {
-              // ask the previous shape
-              drawMyTextObj(questions[m].ln1, questions[m].ln2, questions[m].ln3, questions[m].ln4);
-            }
-            t1 = new Date();
-            await waitUserInput(m);
-            t2 = new Date();
-            d = t2 - t1
-            allresponses.push(d);
-            //"rate="+rate;
-            //console.log("qn response time="+d);
-            rates.push(rate);
-            allrates.push(rate);
-            if (m == 3) {
-              curShapes.push(curShape)
-              allanswer3s.push(rate);
-              if (rate == curShape) {
-                allcorrects3.push("Y")
+          if (!exit) {
+            g = getNextGroup()
+            cnt = 0;
+            while (cnt < gQns[g].length) {
+              m = getNextQuestion(g)
+              // skip question 3 if it is not the first question
+              //if (m==3 && cnt != 0) {
+              //	continue;
+              //}	
+              if (m != 3) {
+                drawMyText(questions[m].ln1, questions[m].ln2, questions[m].ln3, questions[m].ln4);
               } else {
-                allcorrects3.push("N")
+                // ask the previous shape
+                drawMyTextObj(questions[m].ln1, questions[m].ln2, questions[m].ln3, questions[m].ln4);
               }
-              //console.log("curShapes="+curShapes)
-              //console.log("allanswer3s="+allanswer3s)
-              //console.log("allcorrects3="+allcorrects3)
-            }
-
-            if (questions[m].fk == rate && questions[m].fk != 0) {
-              drawMyText(questions[m].fup1, questions[m].fup2, questions[m].fup3, questions[m].fup4);
               t1 = new Date();
               await waitUserInput(m);
               t2 = new Date();
               d = t2 - t1
-              //console.log("fup response time="+d);
-              allfupresponses.push(d);
-              //console.log("fu rate="+rate);
-              fups.push(rate);
-              //console.log("fups="+fups);
-              allfups.push(rate);
+              allresponses.push(d);
+              //"rate="+rate;
+              //console.log("qn response time="+d);
+              rates.push(rate);
+              allrates.push(rate);
+              if (m == 3) {
+                curShapes.push(curShape)
+                allanswer3s.push(rate);
+                if (rate == curShape) {
+                  allcorrects3.push("Y")
+                } else {
+                  allcorrects3.push("N")
+                }
+                //console.log("curShapes="+curShapes)
+                //console.log("allanswer3s="+allanswer3s)
+                //console.log("allcorrects3="+allcorrects3)
+              }
 
-            } else {
-              fups.push(-1);
-              allfups.push(-1);
+              if (questions[m].fk == rate && questions[m].fk != 0) {
+                drawMyText(questions[m].fup1, questions[m].fup2, questions[m].fup3, questions[m].fup4);
+                t1 = new Date();
+                await waitUserInput(m);
+                t2 = new Date();
+                d = t2 - t1
+                //console.log("fup response time="+d);
+                allfupresponses.push(d);
+                //console.log("fu rate="+rate);
+                fups.push(rate);
+                //console.log("fups="+fups);
+                allfups.push(rate);
+
+              } else {
+                fups.push(-1);
+                allfups.push(-1);
+              }
+
+              //console.log("questions"+m+"="+questions[m].ln1);
+              //console.log("allrates="+allrates);
+              //console.log("allresponses="+allresponses);
+              //console.log("allfups="+allfups);
+              //console.log("allfupresponses="+allfupresponses);
+              cnt = cnt + 1;
+            } //end while
+
+            alltimeouts.push(timeouts[toi])
+            alltimeoutstimes.push(new Date().getTime())
+
+            tocnt[toi] += 1;
+            console.log("tocnt=" + tocnt);
+
+            if (tocnt[toi] >= 1) {
+              timeouts.splice(toi, 1)
+              tocnt.splice(toi, 1)
+            }
+            console.log("tocnt=" + tocnt)
+            console.log("timeouts=" + timeouts)
+            console.log("alltimeouts=" + alltimeouts)
+            // break time
+            if ((timeouts.length + 1) % breakTimeFactor == 0 && timeouts.length != 0) {
+              drawMyTextend("", "Please have a short break", "~30 seconds", "Press spacebar to continue");
+              await waitUserInputSpace();
             }
 
-            //console.log("questions"+m+"="+questions[m].ln1);
-            //console.log("allrates="+allrates);
-            //console.log("allresponses="+allresponses);
-            //console.log("allfups="+allfups);
-            //console.log("allfupresponses="+allfupresponses);
-            cnt = cnt + 1;
-          } //end while
-
-          alltimeouts.push(timeouts[toi])
-          alltimeoutstimes.push(new Date().getTime())
-
-          tocnt[toi] += 1;
-          console.log("tocnt=" + tocnt);
-
-          if (tocnt[toi] >= 1) {
-            timeouts.splice(toi, 1)
-            tocnt.splice(toi, 1)
-          }
-          console.log("tocnt=" + tocnt)
-          console.log("timeouts=" + timeouts)
-          console.log("alltimeouts=" + alltimeouts)
-                    // break time
-                    if ((timeouts.length+1)%breakTimeFactor == 0 && timeouts.length!=0) {
-            drawMyTextend("", "Please have a short break", "~30 seconds", "Press spacebar to continue");
-            await waitUserInputSpace();
-          }
-
-          pause = false;
-          lineCleareds.push(LinesCleared);
-          gameLevels.push(GM.Level);
-          lineCleareds2.push(LinesCleared2);
-          //console.log("lineCleareds="+lineCleareds); 
-          //console.log("lineCleareds2="+lineCleareds2);
-          LinesCleared2 = 0
-          toi = getTimeOut()
-          myInterval = setTimeout(setPause, timeouts[toi]);
-        } // if !exit
+            pause = false;
+            lineCleareds.push(LinesCleared);
+            gameLevels.push(GM.Level);
+            lineCleareds2.push(LinesCleared2);
+            //console.log("lineCleareds="+lineCleareds); 
+            //console.log("lineCleareds2="+lineCleareds2);
+            LinesCleared2 = 0
+            toi = getTimeOut()
+            myInterval = setTimeout(setPause, timeouts[toi]);
+          } // if !exit
         } //end if pause
 
 
@@ -1583,7 +1591,7 @@
         } else {
           drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
           document.getElementById('nextButton').style.display = 'block';
-          
+
           // Store in session storage
           sessionStorage.setItem('allmovesStorage', allmoves);
           sessionStorage.setItem('allmovestimesStorage', allmovestimes);
@@ -1610,8 +1618,8 @@
           document.getElementById("allmoves").value = "allmoves: " + allmoves;
           document.getElementById("allmovestimes").value = "allmovestimes: " + allmovestimes;
           */
-                    //document.removeEventListener('keydown');
-          xfunc=document.removeEventListener('keydown',()=>{
+          //document.removeEventListener('keydown');
+          xfunc = document.removeEventListener('keydown', () => {
             console.log("remove listener y")
           });
           //y1.document.removeEventListener('keydown',()=>{
@@ -1684,7 +1692,7 @@
 
     function setGameOverTimeout() {
       gameOverTimeout = true;
-      exit=true
+      exit = true
     }
 
     function setGameAssessTimeout() {
@@ -1831,7 +1839,7 @@
       }
       if (m == 3) { endkey = 6 } else { endkey = 3 }
       return new Promise(resolve =>
-      y2=document.addEventListener('keydown', (event) => {
+        y2 = document.addEventListener('keydown', (event) => {
           if ((event.keyCode >= 49 && event.keyCode <= 49 + endkey) || (event.keyCode >= 97 && event.keyCode <= 97 + endkey)) {
 
 
@@ -1856,7 +1864,7 @@
         return
       }
       return new Promise(resolve =>
-      y1=document.addEventListener('keydown', (event) => {
+        y1 = document.addEventListener('keydown', (event) => {
           if (event.keyCode == 32) {
 
 
