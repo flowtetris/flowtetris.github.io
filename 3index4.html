@@ -4,6 +4,14 @@
 <head>
   <title>Part 3</title>
   <style>
+    body,
+    html {
+      height: 100%;
+      background-position: center;
+      background-size: 100% 100%;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%), url(56.jpg);
+    }
+
     /* Colour */
 
     body {
@@ -148,8 +156,8 @@
     th,
     td {
       width: 8%;
-      padding: 15px 0;
-      border-bottom: 1px solid rgb(255, 255, 255);
+      padding: 15px 2px;
+      border-bottom: 2px solid rgb(255, 255, 255);
       text-align: center;
       font-weight: 400;
       word-break: keep-all;
@@ -158,7 +166,7 @@
     form {
       width: 98%;
       padding: 20px;
-      background: rgb(0, 0, 0);
+      background: transparent;
       line-height: normal;
     }
   </style>
@@ -167,16 +175,17 @@
 <div class="outer">
   <div class="middle">
     <div class="inner">
+
       <body>
         <form action="3index5.html">
           <table>
             <tr>
               <th class="first-col"></th>
-              <th>Strongly disagree</th>
+              <th>Strongly Disagree</th>
               <th>Disagree</th>
               <th>Neutral</th>
               <th>Agree</th>
-              <th>Strongly agree</th>
+              <th>Strongly Agree</th>
             </tr>
             <tr>
               <td class="first-col">I found myself mind wandering during the Tetris task</td>
@@ -198,11 +207,11 @@
             <tr>
               <td class="first-col">While reading, I find I haven't been thinking about the text and must
                 therefore read it again</td>
-                <td><input type="radio" value="SD" name="MWQ2" required /></td>
-                <td><input type="radio" value="D" name="MWQ2" required /></td>
-                <td><input type="radio" value="N" name="MWQ2" required /></td>
-                <td><input type="radio" value="A" name="MWQ2" required /></td>
-                <td><input type="radio" value="SA" name="MWQ2" required /></td>
+              <td><input type="radio" value="SD" name="MWQ2" required /></td>
+              <td><input type="radio" value="D" name="MWQ2" required /></td>
+              <td><input type="radio" value="N" name="MWQ2" required /></td>
+              <td><input type="radio" value="A" name="MWQ2" required /></td>
+              <td><input type="radio" value="SA" name="MWQ2" required /></td>
             </tr>
             <tr>
               <td class="first-col">I do things without paying full attention</td>
@@ -215,11 +224,11 @@
             <tr>
               <td class="first-col">I find myself listening with one ear, thinking about something else at
                 the same time</td>
-                <td><input type="radio" value="SD" name="MWQ4" required /></td>
-                <td><input type="radio" value="D" name="MWQ4" required /></td>
-                <td><input type="radio" value="N" name="MWQ4" required /></td>
-                <td><input type="radio" value="A" name="MWQ4" required /></td>
-                <td><input type="radio" value="SA" name="MWQ4" required /></td>
+              <td><input type="radio" value="SD" name="MWQ4" required /></td>
+              <td><input type="radio" value="D" name="MWQ4" required /></td>
+              <td><input type="radio" value="N" name="MWQ4" required /></td>
+              <td><input type="radio" value="A" name="MWQ4" required /></td>
+              <td><input type="radio" value="SA" name="MWQ4" required /></td>
             </tr>
             <tr>
               <td class="first-col">I mind-wander during the presentations of lectures</td>
