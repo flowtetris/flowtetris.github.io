@@ -4,6 +4,14 @@
 <head>
   <title>Part 3</title>
   <style>
+    body,
+    html {
+      height: 100%;
+      background-position: center;
+      background-size: 100% 100%;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%), url(56.jpg);
+    }
+
     /* Colour */
 
     body {
@@ -148,7 +156,7 @@
     th,
     td {
       width: 8%;
-      padding: 15px 0;
+      padding: 15px 2px;
       border-bottom: 1px solid rgb(255, 255, 255);
       text-align: center;
       font-weight: 400;
@@ -158,7 +166,7 @@
     form {
       width: 98%;
       padding: 20px;
-      background: rgb(0, 0, 0);
+      background: transparent;
       line-height: normal;
     }
   </style>
@@ -170,61 +178,61 @@
 
       <body>
         <form action="3index6.html">
-        <table>
-          <tr>
-            <th class="first-col"></th>
-            <th>Strongly disagree</th>
-            <th>Disagree</th>
-            <th>Neutral</th>
-            <th>Agree</th>
-            <th>Strongly agree</th>
-          </tr>
-          <tr>
-            <td class="first-col">I enjoy and play Tetris frequently</td>
-            <td><input type="radio" value="SD" name="PostQ1" required /></td>
-            <td><input type="radio" value="D" name="PostQ1" required /></td>
-            <td><input type="radio" value="N" name="PostQ1" required /></td>
-            <td><input type="radio" value="A" name="PostQ1" required /></td>
-            <td><input type="radio" value="SA" name="PostQ1" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">I enjoy and play games frequently</td>
-            <td><input type="radio" value="SD" name="PostQ2" required /></td>
-            <td><input type="radio" value="D" name="PostQ2" required /></td>
-            <td><input type="radio" value="N" name="PostQ2" required /></td>
-            <td><input type="radio" value="A" name="PostQ2" required /></td>
-            <td><input type="radio" value="SA" name="PostQ2" required /></td>
-          </tr>
-          <tr>
-            <td class="first-col">The environment I completed this task in was free of distractions (e.g. sounds,
-              people, other open applications)</td>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">I enjoy and play Tetris frequently</td>
+              <td><input type="radio" value="SD" name="PostQ1" required /></td>
+              <td><input type="radio" value="D" name="PostQ1" required /></td>
+              <td><input type="radio" value="N" name="PostQ1" required /></td>
+              <td><input type="radio" value="A" name="PostQ1" required /></td>
+              <td><input type="radio" value="SA" name="PostQ1" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">I enjoy and play games frequently</td>
+              <td><input type="radio" value="SD" name="PostQ2" required /></td>
+              <td><input type="radio" value="D" name="PostQ2" required /></td>
+              <td><input type="radio" value="N" name="PostQ2" required /></td>
+              <td><input type="radio" value="A" name="PostQ2" required /></td>
+              <td><input type="radio" value="SA" name="PostQ2" required /></td>
+            </tr>
+            <tr>
+              <td class="first-col">The environment I completed this task in was free of distractions (e.g. sounds,
+                people, other open applications)</td>
               <td><input type="radio" value="SD" name="PostQ3" required /></td>
               <td><input type="radio" value="D" name="PostQ3" required /></td>
               <td><input type="radio" value="N" name="PostQ3" required /></td>
               <td><input type="radio" value="A" name="PostQ3" required /></td>
               <td><input type="radio" value="SA" name="PostQ3" required /></td>
-          </tr>
-          <td class="first-col">I felt tired or fatigued before I started playing Tetris</td>
-          <td><input type="radio" value="SD" name="PostQ4" required /></td>
-          <td><input type="radio" value="D" name="PostQ4" required /></td>
-          <td><input type="radio" value="N" name="PostQ4" required /></td>
-          <td><input type="radio" value="A" name="PostQ4" required /></td>
-          <td><input type="radio" value="SA" name="PostQ4" required /></td>
-          </tr>
-          <td class="first-col">I feel tired or fatigued right now</td>
-          <td><input type="radio" value="SD" name="PostQ5" required /></td>
-          <td><input type="radio" value="D" name="PostQ5" required /></td>
-          <td><input type="radio" value="N" name="PostQ5" required /></td>
-          <td><input type="radio" value="A" name="PostQ5" required /></td>
-          <td><input type="radio" value="SA" name="PostQ5" required /></td>
-          </tr>
-        </table>
-        <hr style="height:20px; visibility:hidden;" />
-        <div class="Button">
-          <a href="3index4.html" class="previous round">&#8249; Previous</a>
-          &nbsp; &nbsp;
-          <input type="submit" value="Next &#8250;" onclick="variables()">
-        </div>
+            </tr>
+            <td class="first-col">I felt tired or fatigued before I started playing Tetris</td>
+            <td><input type="radio" value="SD" name="PostQ4" required /></td>
+            <td><input type="radio" value="D" name="PostQ4" required /></td>
+            <td><input type="radio" value="N" name="PostQ4" required /></td>
+            <td><input type="radio" value="A" name="PostQ4" required /></td>
+            <td><input type="radio" value="SA" name="PostQ4" required /></td>
+            </tr>
+            <td class="first-col">I feel tired or fatigued right now</td>
+            <td><input type="radio" value="SD" name="PostQ5" required /></td>
+            <td><input type="radio" value="D" name="PostQ5" required /></td>
+            <td><input type="radio" value="N" name="PostQ5" required /></td>
+            <td><input type="radio" value="A" name="PostQ5" required /></td>
+            <td><input type="radio" value="SA" name="PostQ5" required /></td>
+            </tr>
+          </table>
+          <hr style="height:20px; visibility:hidden;" />
+          <div class="Button">
+            <a href="3index4.html" class="previous round">&#8249; Previous</a>
+            &nbsp; &nbsp;
+            <input type="submit" value="Next &#8250;" onclick="variables()">
+          </div>
         </form>
       </body>
     </div>
