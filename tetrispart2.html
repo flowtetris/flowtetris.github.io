@@ -235,7 +235,7 @@
       var uDrawSize = Math.floor(Page.unitSize / 2),
         pcA = pc;
       // next box background
-      Page.ctx.fillStyle = 'rgb(28,30,34)';
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
       Page.ctx.fillRect(this.left, this.top, this.W, this.H);
 
       // draw the upcoming piece (if one exists)
@@ -292,7 +292,7 @@
         drawT;
 
       // redraws the background elements for game area
-      Page.ctx.fillStyle = 'rgb(28,30,34)';
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
       Page.ctx.fillRect(this.left, this.top, this.W, this.H);
 
       // draw the static unit blocks
@@ -351,7 +351,7 @@
         pcA = GM.Pc.Upcoming[0];
 
       // next box background
-      Page.ctx.fillStyle = 'rgb(28,30,34)';
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
       Page.ctx.fillRect(this.left, this.top, this.W, this.H);
 
       // draw the upcoming piece (if one exists)
@@ -400,7 +400,7 @@
         pcB = GM.Pc.Upcoming[1];
 
       // next box background
-      Page.ctx.fillStyle = 'rgb(28,30,34)';
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
       Page.ctx.fillRect(this.left, this.top, this.W, this.H);
 
       // draw the upcoming piece (if one exists)
@@ -449,7 +449,7 @@
         pcC = GM.Pc.Upcoming[2];
 
       // next box background
-      Page.ctx.fillStyle = 'rgb(28,30,34)';
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
       Page.ctx.fillRect(this.left, this.top, this.W, this.H);
 
       // draw the upcoming piece (if one exists)
@@ -495,7 +495,7 @@
     Page.ScoreBarHigh = new DrawAreaObj(10.5, 0, 4.5, 1, function () {
 
       // draw the score area back bar
-      Page.ctx.fillStyle = 'rgb(28,30,34)';
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
       Page.ctx.fillRect(this.left, this.top, this.W, this.H);
 
 
@@ -538,7 +538,7 @@
     Page.ScoreBarCur = new DrawAreaObj(10.5, 1.1, 4.5, 1, function () {
 
       // draw the score area back bar
-      Page.ctx.fillStyle = 'rgb(28,30,34)';
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
       Page.ctx.fillRect(this.left, this.top, this.W, this.H);
 
       // draw the player's current level
@@ -1399,7 +1399,7 @@
           GM.Update();
         } else {
           // assess game over due to GameOver		
-          GM.Level--;
+          GM.Level = GM.Level - 2;
           if (GM.Level < 1) {
             GM.Level = 1
           }
@@ -1449,7 +1449,7 @@
           } else {
             //game over by player 
             //window.clearTimeout(myInterval);
-            GM.Level--;
+            GM.Level = GM.Level - 2;
             if (GM.Level < 1) {
               GM.Level = 1
             }
@@ -1776,7 +1776,7 @@
       this.H = 20 * Page.unitSize;
       //this.left = 0 * Page.unitSize;
       //this.top = 0 * Page.unitSize;
-      Page.ctx.fillStyle = "rgba(28, 30, 34, 1)";
+      Page.ctx.fillStyle = "rgba(48, 50, 54, 1)";
       Page.ctx.fillRect(0, 5, this.W, this.H);
       //Page.ctx.fillStyle = 'rgb(28,30,34)';
       //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
@@ -1796,7 +1796,7 @@
       this.H = 20 * Page.unitSize;
       //this.left = 0 * Page.unitSize;
       //this.top = 0 * Page.unitSize;
-      Page.ctx.fillStyle = "rgba(28, 30, 34, 1)";
+      Page.ctx.fillStyle = "rgba(48, 50, 54, 1)";
       Page.ctx.fillRect(0, 5, this.W, this.H);
       //Page.ctx.fillStyle = 'rgb(28,30,34)';
       //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
@@ -1901,7 +1901,7 @@
       this.H = 20 * Page.unitSize;
 
       //  Page.ctx.fillStyle = "rgba(28, 30, 34, 0.95)";
-      Page.ctx.fillStyle = "rgba(28, 30, 34,1)";
+      Page.ctx.fillStyle = "rgba(48, 50, 54, 1)";
       Page.ctx.fillRect(0, 0, this.W, this.H);
       //Page.ctx.fillStyle = 'rgb(28,30,34)';
       //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
@@ -1948,7 +1948,7 @@
       this.H = 20 * Page.unitSize;
       //this.left = 0 * Page.unitSize;
       //this.top = 0 * Page.unitSize;
-      Page.ctx.fillStyle = "rgba(28, 30, 34, 1)";
+      Page.ctx.fillStyle = "rgba(48, 50, 54, 1)";
       Page.ctx.fillRect(0, 5, this.W, this.H);
       //Page.ctx.fillStyle = 'rgb(28,30,34)';
       //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
