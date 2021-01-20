@@ -70,6 +70,10 @@
   <br>
   <input name="part1scores" id="part1scores" type="text" value="">
   <br>
+  <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
+  <br>
+  <input name="part1allscoreseachdropdifference" id="part1allscoreseachdropdifference" type="text" value="">
+  <br>
   <input name="part1gameovercount" id="part1gameovercount" type="text" value="">
   <br>
   <input name="part1gameovertimes" id="part1gameovertimes" type="text" value="">
@@ -621,7 +625,6 @@
         this.Level = 1;
         part1speed.push(this.TickRate + "new");
         part1levelchange.push("new");
-        part1levelchangetimes.push(0);
         // reset the score and set player to alive
         this.ScoreCur = 0;
         this.IsAlive = true;
@@ -1000,6 +1003,7 @@
             part1alldroptimes.push(Time());
             part1alldroptimesmilliseconds.push(new Date().getTime());
             part1allmovesanddroptimes.push(Time());
+            part1allscoreseachdrop.push(GM.ScoreCur)
           }
 
           Page.UpcomingA.IsDirty = Page.UpcomingB.IsDirty =
@@ -1388,7 +1392,8 @@
     var part1linesclearedtimes = [];
     var part1linesclearedtimesmilliseconds = [];
     var part1alltimesbetweenlinescleared = [];
-    var part1scores = []
+    var part1scores = [];
+    var part1allscoreseachdrop = [];
     var part1gameovertimes = [];
     var part1starttime = [];
 
@@ -1516,20 +1521,23 @@
           var part1linesclearedtotal = part1linesclearedtotalcounter.length;
           var part1gameovercount = part1gameovertimes.length;
 
-          function timeDifferenceBetweenDrop(array) {
+          function DifferenceBetweenElements(array) {
             var newA = [];
             for (var i = 1; i < array.length; i++)  newA.push(array[i] - array[i - 1])
             return newA;
           }
-          var part1alltimesbetweendrops = timeDifferenceBetweenDrop(part1alldroptimesmilliseconds);
+          var part1alltimesbetweendrops = DifferenceBetweenElements(part1alldroptimesmilliseconds);
           var part1alltimesbetweendrops = part1alltimesbetweendrops.map(function (element) {
             return element / 1000
           });
-          var part1alltimesbetweenlinescleared = timeDifferenceBetweenDrop(part1linesclearedtimesmilliseconds);
+          var part1alltimesbetweenlinescleared = DifferenceBetweenElements(part1linesclearedtimesmilliseconds);
           var part1alltimesbetweenlinescleared = part1alltimesbetweenlinescleared.map(function (element) {
             return element / 1000
           });
-
+          var part1allscoreseachdropdifference = DifferenceBetweenElements(part1allscoreseachdrop);
+          var part1allscoreseachdropdifference = part1allscoreseachdropdifference.map(function (element) {
+            return element
+          });
 
           // Store in session storage
           sessionStorage.setItem('part1allmovesStorage', part1allmoves);
@@ -1549,6 +1557,8 @@
           sessionStorage.setItem('part1linesclearedtimesStorage', part1linesclearedtimes);
           sessionStorage.setItem('part1alltimesbetweenlinesclearedStorage', part1alltimesbetweenlinescleared);
           sessionStorage.setItem('part1scoresStorage', part1scores);
+          sessionStorage.setItem('part1allscoreseachdropStorage', part1allscoreseachdrop);
+          sessionStorage.setItem('part1allscoreseachdropdifferenceStorage', part1allscoreseachdropdifference);
           sessionStorage.setItem('part1highscoreStorage', part1highscore);
           sessionStorage.setItem('part1gameovercountStorage', part1gameovercount);
           sessionStorage.setItem('part1gameovertimesStorage', part1gameovertimes);
@@ -1572,6 +1582,8 @@
           document.getElementById("part1linesclearedtimes").value = "part1linesclearedtimes: " + part1linesclearedtimes;
           document.getElementById("part1alltimesbetweenlinescleared").value = "part1alltimesbetweenlinescleared: " + part1alltimesbetweenlinescleared;
           document.getElementById("part1scores").value = "part1scores: " + part1scores;
+          document.getElementById("part1allscoreseachdrop").value = "part1allscoreseachdrop: " + part1allscoreseachdrop;
+          document.getElementById("part1allscoreseachdropdifference").value = "part1allscoreseachdropdifference: " + part1allscoreseachdropdifference;
           document.getElementById("part1highscore").value = "part1highscore: " + part1highscore;
           document.getElementById("part1gameovercount").value = "part1gameovercount: " + part1gameovercount;
           document.getElementById("part1gameovertimes").value = "part1gameovertimes: " + part1gameovertimes;
