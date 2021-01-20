@@ -583,7 +583,10 @@
       IsAlive: 0, Level: 0, PiecesRemaining: 0,
 
       // score count and current piece score modifiers
-      ScoreHigh: 0, ScoreCur: 0, ScoreBonus: 0, DifficultFlag: 0,
+
+      // Get high score from part 1
+
+      ScoreHigh: part1highscore, ScoreCur: 0, ScoreBonus: 0, DifficultFlag: 0,
 
       // array of grid squares
       StaticUnits: [],
@@ -1349,6 +1352,8 @@
     var allmovestimes = [];
     var allmovespregame = [];
     var allmovestimespregame = [];
+
+    var part1highscore = sessionStorage.getItem('part1highscoreStorage');
 
     /*
     O - 1
