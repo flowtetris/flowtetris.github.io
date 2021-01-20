@@ -203,6 +203,10 @@
           <br>
           <input name="part1scores" id="part1scores" type="text" value="">
           <br>
+          <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
+          <br>
+          <input name="part1allscoreseachdropdifference" id="part1allscoreseachdropdifference" type="text" value="">
+          <br>
           <input name="part1highscore" id="part1highscore" type="text" value="">
           <br>
           <input name="part1gameovercount" id="part1gameovercount" type="text" value="">
@@ -274,6 +278,8 @@
   let part1linesclearedtimes = sessionStorage.getItem('part1linesclearedtimesStorage');
   let part1alltimesbetweenlinescleared = sessionStorage.getItem('part1alltimesbetweenlinesclearedStorage');
   let part1scores = sessionStorage.getItem('part1scoresStorage');
+  let part1allscoreseachdrop = sessionStorage.getItem('part1allscoreseachdropStorage');
+  let part1allscoreseachdropdifference = sessionStorage.getItem('part1allscoreseachdropdifferenceStorage');
   let part1highscore = sessionStorage.getItem('part1highscoreStorage');
   let part1gameovercount = sessionStorage.getItem('part1gameovercountStorage');
   let part1gameovertimes = sessionStorage.getItem('part1gameovertimesStorage');
@@ -313,6 +319,8 @@
   document.getElementById("part1linesclearedtimes").value = "part1linesclearedtimes: " + part1linesclearedtimes;
   document.getElementById("part1alltimesbetweenlinescleared").value = "part1alltimesbetweenlinescleared: " + part1alltimesbetweenlinescleared;
   document.getElementById("part1scores").value = "part1scores: " + part1scores;
+  document.getElementById("part1allscoreseachdrop").value = "part1allscoreseachdrop: " + part1allscoreseachdrop;
+  document.getElementById("part1allscoreseachdropdifference").value = "part1allscoreseachdropdifference: " + part1allscoreseachdropdifference;
   document.getElementById("part1highscore").value = "part1highscore: " + part1highscore;
   document.getElementById("part1gameovercount").value = "part1gameovercount: " + part1gameovercount;
   document.getElementById("part1gameovertimes").value = "part1gameovertimes: " + part1gameovertimes;
