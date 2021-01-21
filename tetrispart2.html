@@ -2,6 +2,10 @@
 <title>Part 2</title>
 
 <style>
+  input[type=text] {
+    width: 100%;
+  }
+
   body,
   html {
     height: 100%;
@@ -1554,7 +1558,7 @@
             // glevel = GM.Level
             Init();
             // GM.Level = glevel
-            document.getElementById("glevel").value = "startGameLevel," + glevel;
+            // document.getElementById("glevel").value = "startGameLevel," + glevel;
 
           }
           if (!exitAssess) {
@@ -1578,7 +1582,7 @@
             toi = getTimeOut();
             myInterval = setTimeout(setPause, timeouts[toi]);
             gameOverT1 = new Date()
-            document.getElementById("glevel").value = (glevel);
+            // document.getElementById("glevel").value = (glevel);
             console.log("gameNos=" + gameNos)
             gameNos.push(gameOverCnt)
             console.log("gameNos=" + gameNos)
@@ -1738,87 +1742,105 @@
             window.requestAnimationFrame(Loop);
           } else {
             if (GM.ScoreHigh == 0) {
-            GM.ScoreHigh = GM.ScoreCur
-          }
-          part2scores.push(GM.ScoreCur);
-          var part2lastlevel = part2levels[part2levels.length - 1]
-          var part2lastlevel = part2lastlevel.toString();
-          var part2lastlevel = part2lastlevel.charAt(0);
+              GM.ScoreHigh = GM.ScoreCur
+            }
+            part2scores.push(GM.ScoreCur);
+            var part2lastlevel = part2levels[part2levels.length - 1]
+            var part2lastlevel = part2lastlevel.toString();
+            var part2lastlevel = part2lastlevel.charAt(0);
 
-          var part2highscore = GM.ScoreHigh;
-          var part2linesclearedtotal = part2linesclearedtotalcounter.length;
-          var part2gameovercount = part2gameovertimes.length;
+            var part2highscore = GM.ScoreHigh;
+            var part2linesclearedtotal = part2linesclearedtotalcounter.length;
+            var part2gameovercount = part2gameovertimes.length;
 
-          function DifferenceBetweenElements(array) {
-            var newA = [];
-            for (var i = 1; i < array.length; i++)  newA.push(array[i] - array[i - 1])
-            return newA;
-          }
-          var part2alltimesbetweendrops = DifferenceBetweenElements(part2alldroptimesmilliseconds);
-          var part2alltimesbetweendrops = part2alltimesbetweendrops.map(function (element) {
-            return element / 1000
-          });
-          var part2alltimesbetweenlinescleared = DifferenceBetweenElements(part2linesclearedtimesmilliseconds);
-          var part2alltimesbetweenlinescleared = part2alltimesbetweenlinescleared.map(function (element) {
-            return element / 1000
-          });
-          var part2allscoreseachdropdifference = DifferenceBetweenElements(part2allscoreseachdrop);
-          var part2allscoreseachdropdifference = part2allscoreseachdropdifference.map(function (element) {
-            return element
-          });
+            function DifferenceBetweenElements(array) {
+              var newA = [];
+              for (var i = 1; i < array.length; i++)  newA.push(array[i] - array[i - 1])
+              return newA;
+            }
+            var part2alltimesbetweendrops = DifferenceBetweenElements(part2alldroptimesmilliseconds);
+            var part2alltimesbetweendrops = part2alltimesbetweendrops.map(function (element) {
+              return element / 1000
+            });
+            var part2alltimesbetweenlinescleared = DifferenceBetweenElements(part2linesclearedtimesmilliseconds);
+            var part2alltimesbetweenlinescleared = part2alltimesbetweenlinescleared.map(function (element) {
+              return element / 1000
+            });
+            var part2allscoreseachdropdifference = DifferenceBetweenElements(part2allscoreseachdrop);
+            var part2allscoreseachdropdifference = part2allscoreseachdropdifference.map(function (element) {
+              return element
+            });
 
-          // Store in session storage
-          sessionStorage.setItem('part2allmovesStorage', part2allmoves);
-          sessionStorage.setItem('part2allmovestimesStorage', part2allmovestimes);
-          sessionStorage.setItem('part2allmovesanddroptimesStorage', part2allmovesanddroptimes);
-          sessionStorage.setItem('part2alldroptimesStorage',part2alldroptimes);
-          sessionStorage.setItem('part2alltimesbetweendropsStorage', part2alltimesbetweendrops);
-          sessionStorage.setItem('part2levelsStorage', part2levels);
-          sessionStorage.setItem('part2levelchangeStorage', part2levelchange);
-          sessionStorage.setItem('part2levelchangetimesStorage', part2levelchangetimes);
-          sessionStorage.setItem('part2levelchangescoreStorage', part2levelchangescore);
-          sessionStorage.setItem('part2lastlevelStorage', part2lastlevel);
-          sessionStorage.setItem('part2piecesspawned', part2piecesspawned);
-          sessionStorage.setItem('part2speedStorage', part2speed);
-          sessionStorage.setItem('part2linesclearedin20blocksStorage', part2linesclearedin20blocks);
-          sessionStorage.setItem('part2linesclearedtotalStorage', part2linesclearedtotal);
-          sessionStorage.setItem('part2linesclearedtimesStorage', part2linesclearedtimes);
-          sessionStorage.setItem('part2alltimesbetweenlinesclearedStorage', part2alltimesbetweenlinescleared);
-          sessionStorage.setItem('part2scoresStorage', part2scores);
-          sessionStorage.setItem('part2allscoreseachdropStorage', part2allscoreseachdrop);
-          sessionStorage.setItem('part2allscoreseachdropdifferenceStorage', part2allscoreseachdropdifference);
-          sessionStorage.setItem('part2highscoreStorage', part2highscore);
-          sessionStorage.setItem('part2gameovercountStorage', part2gameovercount);
-          sessionStorage.setItem('part2gameovertimesStorage', part2gameovertimes);
-          sessionStorage.setItem('part2starttimeStorage', part2starttime);
-          sessionStorage.setItem('part2endtimeStorage', part2endtime);
+            // Store in session storage
+            sessionStorage.setItem('part2allmovesStorage', part2allmoves);
+            sessionStorage.setItem('part2allmovestimesStorage', part2allmovestimes);
+            sessionStorage.setItem('part2allmovesanddroptimesStorage', part2allmovesanddroptimes);
+            sessionStorage.setItem('part2alldroptimesStorage', part2alldroptimes);
+            sessionStorage.setItem('part2alltimesbetweendropsStorage', part2alltimesbetweendrops);
+            sessionStorage.setItem('part2levelsStorage', part2levels);
+            sessionStorage.setItem('part2levelchangeStorage', part2levelchange);
+            sessionStorage.setItem('part2levelchangetimesStorage', part2levelchangetimes);
+            sessionStorage.setItem('part2levelchangescoreStorage', part2levelchangescore);
+            sessionStorage.setItem('part2lastlevelStorage', part2lastlevel);
+            sessionStorage.setItem('part2piecesspawned', part2piecesspawned);
+            sessionStorage.setItem('part2speedStorage', part2speed);
+            sessionStorage.setItem('part2linesclearedin20blocksStorage', part2linesclearedin20blocks);
+            sessionStorage.setItem('part2linesclearedtotalStorage', part2linesclearedtotal);
+            sessionStorage.setItem('part2linesclearedtimesStorage', part2linesclearedtimes);
+            sessionStorage.setItem('part2alltimesbetweenlinesclearedStorage', part2alltimesbetweenlinescleared);
+            sessionStorage.setItem('part2scoresStorage', part2scores);
+            sessionStorage.setItem('part2allscoreseachdropStorage', part2allscoreseachdrop);
+            sessionStorage.setItem('part2allscoreseachdropdifferenceStorage', part2allscoreseachdropdifference);
+            sessionStorage.setItem('part2highscoreStorage', part2highscore);
+            sessionStorage.setItem('part2gameovercountStorage', part2gameovercount);
+            sessionStorage.setItem('part2gameovertimesStorage', part2gameovertimes);
+            sessionStorage.setItem('part2starttimeStorage', part2starttime);
+            sessionStorage.setItem('part2endtimeStorage', part2endtime);
 
-          document.getElementById("part2allmoves").value = "part2allmoves: " + part2allmoves;
-          document.getElementById("part2allmovestimes").value = "part2allmovestimes: " + part2allmovestimes;
-          document.getElementById("part2allmovesanddroptimes").value = "part2allmovesanddroptimes: " + part2allmovesanddroptimes;
-          document.getElementById("part2alldroptimes").value = "part2alldroptimes: " + part2alldroptimes;
-          document.getElementById("part2alltimesbetweendrops").value = "part2alltimesbetweendrops: " + part2alltimesbetweendrops;
-          document.getElementById("part2levels").value = "part2levels: " + part2levels;
-          document.getElementById("part2levelchange").value = "part2levelchange: " + part2levelchange;
-          document.getElementById("part2levelchangetimes").value = "part2levelchangetimes: " + part2levelchangetimes;
-          document.getElementById("part2levelchangescore").value = "part2levelchangescore: " + part2levelchangescore;
-          document.getElementById("part2lastlevel").value = "part2lastlevel: " + part2lastlevel;
-          document.getElementById("part2piecesspawned").value = "part2piecesspawned: " + part2piecesspawned;
-          document.getElementById("part2speed").value = "part2speed: " + part2speed;
-          document.getElementById("part2linesclearedin20blocks").value = "part2linesclearedin20blocks: " + part2linesclearedin20blocks;
-          document.getElementById("part2linesclearedtotal").value = "part2linesclearedtotal: " + part2linesclearedtotal;
-          document.getElementById("part2linesclearedtimes").value = "part2linesclearedtimes: " + part2linesclearedtimes;
-          document.getElementById("part2alltimesbetweenlinescleared").value = "part2alltimesbetweenlinescleared: " + part2alltimesbetweenlinescleared;
-          document.getElementById("part2scores").value = "part2scores: " + part2scores;
-          document.getElementById("part2allscoreseachdrop").value = "part2allscoreseachdrop: " + part2allscoreseachdrop;
-          document.getElementById("part2allscoreseachdropdifference").value = "part2allscoreseachdropdifference: " + part2allscoreseachdropdifference;
-          document.getElementById("part2highscore").value = "part2highscore: " + part2highscore;
-          document.getElementById("part2gameovercount").value = "part2gameovercount: " + part2gameovercount;
-          document.getElementById("part2gameovertimes").value = "part2gameovertimes: " + part2gameovertimes;
-          document.getElementById("part2starttime").value = "part2starttime: " + part2starttime;
-          document.getElementById("part2endtime").value = "part2endtime: " + part2endtime;
+            document.getElementById("part2allmoves").value = "part2allmoves: " + part2allmoves;
+            document.getElementById("part2allmovestimes").value = "part2allmovestimes: " + part2allmovestimes;
+            document.getElementById("part2allmovesanddroptimes").value = "part2allmovesanddroptimes: " + part2allmovesanddroptimes;
+            document.getElementById("part2alldroptimes").value = "part2alldroptimes: " + part2alldroptimes;
+            document.getElementById("part2alltimesbetweendrops").value = "part2alltimesbetweendrops: " + part2alltimesbetweendrops;
+            document.getElementById("part2levels").value = "part2levels: " + part2levels;
+            document.getElementById("part2levelchange").value = "part2levelchange: " + part2levelchange;
+            document.getElementById("part2levelchangetimes").value = "part2levelchangetimes: " + part2levelchangetimes;
+            document.getElementById("part2levelchangescore").value = "part2levelchangescore: " + part2levelchangescore;
+            document.getElementById("part2lastlevel").value = "part2lastlevel: " + part2lastlevel;
+            document.getElementById("part2piecesspawned").value = "part2piecesspawned: " + part2piecesspawned;
+            document.getElementById("part2speed").value = "part2speed: " + part2speed;
+            document.getElementById("part2linesclearedin20blocks").value = "part2linesclearedin20blocks: " + part2linesclearedin20blocks;
+            document.getElementById("part2linesclearedtotal").value = "part2linesclearedtotal: " + part2linesclearedtotal;
+            document.getElementById("part2linesclearedtimes").value = "part2linesclearedtimes: " + part2linesclearedtimes;
+            document.getElementById("part2alltimesbetweenlinescleared").value = "part2alltimesbetweenlinescleared: " + part2alltimesbetweenlinescleared;
+            document.getElementById("part2scores").value = "part2scores: " + part2scores;
+            document.getElementById("part2allscoreseachdrop").value = "part2allscoreseachdrop: " + part2allscoreseachdrop;
+            document.getElementById("part2allscoreseachdropdifference").value = "part2allscoreseachdropdifference: " + part2allscoreseachdropdifference;
+            document.getElementById("part2highscore").value = "part2highscore: " + part2highscore;
+            document.getElementById("part2gameovercount").value = "part2gameovercount: " + part2gameovercount;
+            document.getElementById("part2gameovertimes").value = "part2gameovertimes: " + part2gameovertimes;
+            document.getElementById("part2starttime").value = "part2starttime: " + part2starttime;
+            document.getElementById("part2endtime").value = "part2endtime: " + part2endtime;
 
-          drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
+            document.getElementById("allquestions").value = "allquestions: " + allquestions;
+            document.getElementById("allrates").value = "allrates: " + allrates;
+            document.getElementById("allresponses").value = "allresponsestime: " + allresponses;
+            document.getElementById("allcorrects3").value = "allcorrects3: " + allcorrects3;
+            document.getElementById("allanswer3s").value = "allanswer3s: " + allanswer3s;
+            document.getElementById("lineCleareds").value = "lineCleareds: " + lineCleareds;
+            document.getElementById("gameLevels").value = "gameLevels: " + gameLevels;
+            document.getElementById("lineCleareds2").value = "lineCleareds2: " + lineCleareds2;
+            document.getElementById("gameOverTimes").value = "gameOverTimes: " + gameOverTimes;
+            document.getElementById("gameOverCnt").value = "gameOverCnt: " + gameOverCnt;
+            document.getElementById("alltimeouts").value = "alltimeouts: " + alltimeouts;
+            document.getElementById("alltimeoutstimes").value = "alltimeoutstimes: " + alltimeoutstimes;
+            document.getElementById("allmovespregame").value = "allmovespregame: " + allmovespregame;
+            document.getElementById("allmovestimespregame").value = "allmovestimespregame: " + allmovestimespregame;
+            document.getElementById("allmoves").value = "allmoves: " + allmoves;
+            document.getElementById("allmovestimes").value = "allmovestimes: " + allmovestimes;
+
+
+            drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
             document.getElementById('nextButton').style.display = 'block';
             //document.removeEventListener('keydown');
             xfunc = document.removeEventListener('keydown', () => {
