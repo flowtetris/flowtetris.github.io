@@ -223,6 +223,9 @@
           <input name="allmovestimes" id="allmovestimes" type="text" value="">
           <br>
 
+
+          <input name="part1FlowMW" id="part1FlowMW" type="text" value="">
+          <br>
           <input name="flowS" id="flowS" type="text" value="">
           <br>
           <input name="flowD" id="flowD" type="text" value="">
@@ -289,7 +292,7 @@
   let allmoves = sessionStorage.getItem('allmovesStorage');
   let allmovestimes = sessionStorage.getItem('allmovestimesStorage');
 
-
+  let part1FlowMW = sessionStorage.getItem('part1FlowMWStorage');
   let flowS = sessionStorage.getItem('flowSStorage');
   let flowD = sessionStorage.getItem('flowDStorage');
   let MW = sessionStorage.getItem('MWStorage');
@@ -330,6 +333,8 @@
   document.getElementById("allmoves").value = "allmoves: " + allmoves;
   document.getElementById("allmovestimes").value = "allmovestimes: " + allmovestimes;
 
+
+  document.getElementById("part1FlowMW").value = "part1FlowMW: " + part1FlowMW;
   document.getElementById("flowS").value = "flowS: " + flowS;
   document.getElementById("flowD").value = "flowD: " + flowD;
   document.getElementById("MW").value = "MW: " + MW;
