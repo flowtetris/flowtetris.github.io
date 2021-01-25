@@ -85,7 +85,7 @@
 
   <!-- Button -->
   <div id="nextButton" style="display: none; position: absolute; right: 11%; top: 50%;">
-    <a href="2index1.html" class="next round">Next &#8250;</a>
+    <a href="part1post1.html" class="next round">Next &#8250;</a>
   </div>
 
   <script>
@@ -1484,7 +1484,7 @@
           GM.Update();
         } else {
           // assess game over due to GameOver
-          GM.Level = GM.Level - 2;
+          GM.Level = GM.Level - 3;
           if (GM.Level < 1) { GM.Level = 1 }
           assessGameCnt++;
           assessLevelSum = assessLevelSum + GM.Level
@@ -1618,7 +1618,7 @@
           } else {
             //game over by player 
             //window.clearTimeout(myInterval);
-            GM.Level = GM.Level - 2;
+            GM.Level = GM.Level - 3;
             gameOverCnt++;
             gameNos.push(gameOverCnt)
             gameOverT2 = new Date()
