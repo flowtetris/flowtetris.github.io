@@ -2,8 +2,9 @@
 <title>Part 1</title>
 <style>
   input[type=text] {
-   width: 100%;
-}
+    width: 100%;
+  }
+
   /* Next button */
 
   a {
@@ -36,13 +37,21 @@
 <body>
   <input name="part1allmoves" id="part1allmoves" type="text" value="">
   <br>
-  <input name="part1allmovestimes" id="part1allmovestimes" type="text" value="">
+  <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
+  <br>
+  <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
   <br>
   <input name="part1alldroptimes" id="part1alldroptimes" type="text" value="">
   <br>
-  <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
+  <input name="part1allscoreseachdropdifference" id="part1allscoreseachdropdifference" type="text" value="">
   <br>
   <input name="part1alltimesbetweendrops" id="part1alltimesbetweendrops" type="text" value="">
+  <br>
+
+
+  <br>
+  <br>
+  <input name="part1allmovestimes" id="part1allmovestimes" type="text" value="">
   <br>
   <input name="part1levels" id="part1levels" type="text" value="">
   <br>
@@ -69,10 +78,6 @@
   <input name="part1highscore" id="part1highscore" type="text" value="">
   <br>
   <input name="part1scores" id="part1scores" type="text" value="">
-  <br>
-  <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
-  <br>
-  <input name="part1allscoreseachdropdifference" id="part1allscoreseachdropdifference" type="text" value="">
   <br>
   <input name="part1gameovercount" id="part1gameovercount" type="text" value="">
   <br>
@@ -1542,7 +1547,7 @@
           sessionStorage.setItem('part1allmovesStorage', part1allmoves);
           sessionStorage.setItem('part1allmovestimesStorage', part1allmovestimes);
           sessionStorage.setItem('part1allmovesanddroptimesStorage', part1allmovesanddroptimes);
-          sessionStorage.setItem('part1alldroptimesStorage',part1alldroptimes);
+          sessionStorage.setItem('part1alldroptimesStorage', part1alldroptimes);
           sessionStorage.setItem('part1alltimesbetweendropsStorage', part1alltimesbetweendrops);
           sessionStorage.setItem('part1levelsStorage', part1levels);
           sessionStorage.setItem('part1levelchangeStorage', part1levelchange);
