@@ -138,10 +138,10 @@
 
     // Get last level and high score from part 1
 
-    var part1lastlevel = sessionStorage.getItem('part1lastlevelStorage');
-    var part1lastlevel = parseInt(part1lastlevel, 10);
-    if (Number.isNaN(part1lastlevel) == true) {
-      part1lastlevel = 1
+    var part1transferlevel = sessionStorage.getItem('part1transferlevelStorage');
+    var part1transferlevel = parseInt(part1transferlevel, 10);
+    if (Number.isNaN(part1transferlevel) == true) {
+      part1transferlevel = 1
     }
 
     var part1highscore = sessionStorage.getItem('part1highscoreStorage');
@@ -637,7 +637,7 @@
       TimeCur: 0, TimeEvent: 0, TickRate: 0,
 
       // player status & score
-      IsAlive: 0, Level: part1lastlevel, PiecesRemaining: 0,
+      IsAlive: 0, Level: part1transferlevel, PiecesRemaining: 0,
 
       // score count and current piece score modifiers
 
@@ -1821,7 +1821,7 @@
           var part2endtime = Time();
 
           // Store in session storage
-          sessionStorage.setItem('part2allmovesStorage', part2allmovesanddrop);
+          sessionStorage.setItem('part2allmovesanddropStorage', part2allmovesanddrop);
           sessionStorage.setItem('part2allmovestimesStorage', part2allmovestimes);
           sessionStorage.setItem('part2allmovesanddroptimesStorage', part2allmovesanddroptimes);
           sessionStorage.setItem('part2alldroptimesStorage', part2alldroptimes);
@@ -1832,7 +1832,7 @@
           sessionStorage.setItem('part2levelchangescoreStorage', part2levelchangescore);
           sessionStorage.setItem('part2lastlevelStorage', part2lastlevel);
           sessionStorage.setItem('part2piecesspawned', part2piecesspawned);
-          sessionStorage.setItem('part2speedStorage', part2speedPer20blocks);
+          sessionStorage.setItem('part2speedPer20blocksStorage', part2speedPer20blocks);
           sessionStorage.setItem('part2linesclearedin20blocksStorage', part2linesclearedin20blocks);
           sessionStorage.setItem('part2linesclearedtotalStorage', part2linesclearedtotal);
           sessionStorage.setItem('part2linesclearedtimesStorage', part2linesclearedtimes);
@@ -1845,6 +1845,23 @@
           sessionStorage.setItem('part2gameovertimesStorage', part2gameovertimes);
           sessionStorage.setItem('part2starttimeStorage', part2starttime);
           sessionStorage.setItem('part2endtimeStorage', part2endtime);
+
+          sessionStorage.setItem('part2allquestionsStorage', part2allquestions);
+          sessionStorage.setItem('part2allresponsesStorage', part2allresponses);
+          sessionStorage.setItem('part2allresponsestimesStorage', part2allresponsestimes);
+          sessionStorage.setItem('part2allresponsestimesdifferenceStorage', part2allresponsestimesdifference);
+          sessionStorage.setItem('part2allMovesResponsesAndDropsStorage', part2allMovesResponsesAndDrops);
+          sessionStorage.setItem('part2allMovesResponsesAndDropsTimesStorage', part2allMovesResponsesAndDropsTimes);
+          sessionStorage.setItem('part2catchquestionscorrectStorage', part2catchquestionscorrect);
+          sessionStorage.setItem('part2catchquestionsresponsesStorage', part2catchquestionsresponses);
+          sessionStorage.setItem('part2catchquestionscorrectPercentStorage', part2catchquestionscorrectPercent);
+          sessionStorage.setItem('part2CumulativeLinesClearedPerQuestionBlockStorage', part2CumulativeLinesClearedPerQuestionBlock);
+          sessionStorage.setItem('part2GameLevelAtQuestionBlockStorage', part2GameLevelAtQuestionBlock);
+          sessionStorage.setItem('part2LinesClearedPerQuestionBlockStorage', part2LinesClearedPerQuestionBlock);
+          sessionStorage.setItem('part2gameovertimesdifferenceStorage', part2gameovertimesdifference);
+          sessionStorage.setItem('part2InterprobeIntervalsStorage', part2InterprobeIntervals);
+          sessionStorage.setItem('part2InterprobeIntervalsTimesStorage', part2InterprobeIntervalsTimes);
+          sessionStorage.setItem('part2AverageHeightStorage', part2AverageHeight);
 
           document.getElementById("part2allmovesanddrop").value = "part2allmovesanddrop: " + part2allmovesanddrop;
           document.getElementById("part2allmovestimes").value = "part2allmovestimes: " + part2allmovestimes;
