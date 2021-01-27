@@ -1530,9 +1530,13 @@
           //var part1astlevel = part1astlevel.toString();
           //var part1astlevel = part1astlevel.charAt(0);
 
+          if (Array.isArray(part1levels1) && part1levels1.length) {
           var max_of_array = Math.max.apply(Math, part1levels1);
           var part1transferlevel = max_of_array / 2;
-          var part1transferlevel = Math.round(part1transferlevel);
+          var part1transferlevel = Math.round(part1transferlevel);}
+          else {
+            var part1transferlevel = 1;
+          }
 
           var part1highscore = GM.ScoreHigh;
           var part1linesclearedtotal = part1linesclearedtotalcounter.length;
@@ -1567,7 +1571,7 @@
           sessionStorage.setItem('part1levelchangetimesStorage', part1levelchangetimes);
           sessionStorage.setItem('part1levelchangescoreStorage', part1levelchangescore);
           sessionStorage.setItem('part1transferlevelStorage', part1transferlevel);
-          sessionStorage.setItem('part1piecesspawned', part1piecesspawned);
+          sessionStorage.setItem('part1piecesspawnedStorage', part1piecesspawned);
           sessionStorage.setItem('part1speedStorage', part1speed);
           sessionStorage.setItem('part1linesclearedin20blocksStorage', part1linesclearedin20blocks);
           sessionStorage.setItem('part1linesclearedtotalStorage', part1linesclearedtotal);
