@@ -1388,7 +1388,14 @@
     var gameNos = [];
     var gameOverT1;
     var gameOverT2;
-    var breakTimeFactor = 2;
+
+    var repetitions = 5;
+    var timeoutsTimes = [10000, 20000, 30000, 40000, 50000]; // the interprobe intervals
+    var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
+    var tocnt1 = [0, 0, 0, 0, 0];
+    var tocnt = new Array(repetitions).fill(tocnt1).flat();
+
+    var breakTimeFactor = Math.ceil((repetitions*timeoutsTimes.length)/3); // 2 breaks in the game
 
 
     questions = [{
@@ -1463,10 +1470,6 @@
     var groups = [];
     var askeds = [];
     var toi;
-    var timeoutsTimes = [10000, 20000, 30000, 40000, 50000]; // the interprobe intervals
-    var timeouts = new Array(5).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
-    var tocnt1 = [0, 0, 0, 0, 0];
-    var tocnt = new Array(5).fill(tocnt1).flat();
     var part2allquestions = [];
     var part2allresponses = [];
     var part2allMovesResponsesAndDrops = [];
@@ -1765,12 +1768,12 @@
             console.log("timeouts=" + timeouts)
             console.log("part2InterprobeIntervals=" + part2InterprobeIntervals)
             // break time
-            if ((timeouts.length + 1) % breakTimeFactor == 0 && timeouts.length != 0) {
+            if ((timeouts.length) % breakTimeFactor == 0 && timeouts.length != 0) {
               part2allMovesResponsesAndDrops.push("BreakStart");
               part2allMovesResponsesAndDropsTimes.push(Time());
               // drawMyTextbreak("Please have a short break", "The game will resume in:","seconds","");
-              showCountdownBySec(10000);
-              await sleep(10000);
+              showCountdownBySec(30000);
+              await sleep(30000);
               part2allMovesResponsesAndDrops.push("BreakEnd");
               part2allMovesResponsesAndDropsTimes.push(Time());
             }
@@ -2298,7 +2301,7 @@
       //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
 
 
-      DrawText(ln1, 'rgb(255,255,255)', '400', 'center', uDrawSize / 1.4, this.W / 2, this.H / 2.3);
+      DrawText(ln1, 'rgb(255,255,255)', '400', 'center', uDrawSize / 1.3, this.W / 2, this.H / 2.3);
       DrawText(ln2, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.4, this.W / 2, this.H / 2.0);
       DrawText(ln3, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.4, this.W / 2, this.H / 1.75);
       DrawText(ln4, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.4, this.W / 2, this.H / 1.55);
