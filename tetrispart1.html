@@ -1370,10 +1370,11 @@
     var groups = [];
     var askeds = [];
     var toi;
+    var repetitions = 6;
     var timeoutsTimes = [10000, 20000, 30000, 40000, 50000]; // the interprobe intervals
-    var timeouts = new Array(5).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
+    var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
     var tocnt1 = [0, 0, 0, 0, 0];
-    var tocnt = new Array(5).fill(tocnt1).flat();
+    var tocnt = new Array(repetitions).fill(tocnt1).flat();
     var allquestions = [];
     var allrates = [];
     var allfups = [];
@@ -1492,7 +1493,7 @@
           drawMyText("", "Press spacebar to start", "", "");
           await waitUserInputSpace();
           displayDone = true;
-          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 60000);
+          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 240000);
           part1starttime.push(Time());
         }
         Page.Update();
