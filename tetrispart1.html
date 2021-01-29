@@ -1493,7 +1493,8 @@
           drawMyText("", "Press spacebar to start", "", "");
           await waitUserInputSpace();
           displayDone = true;
-          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 240000);
+          // myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 240000);
+          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 120000);
           part1starttime.push(Time());
         }
         Page.Update();
@@ -1536,9 +1537,10 @@
           //var part1astlevel = part1astlevel.charAt(0);
 
           if (Array.isArray(part1levels1) && part1levels1.length) {
-          var max_of_array = Math.max.apply(Math, part1levels1);
-          var part1transferlevel = max_of_array / 2;
-          var part1transferlevel = Math.floor(part1transferlevel);}
+            var max_of_array = Math.max.apply(Math, part1levels1);
+            var part1transferlevel = max_of_array / 2;
+            var part1transferlevel = Math.floor(part1transferlevel);
+          }
           else {
             var part1transferlevel = 1;
           }
