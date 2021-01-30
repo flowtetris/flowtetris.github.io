@@ -192,8 +192,8 @@
           <input name="part1alltimesbetweendrops" id="part1alltimesbetweendrops" type="text" value="">
           <br>
           <br>
-          <input name="part1allmovestimes" id="part1allmovestimes" type="text" value="">
-          <br>
+          <!-- <input name="part1allmovestimes" id="part1allmovestimes" type="text" value="">
+          <br> -->
           <input name="part1levels" id="part1levels" type="text" value="">
           <br>
           <input name="part1levelchange" id="part1levelchange" type="text" value="">
@@ -225,6 +225,8 @@
           <input name="part1gameovertimes" id="part1gameovertimes" type="text" value="">
           <br>
           <input name="part1starttime" id="part1starttime" type="text" value="">
+          <br>
+          <input name="part1starttimeMilliseconds" id="part1starttimeMilliseconds" type="text" value="">
           <br>
           <input name="part1endtime" id="part1endtime" type="text" value="">
           <br>
@@ -292,7 +294,7 @@
           <br>
           <input name="part2catchquestionsresponses" id="part2catchquestionsresponses" type="text" value="">
           <br>
-          <input name="part2allmovesanddrop" id="part2allmovesanddrop" type="text" value="">
+         <!-- <input name="part2allmovesanddrop" id="part2allmovesanddrop" type="text" value="">
           <br>
           <input name="part2allmovestimes" id="part2allmovestimes" type="text" value="">
           <br>
@@ -300,6 +302,7 @@
           <br>
           <input name="part2allresponsestimes" id="part2allresponsestimes" type="text" value="">
           <br>
+          -->
           <input name="part2InterprobeIntervalsTimes" id="part2InterprobeIntervalsTimes" type="text" value="">
           <br>
           <input name="part2piecesspawned" id="part2piecesspawned" type="text" value="">
@@ -380,6 +383,7 @@
   let part1gameovercount = sessionStorage.getItem('part1gameovercountStorage');
   let part1gameovertimes = sessionStorage.getItem('part1gameovertimesStorage');
   let part1starttime = sessionStorage.getItem('part1starttimeStorage');
+  let part1starttimeMilliseconds = sessionStorage.getItem('part1starttimeMillisecondsStorage');
   let part1endtime = sessionStorage.getItem('part1endtimeStorage');
 
   let part2allmovesanddrop = sessionStorage.getItem('part2allmovesanddropStorage');
@@ -461,6 +465,7 @@
   document.getElementById("part1gameovercount").value = "part1gameovercount: " + part1gameovercount;
   document.getElementById("part1gameovertimes").value = "part1gameovertimes: " + part1gameovertimes;
   document.getElementById("part1starttime").value = "part1starttime: " + part1starttime;
+  document.getElementById("part1starttimeMilliseconds").value = "part1starttimeMilliseconds: " + part1starttimeMilliseconds;
   document.getElementById("part1endtime").value = "part1endtime: " + part1endtime;
 
   document.getElementById("part2allmovesanddrop").value = "part2allmovesanddrop: " + part2allmovesanddrop;
