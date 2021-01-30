@@ -35,58 +35,61 @@
 <html>
 
 <body>
-  <!--
-  <input name="part1allmovesanddrops" id="part1allmovesanddrops" type="text" value="">
-  <br>
-  <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
-  <br>
-  <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
-  <br>
-  <input name="part1alldroptimes" id="part1alldroptimes" type="text" value="">
-  <br>
-  <input name="part1allscoreseachdropdifference" id="part1allscoreseachdropdifference" type="text" value="">
-  <br>
-  <input name="part1AverageHeight" id="part1AverageHeight" type="text" value="">
-  <br>
-  <input name="part1alltimesbetweendrops" id="part1alltimesbetweendrops" type="text" value="">
-  <br>
-  <br>
-  <input name="part1allmovestimes" id="part1allmovestimes" type="text" value="">
-  <br>
-  <input name="part1levels" id="part1levels" type="text" value="">
-  <br>
-  <input name="part1levelchange" id="part1levelchange" type="text" value="">
-  <br>
-  <input name="part1levelchangetimes" id="part1levelchangetimes" type="text" value="">
-  <br>
-  <input name="part1levelchangescore" id="part1levelchangescore" type="text" value="">
-  <br>
-  <input name="part1transferlevel" id="part1transferlevel" type="text" value="">
-  <br>
-  <input name="part1piecesspawned" id="part1piecesspawned" type="text" value="">
-  <br>
-  <input name="part1speed" id="part1speed" type="text" value="">
-  <br>
-  <input name="part1linesclearedin20blocks" id="part1linesclearedin20blocks" type="text" value="">
-  <br>
-  <input name="part1linesclearedtotal" id="part1linesclearedtotal" type="text" value="">
-  <br>
-  <input name="part1linesclearedtimes" id="part1linesclearedtimes" type="text" value="">
-  <br>
-  <input name="part1alltimesbetweenlinescleared" id="part1alltimesbetweenlinescleared" type="text" value="">
-  <br>
-  <input name="part1highscore" id="part1highscore" type="text" value="">
-  <br>
-  <input name="part1scores" id="part1scores" type="text" value="">
-  <br>
-  <input name="part1gameovercount" id="part1gameovercount" type="text" value="">
-  <br>
-  <input name="part1gameovertimes" id="part1gameovertimes" type="text" value="">
-  <br>
-  <input name="part1starttime" id="part1starttime" type="text" value="">
-  <br>
-  <input name="part1endtime" id="part1endtime" type="text" value="">
-  -->
+<!-- 
+    <input name="part1allmovesanddrops" id="part1allmovesanddrops" type="text" value="">
+    <br>
+    <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
+    <br>
+    <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
+    <br>
+    <input name="part1alldroptimes" id="part1alldroptimes" type="text" value="">
+    <br>
+    <input name="part1allscoreseachdropdifference" id="part1allscoreseachdropdifference" type="text" value="">
+    <br>
+    <input name="part1AverageHeight" id="part1AverageHeight" type="text" value="">
+    <br>
+    <input name="part1alltimesbetweendrops" id="part1alltimesbetweendrops" type="text" value="">
+    <br>
+    <br>
+    <input name="part1allmovestimes" id="part1allmovestimes" type="text" value="">
+    <br>
+    <input name="part1levels" id="part1levels" type="text" value="">
+    <br>
+    <input name="part1levelchange" id="part1levelchange" type="text" value="">
+    <br>
+    <input name="part1levelchangetimes" id="part1levelchangetimes" type="text" value="">
+    <br>
+    <input name="part1levelchangescore" id="part1levelchangescore" type="text" value="">
+    <br>
+    <input name="part1transferlevel" id="part1transferlevel" type="text" value="">
+    <br>
+    <input name="part1piecesspawned" id="part1piecesspawned" type="text" value="">
+    <br>
+    <input name="part1speed" id="part1speed" type="text" value="">
+    <br>
+    <input name="part1linesclearedin20blocks" id="part1linesclearedin20blocks" type="text" value="">
+    <br>
+    <input name="part1linesclearedtotal" id="part1linesclearedtotal" type="text" value="">
+    <br>
+    <input name="part1linesclearedtimes" id="part1linesclearedtimes" type="text" value="">
+    <br>
+    <input name="part1alltimesbetweenlinescleared" id="part1alltimesbetweenlinescleared" type="text" value="">
+    <br>
+    <input name="part1highscore" id="part1highscore" type="text" value="">
+    <br>
+    <input name="part1scores" id="part1scores" type="text" value="">
+    <br>
+    <input name="part1gameovercount" id="part1gameovercount" type="text" value="">
+    <br>
+    <input name="part1gameovertimes" id="part1gameovertimes" type="text" value="">
+    <br>
+    <input name="part1starttime" id="part1starttime" type="text" value="">
+    <br>
+    <input name="part1starttimeMilliseconds" id="part1starttimeMilliseconds" type="text" value="">
+    <br>
+    <input name="part1endtime" id="part1endtime" type="text" value="">
+  </div>
+-->
 
   <!-- Button -->
   <div id="nextButton" style="display: none; position: absolute; right: 11%; top: 50%;">
@@ -624,7 +627,8 @@
         // set up level values for level 1
         this.PiecesRemainingBase = 20;
         this.PiecesRemaining = 20;
-        part1levelchangetimes.push(Time());
+        part1levelchangetimes.push(Time1());
+        part1levelchangescore.push(GM.ScoreCur);
         part1levels.push(this.Level + "new");
         this.Level = 1;
         part1speed.push(this.TickRate + "new");
@@ -699,7 +703,7 @@
           if (hasGap === false) {
             LinesCleared = LinesCleared + 1;
             part1linesclearedtotalcounter.push(LinesCleared);
-            part1linesclearedtimes.push(Time());
+            part1linesclearedtimes.push(Time1());
             part1linesclearedtimesmilliseconds.push(new Date().getTime());
             LinesCleared2 = LinesCleared2 + 1;
             LinesClearedCounter = LinesClearedCounter + 1
@@ -768,7 +772,7 @@
         part1levels.push(this.Level);
         part1levels1.push(this.Level);
         part1levelchange.push("up");
-        part1levelchangetimes.push(Time());
+        part1levelchangetimes.push(Time1());
         part1levelchangescore.push(GM.ScoreCur);
         part1speed.push(this.TickRate);
         console.log(this.TickRate);
@@ -787,7 +791,7 @@
           part1levels.push(this.Level);
           part1levels1.push(this.Level);
           part1levelchange.push("down");
-          part1levelchangetimes.push(Time());
+          part1levelchangetimes.push(Time1());
           part1levelchangescore.push(GM.ScoreCur);
           part1speed.push(this.TickRate);
           console.log(this.TickRate);
@@ -806,7 +810,7 @@
         part1levels.push(this.Level);
         part1levels1.push(this.Level);
         part1levelchange.push("same");
-        part1levelchangetimes.push(Time());
+        part1levelchangetimes.push(Time1());
         part1levelchangescore.push(GM.ScoreCur);
         part1speed.push(this.TickRate);
         console.log(this.TickRate);
@@ -816,7 +820,7 @@
         Page.Game.IsDirty = Page.ScoreBarCur.IsDirty = true;
 
         part1scores.push(this.ScoreCur);
-        part1gameovertimes.push(Time());
+        part1gameovertimes.push(Time1());
 
         if (this.ScoreCur > this.ScoreHigh) {
           this.ScoreHigh = this.ScoreCur;
@@ -1014,9 +1018,9 @@
           if (this.Cur !== 0) {
             GM.PieceSpawned();
             Page.Game.IsDirty = true;
-            part1alldroptimes.push(Time());
+            part1alldroptimes.push(Time1());
             part1alldroptimesmilliseconds.push(new Date().getTime());
-            part1allmovesanddroptimes.push(Time());
+            part1allmovesanddroptimes.push(Time1());
             part1allscoreseachdrop.push(GM.ScoreCur)
           }
 
@@ -1186,8 +1190,8 @@
             }
             else {
               part1allmovesanddrops.push("U");
-              part1allmovestimes.push(Time());
-              part1allmovesanddroptimes.push(Time());
+              part1allmovestimes.push(Time1());
+              part1allmovesanddroptimes.push(Time1());
             }
             break;
 
@@ -1200,8 +1204,8 @@
             }
             else {
               part1allmovesanddrops.push("L");
-              part1allmovestimes.push(Time());
-              part1allmovesanddroptimes.push(Time());
+              part1allmovestimes.push(Time1());
+              part1allmovesanddroptimes.push(Time1());
             }
             Page.Game.IsDirty = GM.Pc.TryMove(-1, 0);
             break;
@@ -1215,8 +1219,8 @@
             }
             else {
               part1allmovesanddrops.push("R");
-              part1allmovestimes.push(Time());
-              part1allmovesanddroptimes.push(Time());
+              part1allmovestimes.push(Time1());
+              part1allmovesanddroptimes.push(Time1());
             }
             Page.Game.IsDirty = GM.Pc.TryMove(1, 0);
             break;
@@ -1230,8 +1234,8 @@
             }
             else {
               part1allmovesanddrops.push("D");
-              part1allmovestimes.push(Time());
-              part1allmovesanddroptimes.push(Time());
+              part1allmovestimes.push(Time1());
+              part1allmovesanddroptimes.push(Time1());
             }
             Page.Game.IsDirty = GM.Pc.TryMove(0, 1);
             break;
@@ -1244,8 +1248,8 @@
             }
             else {
               part1allmovesanddrops.push("S");
-              part1allmovestimes.push(Time());
-              part1allmovesanddroptimes.push(Time());
+              part1allmovestimes.push(Time1());
+              part1allmovesanddroptimes.push(Time1());
             }
             Page.Game.IsDirty = GM.Pc.TryDrop();
             break;
@@ -1413,6 +1417,7 @@
     var part1allscoreseachdrop = [];
     var part1gameovertimes = [];
     var part1starttime = [];
+    var part1starttimeMilliseconds = [];
     var part1AverageHeight = [];
 
 
@@ -1448,6 +1453,37 @@
       var currentTime = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
 
       return currentTime;
+    }
+
+    function Time1() {
+
+      var datetime = new Date();
+
+      // adjust 0 before single digit date
+      var date = ("0" + datetime.getDate()).slice(-2);
+
+      // current month
+      var month = ("0" + (datetime.getMonth() + 1)).slice(-2);
+
+      // current year
+      var year = datetime.getFullYear();
+
+      // current hours
+      var hours = (datetime.getHours())
+
+      // current minutes
+      var minutes = (datetime.getMinutes());
+
+      // current seconds
+      var seconds = (datetime.getSeconds());
+
+      // current milliseconds
+      var milliseconds = (datetime.getMilliseconds());
+
+      // prints date & time in HH:MM:SS:MS format
+      var TimeSinceGameStartMilliseconds = (3600000 * hours + 60000 * minutes + 1000 * seconds + milliseconds);
+
+      return TimeSinceGameStartMilliseconds;
     }
 
     /*
@@ -1494,8 +1530,9 @@
           await waitUserInputSpace();
           displayDone = true;
           // myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 240000);
-          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 1200);
+          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 24000);
           part1starttime.push(Time());
+          part1starttimeMilliseconds.push(Time1());
         }
         Page.Update();
 
@@ -1556,16 +1593,22 @@
           }
           var part1alltimesbetweendrops = DifferenceBetweenElements(part1alldroptimesmilliseconds);
           var part1alltimesbetweendrops = part1alltimesbetweendrops.map(function (element) {
-            return element / 1000
+            return element
           });
           var part1alltimesbetweenlinescleared = DifferenceBetweenElements(part1linesclearedtimesmilliseconds);
           var part1alltimesbetweenlinescleared = part1alltimesbetweenlinescleared.map(function (element) {
-            return element / 1000
+            return element
           });
           var part1allscoreseachdropdifference = DifferenceBetweenElements(part1allscoreseachdrop);
           var part1allscoreseachdropdifference = part1allscoreseachdropdifference.map(function (element) {
             return element
           });
+
+          // Times in milliseconds since start of game
+          part1allmovesanddroptimes = part1allmovesanddroptimes.map(x => x - part1starttimeMilliseconds[0] + 1);
+          part1alldroptimes = part1alldroptimes.map(x => x - part1starttimeMilliseconds[0] + 1);
+          part1allmovestimes = part1allmovestimes.map(x => x - part1starttimeMilliseconds[0] + 1);
+          part1linesclearedtimes = part1linesclearedtimes.map(x => x - part1starttimeMilliseconds[0] + 1);
 
           // Store in session storage
           sessionStorage.setItem('part1allmovesanddropsStorage', part1allmovesanddrops);
@@ -1592,8 +1635,10 @@
           sessionStorage.setItem('part1gameovercountStorage', part1gameovercount);
           sessionStorage.setItem('part1gameovertimesStorage', part1gameovertimes);
           sessionStorage.setItem('part1starttimeStorage', part1starttime);
+          sessionStorage.setItem('part1starttimeMillisecondsStorage', part1starttimeMilliseconds);
           sessionStorage.setItem('part1endtimeStorage', part1endtime);
 
+          /*
           document.getElementById("part1allmovesanddrops").value = "part1allmovesanddrops: " + part1allmovesanddrops;
           document.getElementById("part1allmovestimes").value = "part1allmovestimes: " + part1allmovestimes;
           document.getElementById("part1allmovesanddroptimes").value = "part1allmovesanddroptimes: " + part1allmovesanddroptimes;
@@ -1618,7 +1663,9 @@
           document.getElementById("part1gameovercount").value = "part1gameovercount: " + part1gameovercount;
           document.getElementById("part1gameovertimes").value = "part1gameovertimes: " + part1gameovertimes;
           document.getElementById("part1starttime").value = "part1starttime: " + part1starttime;
+          document.getElementById("part1starttimeMilliseconds").value = "part1starttimeMilliseconds: " + part1starttimeMilliseconds;
           document.getElementById("part1endtime").value = "part1endtime: " + part1endtime;
+          */
 
           return
       /*
