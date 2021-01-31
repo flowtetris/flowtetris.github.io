@@ -181,8 +181,6 @@
           <br>
           <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
           <br>
-          <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
-          <br>
           <input name="part1alldroptimes" id="part1alldroptimes" type="text" value="">
           <br>
           <input name="part1allscoreseachdropdifference" id="part1allscoreseachdropdifference" type="text" value="">
@@ -220,6 +218,8 @@
           <br>
           <input name="part1scores" id="part1scores" type="text" value="">
           <br>
+          <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
+          <br>
           <input name="part1gameovercount" id="part1gameovercount" type="text" value="">
           <br>
           <input name="part1gameovertimes" id="part1gameovertimes" type="text" value="">
@@ -240,11 +240,11 @@
           <br>
           <input name="part2catchquestionscorrectPercent" id="part2catchquestionscorrectPercent" type="text" value="">
           <br>
-          <input name="part2allquestions" id="part2allquestions" type="text" value="">
+          <input name="part2InterprobeIntervals" id="part2InterprobeIntervals" type="text" value="">
           <br>
-          <input name="part2allresponses" id="part2allresponses" type="text" value="">
+          <input name="part2InterprobeIntervalsTimes" id="part2InterprobeIntervalsTimes" type="text" value="">
           <br>
-          <input name="part2allscoreseachdrop" id="part2allscoreseachdrop" type="text" value="">
+          <input name="part2catchquestionscorrect" id="part2catchquestionscorrect" type="text" value="">
           <br>
           <input name="part2alldroptimes" id="part2alldroptimes" type="text" value="">
           <br>
@@ -254,10 +254,12 @@
           <br>
           <input name="part2alltimesbetweendrops" id="part2alltimesbetweendrops" type="text" value="">
           <br>
-          <input name="part2InterprobeIntervals" id="part2InterprobeIntervals" type="text" value="">
           <br>
           <input name="part2allresponsestimesdifference" id="part2allresponsestimesdifference" type="text" value="">
           <br>
+          <input name="part2allquestions" id="part2allquestions" type="text" value="">
+          <br>
+          <input name="part2allresponses" id="part2allresponses" type="text" value="">
           <br>
           <input name="part2levels" id="part2levels" type="text" value="">
           <br>
@@ -290,7 +292,7 @@
           <br>
           <input name="part2scores" id="part2scores" type="text" value="">
           <br>
-          <input name="part2catchquestionscorrect" id="part2catchquestionscorrect" type="text" value="">
+          <input name="part2allscoreseachdrop" id="part2allscoreseachdrop" type="text" value="">
           <br>
           <input name="part2catchquestionsresponses" id="part2catchquestionsresponses" type="text" value="">
           <br>
@@ -303,8 +305,6 @@
           <input name="part2allresponsestimes" id="part2allresponsestimes" type="text" value="">
           <br>
           -->
-          <input name="part2InterprobeIntervalsTimes" id="part2InterprobeIntervalsTimes" type="text" value="">
-          <br>
           <input name="part2piecesspawned" id="part2piecesspawned" type="text" value="">
           <br>
           <input name="part2gameovercount" id="part2gameovercount" type="text" value="">
@@ -315,9 +315,33 @@
           <br>
           <input name="part2starttime" id="part2starttime" type="text" value="">
           <br>
+          <input name="part2starttimeMilliseconds" id="part2starttimeMilliseconds" type="text" value="">
+          <br>
           <input name="part2endtime" id="part2endtime" type="text" value="">
           <br>
           <br>
+          <br>
+
+
+          <input name="part1flowScore" id="part1flowScore" type="text" value="">
+          <br>
+          <input name="part1flowPerformanceScore" id="part1flowPerformanceScore" type="text" value="">
+          <br>
+          <input name="part1MWScore" id="part1MWScore" type="text" value="">
+          <br>
+          <input name="flowScore" id="flowScore" type="text" value="">
+          <br>
+          <input name="flowPerformanceScore" id="flowPerformanceScore" type="text" value="">
+          <br>
+          <input name="flowDispositionalScore" id="flowDispositionalScore" type="text" value="">
+          <br>
+          <input name="MWScore" id="MWScore" type="text" value="">
+          <br>
+          <input name="MWDispositionalScore" id="MWDispositionalScore" type="text" value="">
+          <br>
+          <input name="postQ" id="postQ" type="text" value="">
+          <br>
+          <input name="comments" id="comments" type="text" value="">
           <br>
 
           <input name="part1FlowMW" id="part1FlowMW" type="text" value="">
@@ -328,10 +352,7 @@
           <br>
           <input name="MW" id="MW" type="text" value="">
           <br>
-          <input name="postQ" id="postQ" type="text" value="">
-          <br>
-          <input name="comments" id="comments" type="text" value="">
-          <br>
+
 
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next"
@@ -409,6 +430,7 @@
   let part2gameovercount = sessionStorage.getItem('part2gameovercountStorage');
   let part2gameovertimes = sessionStorage.getItem('part2gameovertimesStorage');
   let part2starttime = sessionStorage.getItem('part2starttimeStorage');
+  let part2starttimeMilliseconds = sessionStorage.getItem('part2starttimeMillisecondsStorage');
   let part2endtime = sessionStorage.getItem('part2endtimeStorage');
 
   let part2allquestions = sessionStorage.getItem('part2allquestionsStorage');
@@ -429,9 +451,17 @@
   let part2AverageHeight = sessionStorage.getItem('part2AverageHeightStorage');
 
   let part1FlowMW = sessionStorage.getItem('part1FlowMWStorage');
+  let part1flowScore = sessionStorage.getItem('part1flowScoreStorage');
+  let part1flowPerformanceScore = sessionStorage.getItem('part1flowPerformanceScoreStorage');
+  let part1MWScore = sessionStorage.getItem('part1MWScoreStorage');
   let flowS = sessionStorage.getItem('flowSStorage');
+  let flowScore = sessionStorage.getItem('flowScoreStorage');
+  let flowPerformanceScore = sessionStorage.getItem('flowPerformanceScoreStorage');
   let flowD = sessionStorage.getItem('flowDStorage');
+  let flowDispositionalScore= sessionStorage.getItem('flowDispositionalScoreStorage');
   let MW = sessionStorage.getItem('MWStorage');
+  let MWScore = sessionStorage.getItem('MWScoreStorage');
+  let MWDispositionalScore= sessionStorage.getItem('MWDispositionalScoreStorage');
   let postQ = sessionStorage.getItem('postQStorage');
   let comments = sessionStorage.getItem('commentsStorage');
 
@@ -491,6 +521,7 @@
   document.getElementById("part2gameovercount").value = "part2gameovercount: " + part2gameovercount;
   document.getElementById("part2gameovertimes").value = "part2gameovertimes: " + part2gameovertimes;
   document.getElementById("part2starttime").value = "part2starttime: " + part2starttime;
+  document.getElementById("part2starttimeMilliseconds").value = "part2starttimeMilliseconds: " + part2starttimeMilliseconds;
   document.getElementById("part2endtime").value = "part2endtime: " + part2endtime;
 
   document.getElementById("part2allquestions").value = "part2allquestions: " + part2allquestions;
@@ -511,9 +542,18 @@
   document.getElementById("part2AverageHeight").value = "part2AverageHeight: " + part2AverageHeight;
 
   document.getElementById("part1FlowMW").value = "part1FlowMW: " + part1FlowMW;
+  document.getElementById("part1flowScore").value = "part1flowScore: " + part1flowScore;
+  document.getElementById("part1flowPerformanceScore").value = "part1flowPerformanceScore: " + part1flowPerformanceScore;
+  document.getElementById("part1MWScore").value = "part1MWScore: " + part1MWScore;
+
   document.getElementById("flowS").value = "flowS: " + flowS;
+  document.getElementById("flowScore").value = "flowScore: " + flowScore;
+  document.getElementById("flowPerformanceScore").value = "flowPerformanceScore: " + flowPerformanceScore;
   document.getElementById("flowD").value = "flowD: " + flowD;
+  document.getElementById("flowDispositionalScore").value = "flowDispositionalScore: " + flowDispositionalScore;
   document.getElementById("MW").value = "MW: " + MW;
+  document.getElementById("MWScore").value = "MWScore: " + MWScore;
+  document.getElementById("MWDispositionalScore").value = "MWDispositionalScore: " + MWDispositionalScore;
   document.getElementById("postQ").value = "postQ: " + postQ;
   document.getElementById("comments").value = "comments: " + comments;
 </script>
