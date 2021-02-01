@@ -35,7 +35,7 @@
 <html>
 
 <body>
-<!-- 
+  <!-- 
     <input name="part1allmovesanddrops" id="part1allmovesanddrops" type="text" value="">
     <br>
     <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
@@ -687,7 +687,13 @@
             var checkRowsAverage = total / checkRows.length;
           }
         }
+        part1AverageHeight.push(checkRowsAverage)
         console.log(checkRowsAverage)
+
+        part1alldroptimes.push(Time1());
+        part1alldroptimesmilliseconds.push(new Date().getTime());
+        part1allmovesanddroptimes.push(Time1());
+        part1allscoreseachdrop.push(GM.ScoreCur)
 
         for (var i = 0; i < checkRows.length; i++) {
           var hasGap = false,
@@ -1017,11 +1023,6 @@
           if (this.Cur !== 0) {
             GM.PieceSpawned();
             Page.Game.IsDirty = true;
-            part1alldroptimes.push(Time1());
-            part1alldroptimesmilliseconds.push(new Date().getTime());
-            part1allmovesanddroptimes.push(Time1());
-            part1allscoreseachdrop.push(GM.ScoreCur)
-            part1AverageHeight.push(checkRowsAverage)
           }
 
           Page.UpcomingA.IsDirty = Page.UpcomingB.IsDirty =
@@ -1582,7 +1583,7 @@
             var part1transferlevel = 1;
           }
 
-          if (part1transferlevel <= 1){
+          if (part1transferlevel <= 1) {
             var part1transferlevel = 1
           }
 
