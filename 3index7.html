@@ -482,6 +482,15 @@
   let postQ = sessionStorage.getItem('postQStorage');
   let comments = sessionStorage.getItem('commentsStorage');
 
+
+ // Add 0 in front of difference data
+ part1alltimesbetweendrops.unshift("0");
+ part1alltimesbetweenlinescleared.unshift("0");
+ part1allscoreseachdropdifference.unshift("0");
+ part2allscoreseachdropdifference.unshift("0");
+ part2alltimesbetweendrops.unshift("0");
+ part2alltimesbetweenlinescleared.unshift("0");
+
   // Put into form
   document.getElementById("participantID").value = "participantID: " + participantID;
   document.getElementById("initials").value = "initials: " + initials;
