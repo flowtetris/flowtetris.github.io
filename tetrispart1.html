@@ -1609,6 +1609,10 @@
             return element
           });
 
+          var part1alltimesbetweendrops = part1alltimesbetweendrops.unshift("0")
+          var part1alltimesbetweenlinescleared = part1alltimesbetweenlinescleared.unshift("0")
+          var part1allscoreseachdropdifference = part1allscoreseachdropdifference.unshift("0")
+
           // Times in milliseconds since start of game
           part1allmovesanddroptimes = part1allmovesanddroptimes.map(x => x - part1starttimeMilliseconds[0] + 1);
           part1alldroptimes = part1alldroptimes.map(x => x - part1starttimeMilliseconds[0] + 1);
