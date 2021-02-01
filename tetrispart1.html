@@ -687,7 +687,6 @@
             var checkRowsAverage = total / checkRows.length;
           }
         }
-        part1AverageHeight.push(checkRowsAverage)
         console.log(checkRowsAverage)
 
         for (var i = 0; i < checkRows.length; i++) {
@@ -1022,6 +1021,7 @@
             part1alldroptimesmilliseconds.push(new Date().getTime());
             part1allmovesanddroptimes.push(Time1());
             part1allscoreseachdrop.push(GM.ScoreCur)
+            part1AverageHeight.push(checkRowsAverage)
           }
 
           Page.UpcomingA.IsDirty = Page.UpcomingB.IsDirty =
@@ -1580,6 +1580,10 @@
           }
           else {
             var part1transferlevel = 1;
+          }
+
+          if (part1transferlevel <= 1){
+            var part1transferlevel = 1
           }
 
           var part1highscore = GM.ScoreHigh;
