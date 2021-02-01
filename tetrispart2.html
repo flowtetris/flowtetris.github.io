@@ -749,7 +749,7 @@
             var checkRowsAverage = total / checkRows.length;
           }
         }
-        part2AverageHeight.push(checkRowsAverage)
+
         console.log(checkRowsAverage)
 
         for (var i = 0; i < checkRows.length; i++) {
@@ -1087,6 +1087,7 @@
             part2alldroptimesmilliseconds.push(new Date().getTime());
             part2allmovesanddroptimes.push(Time1());
             part2allscoreseachdrop.push(GM.ScoreCur)
+            part2AverageHeight.push(checkRowsAverage)
           }
 
           Page.UpcomingA.IsDirty = Page.UpcomingB.IsDirty =
@@ -1402,7 +1403,7 @@
 
     // var repetitions = 5;
     var breaktime = 10000; // 30000
-    var repetitions = 2;
+    var repetitions = 1;
     var timeoutsTimes = [10000, 20000, 30000, 40000, 50000]; // the interprobe intervals
     var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
     var tocnt1 = [0, 0, 0, 0, 0];
