@@ -46,6 +46,7 @@
 <html>
 
 <body>
+  <!--
   <input name="part2allMovesResponsesAndDrops" id="part2allMovesResponsesAndDrops" type="text" value="">
   <br>
   <input name="part2allMovesResponsesAndDropsTimes" id="part2allMovesResponsesAndDropsTimes" type="text" value="">
@@ -137,7 +138,7 @@
   <input name="part2starttimeMilliseconds" id="part2starttimeMilliseconds" type="text" value="">
   <br>
   <input name="part2endtime" id="part2endtime" type="text" value="">
-  </div>
+  -->
 
   <!-- Button -->
   <div id="nextButton" style="display: none; position: absolute; right: 11%; top: 50%;">
@@ -1413,10 +1414,10 @@
     questions = [{
       ln1: "Question 2/6",
       ln2: "Just now, while playing Tetris:",
-      ln3: "I was concentrated",
-      ln4: "on the game",
+      ln3: "",
+      ln4: "Where was your attention?",
       ln5: "1  -----------------------  4",
-      ln6: "Disagree                        Agree",
+      ln6: "Off-game                        On-game",
     },
     /* 
     fk:1,
@@ -2050,6 +2051,7 @@
           sessionStorage.setItem('part2CoexistenceListStorage', part2CoexistenceList);
           sessionStorage.setItem('part2CoexistenceStorage', part2Coexistence);
 
+          /*
           document.getElementById("part2allmovesanddrop").value = "part2allmovesanddrop: " + part2allmovesanddrop;
           document.getElementById("part2allmovestimes").value = "part2allmovestimes: " + part2allmovestimes;
           document.getElementById("part2allmovesanddroptimes").value = "part2allmovesanddroptimes: " + part2allmovesanddroptimes;
@@ -2096,6 +2098,7 @@
           document.getElementById("part2MWRating").value = "part2MWRating: " + part2MWRating;
           document.getElementById("part2CoexistenceList").value = "part2CoexistenceList: " + part2CoexistenceList;
           document.getElementById("part2Coexistence").value = "part2Coexistence: " + part2Coexistence;
+          */
 
           drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
           document.getElementById('nextButton').style.display = 'block';
