@@ -35,7 +35,7 @@
 <html>
 
 <body>
-
+<!--
   <input name="part1allmovesanddrops" id="part1allmovesanddrops" type="text" value="">
   <br>
   <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
@@ -88,7 +88,7 @@
   <input name="part1starttimeMilliseconds" id="part1starttimeMilliseconds" type="text" value="">
   <br>
   <input name="part1endtime" id="part1endtime" type="text" value="">
-
+-->
 
   <!-- Button -->
   <div id="nextButton" style="display: none; position: absolute; right: 11%; top: 50%;">
@@ -1530,7 +1530,7 @@
           await waitUserInputSpace();
           displayDone = true;
           // myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 240000);
-          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 24000);
+          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 120000); //duration of Tetris game
           part1starttime.push(Time());
           part1starttimeMilliseconds.push(Time1());
         }
@@ -1642,7 +1642,7 @@
           sessionStorage.setItem('part1starttimeMillisecondsStorage', part1starttimeMilliseconds);
           sessionStorage.setItem('part1endtimeStorage', part1endtime);
 
-
+          /*
           document.getElementById("part1allmovesanddrops").value = "part1allmovesanddrops: " + part1allmovesanddrops;
           document.getElementById("part1allmovestimes").value = "part1allmovestimes: " + part1allmovestimes;
           document.getElementById("part1allmovesanddroptimes").value = "part1allmovesanddroptimes: " + part1allmovesanddroptimes;
@@ -1669,7 +1669,7 @@
           document.getElementById("part1starttime").value = "part1starttime: " + part1starttime;
           document.getElementById("part1starttimeMilliseconds").value = "part1starttimeMilliseconds: " + part1starttimeMilliseconds;
           document.getElementById("part1endtime").value = "part1endtime: " + part1endtime;
-
+          */
 
           return
       /*
