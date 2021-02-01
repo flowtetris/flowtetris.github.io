@@ -245,19 +245,19 @@
             <br>
             <input name="part2catchquestionscorrectPercent" id="part2catchquestionscorrectPercent" type="text" value="">
             <br>
-            <input name="part2InterprobeIntervals" id="part2InterprobeIntervals" type="text" value="">
-            <br>
             <input name="part2InterprobeIntervalsTimes" id="part2InterprobeIntervalsTimes" type="text" value="">
+            <br>
+            <input name="part2InterprobeIntervals" id="part2InterprobeIntervals" type="text" value="">
             <br>
             <input name="part2flowRating" id="part2flowRating" type="text" value="">
             <br>
             <input name="part2MWRating" id="part2MWRating" type="text" value="">
             <br>
-            <input name="part2catchquestionscorrect" id="part2catchquestionscorrect" type="text" value="">
-            <br>
             <input name="part2CoexistenceList" id="part2CoexistenceList" type="text" value="">
             <br>
             <input name="part2Coexistence" id="part2Coexistence" type="text" value="">
+            <br>
+            <input name="part2catchquestionscorrect" id="part2catchquestionscorrect" type="text" value="">
             <br>
             <input name="part2alldroptimes" id="part2alldroptimes" type="text" value="">
             <br>
@@ -357,7 +357,7 @@
             <input name="comments" id="comments" type="text" value="">
             <br>
 
-            <input name="part1FlowMW" id="part1FlowMW" type="text" value="">
+            <input name="part1flowMW" id="part1flowMW" type="text" value="">
             <br>
             <input name="flowS" id="flowS" type="text" value="">
             <br>
@@ -463,11 +463,11 @@
   let part2InterprobeIntervalsTimes = sessionStorage.getItem('part2InterprobeIntervalsTimesStorage');
   let part2AverageHeight = sessionStorage.getItem('part2AverageHeightStorage');
   let part2flowRating = sessionStorage.getItem('part2flowRatingStorage');
-  let part2part2MWRating = sessionStorage.getItem('part2MWRatingStorage');
+  let part2MWRating = sessionStorage.getItem('part2MWRatingStorage');
   let part2CoexistenceList = sessionStorage.getItem('part2CoexistenceListStorage');
   let part2Coexistence = sessionStorage.getItem('part2CoexistenceStorage');
 
-  let part1FlowMW = sessionStorage.getItem('part1FlowMWStorage');
+  let part1flowMW = sessionStorage.getItem('part1flowMWStorage');
   let part1flowScore = sessionStorage.getItem('part1flowScoreStorage');
   let part1flowPerformanceScore = sessionStorage.getItem('part1flowPerformanceScoreStorage');
   let part1MWScore = sessionStorage.getItem('part1MWScoreStorage');
@@ -563,7 +563,7 @@
   document.getElementById("part2Coexistence").value = "part2Coexistence: " + part2Coexistence;
 
 
-  document.getElementById("part1FlowMW").value = "part1FlowMW: " + part1FlowMW;
+  document.getElementById("part1flowMW").value = "part1flowMW: " + part1flowMW;
   document.getElementById("part1flowScore").value = "part1flowScore: " + part1flowScore;
   document.getElementById("part1flowPerformanceScore").value = "part1flowPerformanceScore: " + part1flowPerformanceScore;
   document.getElementById("part1MWScore").value = "part1MWScore: " + part1MWScore;
