@@ -749,8 +749,13 @@
             var checkRowsAverage = total / checkRows.length;
           }
         }
-
+        part2AverageHeight.push(checkRowsAverage)
         console.log(checkRowsAverage)
+
+        part2alldroptimes.push(Time1());
+        part2alldroptimesmilliseconds.push(new Date().getTime());
+        part2allmovesanddroptimes.push(Time1());
+        part2allscoreseachdrop.push(GM.ScoreCur)
 
         for (var i = 0; i < checkRows.length; i++) {
           var hasGap = false,
@@ -1083,11 +1088,6 @@
           if (this.Cur !== 0) {
             GM.PieceSpawned();
             Page.Game.IsDirty = true;
-            part2alldroptimes.push(Time1());
-            part2alldroptimesmilliseconds.push(new Date().getTime());
-            part2allmovesanddroptimes.push(Time1());
-            part2allscoreseachdrop.push(GM.ScoreCur)
-            part2AverageHeight.push(checkRowsAverage)
           }
 
           Page.UpcomingA.IsDirty = Page.UpcomingB.IsDirty =
@@ -1955,8 +1955,8 @@
           // round to 2 decimal places
           var part2flowRating = part2flowRating.map(
             function (each_element) {
-            return Number(each_element.toFixed(2));
-          });
+              return Number(each_element.toFixed(2));
+            });
 
           // All flow ratings 3 and 4 are changed to 'Y', https://stackoverflow.com/questions/16881872/changing-array-value-when-condition-is-met-in-javascript
           var part2flowRating3orAbove = part2flowRating;
@@ -1993,7 +1993,7 @@
 
           var NumberofCoexistence = getOccurrence(part2CoexistenceList, 'Y')
 
-          var part2Coexistence = ((NumberofCoexistence / part2CoexistenceList.length)*100)+'%'
+          var part2Coexistence = ((NumberofCoexistence / part2CoexistenceList.length) * 100) + '%'
 
           // Times in milliseconds since start of game
           part2allmovesanddroptimes = part2allmovesanddroptimes.map(x => x - part2starttimeMilliseconds[0] + 1);
