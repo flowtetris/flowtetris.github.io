@@ -60,6 +60,10 @@
   <br>
   <input name="part2MWRating" id="part2MWRating" type="text" value="">
   <br>
+  <input name="part2CoexistenceList" id="part2CoexistenceList" type="text" value="">
+  <br>
+  <input name="part2Coexistence" id="part2Coexistence" type="text" value="">
+  <br>
   <input name="part2allscoreseachdrop" id="part2allscoreseachdrop" type="text" value="">
   <br>
   <input name="part2alldroptimes" id="part2alldroptimes" type="text" value="">
@@ -1396,9 +1400,9 @@
     var gameOverT2;
 
     // var repetitions = 5;
-    var breaktime = 3000; // 30000
+    var breaktime = 10000; // 30000
     var repetitions = 1;
-    var timeoutsTimes = [1000, 2000, 3000, 4000, 5000]; // the interprobe intervals
+    var timeoutsTimes = [10000, 20000, 30000, 40000, 50000]; // the interprobe intervals
     var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
     var tocnt1 = [0, 0, 0, 0, 0];
     var tocnt = new Array(repetitions).fill(tocnt1).flat();
@@ -1407,12 +1411,12 @@
 
 
     questions = [{
-      ln1: "Question 2/5",
+      ln1: "Question 2/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "",
       ln4: "Where was your attention?",
       ln5: "1  -----------------------  4",
-      ln6: "Off-game                        On-game",
+      ln6: "Disagree                        Agree",
     },
     /* 
     fk:1,
@@ -1422,7 +1426,7 @@
       fup4:"Unintentional             Intentional"},
     */
     {
-      ln1: "Question 4/5",
+      ln1: "Question 4/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "I felt the right amount",
       ln4: "of challenge",
@@ -1433,7 +1437,7 @@
       fup2: ""
     },
     {
-      ln1: "Question 3/5",
+      ln1: "Question 3/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "My thoughts and movements",
       ln4: "felt fluid and smooth",
@@ -1444,7 +1448,7 @@
       fup2: ""
     },
     {
-      ln1: "Question 1/5",
+      ln1: "Question 1/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "What was the shape of the",
       ln4: "currently falling Tetris block?",
@@ -1455,7 +1459,7 @@
       fup2: ""
     },
     {
-      ln1: "Question 5/5",
+      ln1: "Question 5/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "",
       ln4: "I was enjoying the game",
@@ -1465,13 +1469,33 @@
       fup1: "",
       fup2: ""
     },
+    {
+      ln1: "Question 6/6",
+      ln2: "Just now, while playing Tetris:",
+      ln3: "",
+      ln4: "I was mind wandering",
+      ln5: "1  ------------------------  4",
+      ln6: "Disagree                             Agree",
+      fk: 0,
+      fup1: "",
+      fup2: ""
+
+      ///WHEN ADDING A QUESTION, make sure to change var gQns and these lines below
+      //len = gQns[g].length
+      //  // to randomise the questions: 
+      //  // n = Math.floor(Math.random() * len)
+      // //console.log("n="+n);
+      // // m = gQns[g][n]
+      //  m = [3, 0, 2, 1, 4, 5]
+      //  m = m[i - 1]
+    },
     ]
     //{ln1:"What shape was the last block", ln2:"qn4 ln2"}]
 
 
     //var gQns = [[0,1,2],[3,4,5],[6,7],[8,9]]
     //var gQns = [[0],[1],[2],[3],[4],[5],[6],[7],[8],[9]]
-    var gQns = [[0, 1, 2, 3, 4]]
+    var gQns = [[0, 1, 2, 3, 4, 5]]
     var part2CumulativeLinesClearedPerQuestionBlock = [];
     var part2GameLevelAtQuestionBlock = [];
     var part2LinesClearedPerQuestionBlock = [];
@@ -1522,6 +1546,7 @@
     var part2AverageHeight = [];
     var part2flowRating1 = [];
     var part2MWRating = [];
+    var part2flowRating = [];
 
     // Get Time and Date
 
@@ -1769,8 +1794,8 @@
               if (m == 4) {
                 part2flowRating1.push(rate);
               }
-              if (m == 0) {
-                part2MWRating.push(5 - rate);
+              if (m == 5) {
+                part2MWRating.push(rate);
               }
 
               part2allMovesResponsesAndDrops.push(rate);
@@ -1896,15 +1921,17 @@
           // identify what each question is
           for (var i = 0; i < part2allquestions.length; i++) {
             if (part2allquestions[i] == 0)
-              part2allquestions[i] = "MW";
-            if (part2allquestions[i] == 1)
-              part2allquestions[i] = "Flow2";
-            if (part2allquestions[i] == 2)
               part2allquestions[i] = "Flow1";
+            if (part2allquestions[i] == 1)
+              part2allquestions[i] = "Flow3";
+            if (part2allquestions[i] == 2)
+              part2allquestions[i] = "Flow2";
             if (part2allquestions[i] == 3)
               part2allquestions[i] = "catch";
             if (part2allquestions[i] == 4)
-              part2allquestions[i] = "Flow3";
+              part2allquestions[i] = "Flow4";
+            if (part2allquestions[i] == 5)
+              part2allquestions[i] = "MW";
           }
 
           // Calculate average flow rating score at each interprobe interval
@@ -1920,9 +1947,12 @@
             }
             return result
           }
+
+          // Calculate average flow rating score at each interprobe interval
           var part2flowRating = groupAverage(part2flowRating1, 4);
           // round to 2 decimal places
-          part2flowRating = part2flowRating.map(function (each_element) {
+          var part2flowRating = part2flowRating.map(
+            function (each_element) {
             return Number(each_element.toFixed(2));
           });
 
@@ -1930,26 +1960,38 @@
           var part2flowRating3orAbove = part2flowRating;
           var limit = 2.99999; // anything above this number is changed to 'Y'
 
-          $.each(arr, function (k, v) {
-            if (v > limit) {
-              arr[k] = 'Y';
-            }
-            return (arr[k]);
-          });
+          var part2flowRating3orAbove = part2flowRating3orAbove.map(a => a > limit ? 'Y' : a);
 
           // All MW ratings 3 and 4 are changed to 'Y', https://stackoverflow.com/questions/16881872/changing-array-value-when-condition-is-met-in-javascript
           var part2MWRating3orAbove = part2MWRating;
           var limit = 2.99999; // anything above this number is changed to 'Y'
 
-          $.each(arr, function (k, v) {
-            if (v > limit) {
-              arr[k] = 'Y';
+          var part2MWRating3orAbove = part2MWRating3orAbove.map(a => a > limit ? 'Y' : a);
+
+          // Look at coexistence of flow and mind wandering (flow and mind wandering score BOTH 3 or above)
+          var A = part2flowRating3orAbove;
+          var B = part2MWRating3orAbove;
+
+          var part2CoexistenceList = [];
+          var len = Math.max(A.length, B.length);
+          for (var i = 0; i < len; i++) {
+            if (A[i] === B[i]) {
+              part2CoexistenceList.push('Y');
             }
-            return (arr[k]);
-          });
+            else {
+              part2CoexistenceList.push('N');
+            }
+          }
 
-          
+          function getOccurrence(array, value) {
+            var count = 0;
+            array.forEach((v) => (v === value && count++));
+            return count;
+          }
 
+          var NumberofCoexistence = getOccurrence(part2CoexistenceList, 'Y')
+
+          var part2Coexistence = ((NumberofCoexistence / part2CoexistenceList.length)*100)+'%'
 
           // Times in milliseconds since start of game
           part2allmovesanddroptimes = part2allmovesanddroptimes.map(x => x - part2starttimeMilliseconds[0] + 1);
@@ -2005,7 +2047,8 @@
           sessionStorage.setItem('part2AverageHeightStorage', part2AverageHeight);
           sessionStorage.setItem('part2flowRatingStorage', part2flowRating);
           sessionStorage.setItem('part2MWRatingStorage', part2MWRating);
-          sessionStorage.setItem('part2MWRatingStorage', part2MWRating);
+          sessionStorage.setItem('part2CoexistenceListStorage', part2CoexistenceList);
+          sessionStorage.setItem('part2CoexistenceStorage', part2Coexistence);
 
           document.getElementById("part2allmovesanddrop").value = "part2allmovesanddrop: " + part2allmovesanddrop;
           document.getElementById("part2allmovestimes").value = "part2allmovestimes: " + part2allmovestimes;
@@ -2051,6 +2094,8 @@
           document.getElementById("part2AverageHeight").value = "part2AverageHeight: " + part2AverageHeight;
           document.getElementById("part2flowRating").value = "part2flowRating: " + part2flowRating;
           document.getElementById("part2MWRating").value = "part2MWRating: " + part2MWRating;
+          document.getElementById("part2CoexistenceList").value = "part2CoexistenceList: " + part2CoexistenceList;
+          document.getElementById("part2Coexistence").value = "part2Coexistence: " + part2Coexistence;
 
           drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
           document.getElementById('nextButton').style.display = 'block';
@@ -2181,7 +2226,7 @@
         // n = Math.floor(Math.random() * len)
         //console.log("n="+n);
         // m = gQns[g][n]
-        m = [3, 0, 2, 1, 4]
+        m = [3, 0, 2, 1, 4, 5]
         m = m[i - 1]
 
         //console.log("i="+i+" m="+m);
