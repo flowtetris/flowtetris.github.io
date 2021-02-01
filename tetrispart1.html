@@ -35,60 +35,60 @@
 <html>
 
 <body>
-  <!--
-    <input name="part1allmovesanddrops" id="part1allmovesanddrops" type="text" value="">
-    <br>
-    <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
-    <br>
-    <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
-    <br>
-    <input name="part1alldroptimes" id="part1alldroptimes" type="text" value="">
-    <br>
-    <input name="part1allscoreseachdropdifference" id="part1allscoreseachdropdifference" type="text" value="">
-    <br>
-    <input name="part1AverageHeight" id="part1AverageHeight" type="text" value="">
-    <br>
-    <input name="part1alltimesbetweendrops" id="part1alltimesbetweendrops" type="text" value="">
-    <br>
-    <br>
-    <input name="part1allmovestimes" id="part1allmovestimes" type="text" value="">
-    <br>
-    <input name="part1levels" id="part1levels" type="text" value="">
-    <br>
-    <input name="part1levelchange" id="part1levelchange" type="text" value="">
-    <br>
-    <input name="part1levelchangetimes" id="part1levelchangetimes" type="text" value="">
-    <br>
-    <input name="part1levelchangescore" id="part1levelchangescore" type="text" value="">
-    <br>
-    <input name="part1transferlevel" id="part1transferlevel" type="text" value="">
-    <br>
-    <input name="part1piecesspawned" id="part1piecesspawned" type="text" value="">
-    <br>
-    <input name="part1speed" id="part1speed" type="text" value="">
-    <br>
-    <input name="part1linesclearedin20blocks" id="part1linesclearedin20blocks" type="text" value="">
-    <br>
-    <input name="part1linesclearedtotal" id="part1linesclearedtotal" type="text" value="">
-    <br>
-    <input name="part1linesclearedtimes" id="part1linesclearedtimes" type="text" value="">
-    <br>
-    <input name="part1alltimesbetweenlinescleared" id="part1alltimesbetweenlinescleared" type="text" value="">
-    <br>
-    <input name="part1highscore" id="part1highscore" type="text" value="">
-    <br>
-    <input name="part1scores" id="part1scores" type="text" value="">
-    <br>
-    <input name="part1gameovercount" id="part1gameovercount" type="text" value="">
-    <br>
-    <input name="part1gameovertimes" id="part1gameovertimes" type="text" value="">
-    <br>
-    <input name="part1starttime" id="part1starttime" type="text" value="">
-    <br>
-    <input name="part1starttimeMilliseconds" id="part1starttimeMilliseconds" type="text" value="">
-    <br>
-    <input name="part1endtime" id="part1endtime" type="text" value="">
-  -->
+
+  <input name="part1allmovesanddrops" id="part1allmovesanddrops" type="text" value="">
+  <br>
+  <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
+  <br>
+  <input name="part1allscoreseachdrop" id="part1allscoreseachdrop" type="text" value="">
+  <br>
+  <input name="part1alldroptimes" id="part1alldroptimes" type="text" value="">
+  <br>
+  <input name="part1allscoreseachdropdifference" id="part1allscoreseachdropdifference" type="text" value="">
+  <br>
+  <input name="part1AverageHeight" id="part1AverageHeight" type="text" value="">
+  <br>
+  <input name="part1alltimesbetweendrops" id="part1alltimesbetweendrops" type="text" value="">
+  <br>
+  <br>
+  <input name="part1allmovestimes" id="part1allmovestimes" type="text" value="">
+  <br>
+  <input name="part1levels" id="part1levels" type="text" value="">
+  <br>
+  <input name="part1levelchange" id="part1levelchange" type="text" value="">
+  <br>
+  <input name="part1levelchangetimes" id="part1levelchangetimes" type="text" value="">
+  <br>
+  <input name="part1levelchangescore" id="part1levelchangescore" type="text" value="">
+  <br>
+  <input name="part1transferlevel" id="part1transferlevel" type="text" value="">
+  <br>
+  <input name="part1piecesspawned" id="part1piecesspawned" type="text" value="">
+  <br>
+  <input name="part1speed" id="part1speed" type="text" value="">
+  <br>
+  <input name="part1linesclearedin20blocks" id="part1linesclearedin20blocks" type="text" value="">
+  <br>
+  <input name="part1linesclearedtotal" id="part1linesclearedtotal" type="text" value="">
+  <br>
+  <input name="part1linesclearedtimes" id="part1linesclearedtimes" type="text" value="">
+  <br>
+  <input name="part1alltimesbetweenlinescleared" id="part1alltimesbetweenlinescleared" type="text" value="">
+  <br>
+  <input name="part1highscore" id="part1highscore" type="text" value="">
+  <br>
+  <input name="part1scores" id="part1scores" type="text" value="">
+  <br>
+  <input name="part1gameovercount" id="part1gameovercount" type="text" value="">
+  <br>
+  <input name="part1gameovertimes" id="part1gameovertimes" type="text" value="">
+  <br>
+  <input name="part1starttime" id="part1starttime" type="text" value="">
+  <br>
+  <input name="part1starttimeMilliseconds" id="part1starttimeMilliseconds" type="text" value="">
+  <br>
+  <input name="part1endtime" id="part1endtime" type="text" value="">
+
 
   <!-- Button -->
   <div id="nextButton" style="display: none; position: absolute; right: 11%; top: 50%;">
@@ -689,11 +689,6 @@
         part1AverageHeight.push(checkRowsAverage)
         console.log(checkRowsAverage)
 
-        part1alldroptimes.push(Time1());
-        part1alldroptimesmilliseconds.push(new Date().getTime());
-        part1allmovesanddroptimes.push(Time1());
-        part1allscoreseachdrop.push(GM.ScoreCur)
-
         for (var i = 0; i < checkRows.length; i++) {
           var hasGap = false,
             checkIndex = checkRows[i];
@@ -759,6 +754,11 @@
         }
         part1piecesspawned++;
         part1allmovesanddrops.push("drop");
+        part1allmovesanddroptimes.push(Time1());
+        part1alldroptimes.push(Time1());
+        part1alldroptimesmilliseconds.push(new Date().getTime());
+        part1allscoreseachdrop.push(GM.ScoreCur)
+
       },
 
 
@@ -1608,7 +1608,7 @@
             return element
           });
 
-          // Times in milliseconds since start of game
+          // Times in milliseconds since start of game, minus each time in array with starttime in milliseconds
           part1allmovesanddroptimes = part1allmovesanddroptimes.map(x => x - part1starttimeMilliseconds[0] + 1);
           part1alldroptimes = part1alldroptimes.map(x => x - part1starttimeMilliseconds[0] + 1);
           part1allmovestimes = part1allmovestimes.map(x => x - part1starttimeMilliseconds[0] + 1);
@@ -1642,7 +1642,7 @@
           sessionStorage.setItem('part1starttimeMillisecondsStorage', part1starttimeMilliseconds);
           sessionStorage.setItem('part1endtimeStorage', part1endtime);
 
-          /*
+
           document.getElementById("part1allmovesanddrops").value = "part1allmovesanddrops: " + part1allmovesanddrops;
           document.getElementById("part1allmovestimes").value = "part1allmovestimes: " + part1allmovestimes;
           document.getElementById("part1allmovesanddroptimes").value = "part1allmovesanddroptimes: " + part1allmovesanddroptimes;
@@ -1669,7 +1669,7 @@
           document.getElementById("part1starttime").value = "part1starttime: " + part1starttime;
           document.getElementById("part1starttimeMilliseconds").value = "part1starttimeMilliseconds: " + part1starttimeMilliseconds;
           document.getElementById("part1endtime").value = "part1endtime: " + part1endtime;
-          */
+
 
           return
       /*
