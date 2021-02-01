@@ -35,7 +35,7 @@
 <html>
 
 <body>
-  <!-- 
+  
     <input name="part1allmovesanddrops" id="part1allmovesanddrops" type="text" value="">
     <br>
     <input name="part1allmovesanddroptimes" id="part1allmovesanddroptimes" type="text" value="">
@@ -89,7 +89,7 @@
     <br>
     <input name="part1endtime" id="part1endtime" type="text" value="">
   </div>
--->
+
 
   <!-- Button -->
   <div id="nextButton" style="display: none; position: absolute; right: 11%; top: 50%;">
@@ -1609,10 +1609,6 @@
             return element
           });
 
-          var part1alltimesbetweendrops = part1alltimesbetweendrops.unshift("0")
-          var part1alltimesbetweenlinescleared = part1alltimesbetweenlinescleared.unshift("0")
-          var part1allscoreseachdropdifference = part1allscoreseachdropdifference.unshift("0")
-
           // Times in milliseconds since start of game
           part1allmovesanddroptimes = part1allmovesanddroptimes.map(x => x - part1starttimeMilliseconds[0] + 1);
           part1alldroptimes = part1alldroptimes.map(x => x - part1starttimeMilliseconds[0] + 1);
@@ -1647,7 +1643,7 @@
           sessionStorage.setItem('part1starttimeMillisecondsStorage', part1starttimeMilliseconds);
           sessionStorage.setItem('part1endtimeStorage', part1endtime);
 
-          /*
+          
           document.getElementById("part1allmovesanddrops").value = "part1allmovesanddrops: " + part1allmovesanddrops;
           document.getElementById("part1allmovestimes").value = "part1allmovestimes: " + part1allmovestimes;
           document.getElementById("part1allmovesanddroptimes").value = "part1allmovesanddroptimes: " + part1allmovesanddroptimes;
@@ -1674,7 +1670,7 @@
           document.getElementById("part1starttime").value = "part1starttime: " + part1starttime;
           document.getElementById("part1starttimeMilliseconds").value = "part1starttimeMilliseconds: " + part1starttimeMilliseconds;
           document.getElementById("part1endtime").value = "part1endtime: " + part1endtime;
-          */
+          
 
           return
       /*
