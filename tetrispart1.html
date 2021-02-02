@@ -1111,7 +1111,7 @@
         }
 
         if (squaresDropped > 0) {
-          GM.ScoreBonus += 2 * squaresDropped;
+          GM.ScoreBonus += Math.round(2 * squaresDropped/4);
           this.Freeze();
           return true;
         }
