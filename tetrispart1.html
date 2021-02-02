@@ -1541,7 +1541,7 @@
           GM.Update();
         } else {
           // assess game over due to GameOver
-          GM.Level = GM.Level - 5;
+          GM.Level = GM.Level - 3;
           if (GM.Level < 1) { GM.Level = 1 }
           assessGameCnt++;
           assessLevelSum = assessLevelSum + GM.Level
@@ -1696,7 +1696,7 @@
           } else {
             //game over by player 
             //window.clearTimeout(myInterval);
-            GM.Level = GM.Level - 2;
+            GM.Level = GM.Level - 3;
             gameOverCnt++;
             gameNos.push(gameOverCnt)
             gameOverT2 = new Date()
