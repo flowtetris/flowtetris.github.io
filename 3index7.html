@@ -366,9 +366,8 @@
             <input name="MW" id="MW" type="text" value="">
             <br>
 
-
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" id="redirect" value="">
+            <input type="hidden" name="_next" id="redirect" value="https://unsw-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=1435&credit_token=5790ed28c621401a9e8f2c26b3ab3efd&survey_code=${participantID}">
           </div>
           <!-- The buttons-->
           <div class="Button">
@@ -382,11 +381,7 @@
   </div>
 </div>
 
-
-
 <script>
-  document.getElementById('redirect').value = "https://unsw-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=1435&credit_token=5790ed28c621401a9e8f2c26b3ab3efd&survey_code=11111"
-
   // Retrieve from session storage
   var participantID = sessionStorage.getItem('participantIDStorage');
   let initials = sessionStorage.getItem('initialsStorage');
