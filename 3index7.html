@@ -382,10 +382,9 @@
 </div>
 
 <script>
-  var participantID1 = '60403'
-  document.getElementById('redirect').value = "https://unsw-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=1435&credit_token=5790ed28c621401a9e8f2c26b3ab3efd&survey_code="+participantID1
   // Retrieve from session storage
   var participantID = sessionStorage.getItem('participantIDStorage');
+  document.getElementById('redirect').value = "https://unsw-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=1435&credit_token=5790ed28c621401a9e8f2c26b3ab3efd&survey_code="+participantID
   let initials = sessionStorage.getItem('initialsStorage');
   let age = sessionStorage.getItem('ageStorage');
   let gender = sessionStorage.getItem('genderStorage');
