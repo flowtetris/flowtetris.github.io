@@ -154,6 +154,7 @@
 
     table {
       width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     th,
@@ -307,7 +308,7 @@
       + "," + document.querySelector('input[name="Part1FlowS9"]:checked').value
       + "," + document.querySelector('input[name="Part1MWTetris"]:checked').value
 
-    var part1flowScore = (parseInt(document.querySelector('input[name="Part1FlowS1"]:checked').value)
+    var part1flowScore = parseInt(document.querySelector('input[name="Part1FlowS1"]:checked').value)
       + parseInt(document.querySelector('input[name="Part1FlowS2"]:checked').value)
       + parseInt(document.querySelector('input[name="Part1FlowS3"]:checked').value)
       + parseInt(document.querySelector('input[name="Part1FlowS4"]:checked').value)
@@ -315,7 +316,7 @@
       + parseInt(document.querySelector('input[name="Part1FlowS6"]:checked').value)
       + parseInt(document.querySelector('input[name="Part1FlowS7"]:checked').value)
       + parseInt(document.querySelector('input[name="Part1FlowS8"]:checked').value)
-      + parseInt(document.querySelector('input[name="Part1FlowS9"]:checked').value)) / 9
+      + parseInt(document.querySelector('input[name="Part1FlowS9"]:checked').value)
     
     var part1flowPerformanceScore = parseInt(document.querySelector('input[name="Part1FlowTetris"]:checked').value)
     
