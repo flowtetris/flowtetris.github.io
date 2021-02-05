@@ -152,6 +152,7 @@
 
     table {
       width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     th,
@@ -264,11 +265,11 @@
 
       var MWScore = parseInt(document.querySelector('input[name="MWTetris"]:checked').value)
 
-      var MWDispositionalScore = (parseInt(document.querySelector('input[name="MWQ1"]:checked').value)
+      var MWDispositionalScore = parseInt(document.querySelector('input[name="MWQ1"]:checked').value)
       + parseInt(document.querySelector('input[name="MWQ2"]:checked').value)
       + parseInt(document.querySelector('input[name="MWQ3"]:checked').value)
       + parseInt(document.querySelector('input[name="MWQ4"]:checked').value)
-      + parseInt(document.querySelector('input[name="MWQ5"]:checked').value)) / 5
+      + parseInt(document.querySelector('input[name="MWQ5"]:checked').value)
 
     // Store in session storage
     sessionStorage.setItem('MWStorage', MW);
