@@ -52,7 +52,7 @@
     }
 
     p {
-      font-family: Georgia, Garamond, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .outer {
@@ -161,9 +161,10 @@
       <body>
         <div class="a">
           <p><b>Thank you for your participation!</b></p>
-          </p>Please click submit to finish.</p>
+          <p>Below is the debriefing sheet.</p>
+          <embed src="Participant Information and Consent Form.pdf" width=70% height=450px />
+          <p>Please click submit to finish.</p>
         </div>
-        <br>
         <div style="font-size: 27px;">
           <p>You will be taken back to the SONA website and granted your credit points.</p>
         </div>
@@ -335,7 +336,6 @@
             <br>
             <br>
 
-
             <input name="part1flowScore" id="part1flowScore" type="text" value="">
             <br>
             <input name="part1flowPerformanceScore" id="part1flowPerformanceScore" type="text" value="">
@@ -367,7 +367,7 @@
             <br>
 
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" id="redirect" value=""/>
+            <input type="hidden" name="_next" id="redirect" value="" />
           </div>
           <!-- The buttons-->
           <div class="Button">
@@ -384,7 +384,7 @@
 <script>
   // Retrieve from session storage
   var participantID = sessionStorage.getItem('participantIDStorage');
-  document.getElementById('redirect').value = "https://unsw-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=1435&credit_token=5790ed28c621401a9e8f2c26b3ab3efd&survey_code="+participantID
+  document.getElementById('redirect').value = "https://unsw-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=1435&credit_token=5790ed28c621401a9e8f2c26b3ab3efd&survey_code=" + participantID
   let initials = sessionStorage.getItem('initialsStorage');
   let age = sessionStorage.getItem('ageStorage');
   let gender = sessionStorage.getItem('genderStorage');
