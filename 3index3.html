@@ -154,6 +154,7 @@
 
     table {
       width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     th,
@@ -289,7 +290,7 @@
       + "," + document.querySelector('input[name="FlowD8"]:checked').value
       + "," + document.querySelector('input[name="FlowD9"]:checked').value
 
-      var flowDispositionalScore = (parseInt(document.querySelector('input[name="FlowD1"]:checked').value)
+      var flowDispositionalScore = parseInt(document.querySelector('input[name="FlowD1"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowD2"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowD3"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowD4"]:checked').value)
@@ -297,7 +298,7 @@
       + parseInt(document.querySelector('input[name="FlowD6"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowD7"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowD8"]:checked').value)
-      + parseInt(document.querySelector('input[name="FlowD9"]:checked').value)) / 9
+      + parseInt(document.querySelector('input[name="FlowD9"]:checked').value)
 
     // Store in session storage
     sessionStorage.setItem('flowDStorage', flowD);
