@@ -154,6 +154,7 @@
 
     table {
       width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     th,
@@ -298,7 +299,7 @@
       + "," + document.querySelector('input[name="FlowS8"]:checked').value
       + "," + document.querySelector('input[name="FlowS9"]:checked').value
 
-      var flowScore = (parseInt(document.querySelector('input[name="FlowS1"]:checked').value)
+      var flowScore = parseInt(document.querySelector('input[name="FlowS1"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowS2"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowS3"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowS4"]:checked').value)
@@ -306,7 +307,7 @@
       + parseInt(document.querySelector('input[name="FlowS6"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowS7"]:checked').value)
       + parseInt(document.querySelector('input[name="FlowS8"]:checked').value)
-      + parseInt(document.querySelector('input[name="FlowS9"]:checked').value)) / 9
+      + parseInt(document.querySelector('input[name="FlowS9"]:checked').value)
     
     var flowPerformanceScore = parseInt(document.querySelector('input[name="FlowTetris"]:checked').value)
 
