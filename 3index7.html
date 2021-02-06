@@ -271,6 +271,8 @@
             <br>
             <input name="part2allresponsestimesdifference" id="part2allresponsestimesdifference" type="text" value="">
             <br>
+            <input name="part2BreakTimes" id="part2BreakTimes" type="text" value="">
+            <br>
             <input name="part2allquestions" id="part2allquestions" type="text" value="">
             <br>
             <input name="part2allresponses" id="part2allresponses" type="text" value="">
@@ -477,6 +479,7 @@
   let part2MWRating = sessionStorage.getItem('part2MWRatingStorage');
   let part2CoexistenceList = sessionStorage.getItem('part2CoexistenceListStorage');
   let part2Coexistence = sessionStorage.getItem('part2CoexistenceStorage');
+  let part2BreakTimes = sessionStorage.getItem('part2BreakTimesStorage');
 
   let part1flowMW = sessionStorage.getItem('part1flowMWStorage');
   let part1flowScore = sessionStorage.getItem('part1flowScoreStorage');
@@ -582,6 +585,7 @@
   document.getElementById("part2MWRating").value = "part2MWRating: " + part2MWRating;
   document.getElementById("part2CoexistenceList").value = "part2CoexistenceList: " + part2CoexistenceList;
   document.getElementById("part2Coexistence").value = "part2Coexistence: " + part2Coexistence;
+  document.getElementById("part2BreakTimes").value = "part2BreakTimes: " + part2BreakTimes;
 
 
   document.getElementById("part1flowMW").value = "part1flowMW: " + part1flowMW;
