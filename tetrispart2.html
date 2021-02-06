@@ -147,6 +147,35 @@
 
 
   <script>
+    // Randomise the question probes for each participant
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+    }
+
+    // randomise questions for each participants. The catch question is always first.
+    var catchquestion = [3]
+    var randomisedquestionsOriginal = [0, 2, 1, 4, 5]
+    var randomisedquestions1 = shuffle(randomisedquestionsOriginal);
+    //m = [3, 0, 2, 1, 4, 5]
+    var randomisedquestions = catchquestion.concat(randomisedquestions1);
+
+    // question numbers
+    var questionnumbers = [1, 2, 3, 4, 5, 6] // have to make sure this matches with the number of questions
 
     // Get last level and high score from part 1
 
@@ -170,7 +199,7 @@
     var participantID = URL.slice(-5);
 
     var completionURL = "https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=612&credit_token=d6892d7ff76f49c3a1116133948e6a03&survey_code=" + participantID
- 
+
     var Page = {
       IsSetup: false, // These are objects.
 
@@ -182,7 +211,7 @@
       AreaArr: [],
 
 
-      
+
       // calculates the unit size, canvas bounds, and canvas positioning
       WindowChanged: function () {
 
@@ -1417,9 +1446,9 @@
       ln1: "question", //"Question 2/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "",
-      ln4: "Where was your attention?",
+      ln4: "I was focused on the game",
       ln5: "1  -----------------------  4",
-      ln6: "Off-game                        On-game",
+      ln6: "Disagree                        Agree",
     },
     /* 
     fk:1,
@@ -1429,7 +1458,7 @@
       fup4:"Unintentional             Intentional"},
     */
     {
-      ln1: "question", //"Question 4/6",
+      ln1: "Question 4/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "I felt the right amount",
       ln4: "of challenge",
@@ -1440,7 +1469,7 @@
       fup2: ""
     },
     {
-      ln1: "question", //"Question 3/6",
+      ln1: "Question 3/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "My thoughts and movements",
       ln4: "felt fluid and smooth",
@@ -1463,7 +1492,7 @@
       fup2: ""
     },
     {
-      ln1: "question", //"Question 5/6",
+      ln1: "Question 5/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "",
       ln4: "I was enjoying the game",
@@ -1474,7 +1503,7 @@
       fup2: ""
     },
     {
-      ln1: "question", //"Question 6/6",
+      ln1: "Question 6/6",
       ln2: "Just now, while playing Tetris:",
       ln3: "",
       ln4: "I was mind wandering",
@@ -1552,7 +1581,7 @@
     var part2MWRating = [];
     var part2flowRating = [];
     var part2BreakTimes = [];
-    
+
 
     // Get Time and Date
 
@@ -1765,18 +1794,21 @@
           if (!exit) {
             g = getNextGroup()
             cnt = 0;
+            var n = 0
             while (cnt < gQns[g].length) {
               m = getNextQuestion(g)
               // skip question 3 if it is not the first question
               //if (m==3 && cnt != 0) {
               //	continue;
               //}	
+              n++
               if (m != 3) {
-                drawMyText(questions[m].ln1, questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
-              } else {
-                // ask the previous shape
-                drawMyTextObj(questions[m].ln1, questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
+                drawMyText("Question " + n + "/6", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
               }
+              else {
+                // ask the previous shape
+                drawMyTextObj("Question " + n + "/6", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
+            }
               t1 = new Date();
               await waitUserInput(m);
               t2 = new Date();
@@ -1870,7 +1902,6 @@
               part2BreakTimes.push("BreakEnd")
               part2BreakTimes.push(Time1())
               part2allMovesResponsesAndDrops.push("BreakEnd");
-              part2BreakTimes.push(Time1())
               part2allMovesResponsesAndDropsTimes.push(Time1());
             }
 
@@ -2241,33 +2272,8 @@
         //console.log("n="+n);
         // m = gQns[g][n]
 
-        // function to randomise an array
-        function shuffle(array) {
-          var currentIndex = array.length, temporaryValue, randomIndex;
-
-          // While there remain elements to shuffle...
-          while (0 !== currentIndex) {
-
-            // Pick a remaining element...
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-
-            // And swap it with the current element.
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
-          }
-
-          return array;
-        }
-        
-        // randomise questions for each participants. The catch question is always first.
-        var catchquestion = [3]
-        var randomisedquestionsOriginal = [0, 2, 1, 4, 5]
-        var randomisedquestions = shuffle(randomisedquestionsOriginal);
-        m = [3, 0, 2, 1, 4, 5]
-        //m = catchquestion.concat(randomisedquestions)
-        m = m[i - 1]
+        m = randomisedquestions
+        m = m[i - 1];
 
         // var question = "Question " + m[4]; // ensure question numbers on the screen are correct
 
