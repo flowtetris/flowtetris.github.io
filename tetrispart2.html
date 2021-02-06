@@ -1551,6 +1551,7 @@
     var part2flowRating1 = [];
     var part2MWRating = [];
     var part2flowRating = [];
+    var part2BreakTimes = [];
     
 
     // Get Time and Date
@@ -1859,12 +1860,17 @@
             console.log("part2InterprobeIntervals=" + part2InterprobeIntervals)
             // break time
             if ((timeouts.length) % breakTimeFactor == 0 && timeouts.length != 0) {
+              part2BreakTimes.push("BreakStart")
+              part2BreakTimes.push(Time1())
               part2allMovesResponsesAndDrops.push("BreakStart");
               part2allMovesResponsesAndDropsTimes.push(Time1());
               // drawMyTextbreak("Please have a short break", "The game will resume in:","seconds","");
               showCountdownBySec(breaktime);
               await sleep(breaktime);
+              part2BreakTimes.push("BreakEnd")
+              part2BreakTimes.push(Time1())
               part2allMovesResponsesAndDrops.push("BreakEnd");
+              part2BreakTimes.push(Time1())
               part2allMovesResponsesAndDropsTimes.push(Time1());
             }
 
@@ -2054,6 +2060,7 @@
           sessionStorage.setItem('part2MWRatingStorage', part2MWRating);
           sessionStorage.setItem('part2CoexistenceListStorage', part2CoexistenceList);
           sessionStorage.setItem('part2CoexistenceStorage', part2Coexistence);
+          sessionStorage.setItem('part2BreakTimesStorage', part2BreakTimes);
 
           /*
           document.getElementById("part2allmovesanddrop").value = "part2allmovesanddrop: " + part2allmovesanddrop;
