@@ -169,13 +169,10 @@
 
     // randomise questions for each participants. The catch question is always first.
     var catchquestion = [3]
-    var randomisedquestionsOriginal = [0, 2, 1, 4, 5]
+    var randomisedquestionsOriginal = [0, 2, 1, 4]
     var randomisedquestions1 = shuffle(randomisedquestionsOriginal);
     //m = [3, 0, 2, 1, 4, 5]
     var randomisedquestions = catchquestion.concat(randomisedquestions1);
-
-    // question numbers
-    var questionnumbers = [1, 2, 3, 4, 5, 6] // have to make sure this matches with the number of questions
 
     // Get last level and high score from part 1
 
@@ -1434,7 +1431,7 @@
     // var repetitions = 5;
     var breaktime = 30000; // 30000
     var repetitions = 5;
-    var timeoutsTimes = [5000, 10000, 20000, 30000, 40000, 50000]; // the interprobe intervals
+    var timeoutsTimes = [500, 1000, 2000, 3000, 4000, 5000]; // the interprobe intervals
     var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
     var tocnt1 = [0, 0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
     var tocnt = new Array(repetitions).fill(tocnt1).flat();
@@ -1447,8 +1444,8 @@
       ln2: "Just now, while playing Tetris:",
       ln3: "",
       ln4: "I was focused on the game",
-      ln5: "1  -----------------------  4",
-      ln6: "Disagree                        Agree",
+      ln5: "1  ------------------------  4",
+      ln6: "Disagree                              Agree",
     },
     /* 
     fk:1,
@@ -1491,6 +1488,7 @@
       fup1: "",
       fup2: ""
     },
+    /* 
     {
       ln1: "Question 5/6",
       ln2: "Just now, while playing Tetris:",
@@ -1502,6 +1500,7 @@
       fup1: "",
       fup2: ""
     },
+    */
     {
       ln1: "Question 6/6",
       ln2: "Just now, while playing Tetris:",
@@ -1528,7 +1527,7 @@
 
     //var gQns = [[0,1,2],[3,4,5],[6,7],[8,9]]
     //var gQns = [[0],[1],[2],[3],[4],[5],[6],[7],[8],[9]]
-    var gQns = [[0, 1, 2, 3, 4, 5]]
+    var gQns = [[0, 1, 2, 3, 4]]
     var part2CumulativeLinesClearedPerQuestionBlock = [];
     var part2GameLevelAtQuestionBlock = [];
     var part2LinesClearedPerQuestionBlock = [];
@@ -1803,11 +1802,11 @@
               //}	
               n++
               if (m != 3) {
-                drawMyText("Question " + n + "/6", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
+                drawMyText("Question " + n + "/5", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
               }
               else {
                 // ask the previous shape
-                drawMyTextObj("Question " + n + "/6", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
+                drawMyTextObj("Question " + n + "/5", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
             }
               t1 = new Date();
               await waitUserInput(m);
