@@ -1430,8 +1430,8 @@
 
     // var repetitions = 5;
     var breaktime = 3000; // 30000
-    var repetitions = 1;
-    var timeoutsTimes = [500, 1000, 2000, 3000, 4000, 5000]; // the interprobe intervals
+    var repetitions = 3;
+    var timeoutsTimes = [5000, 10000, 20000, 30000, 40000, 50000]; // the interprobe intervals
     var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
     var tocnt1 = [0, 0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
     var tocnt = new Array(repetitions).fill(tocnt1).flat();
@@ -1829,9 +1829,6 @@
                 part2flowRating1.push(rate);
               }
               if (m == 4) {
-                part2flowRating1.push(rate);
-              }
-              if (m == 5) {
                 part2MWRating.push(rate);
               }
 
@@ -1970,8 +1967,6 @@
             if (part2allquestions[i] == 3)
               part2allquestions[i] = "catch";
             if (part2allquestions[i] == 4)
-              part2allquestions[i] = "Flow4";
-            if (part2allquestions[i] == 5)
               part2allquestions[i] = "MW";
           }
 
@@ -1990,7 +1985,7 @@
           }
 
           // Calculate average flow rating score at each interprobe interval
-          var part2flowRating = groupAverage(part2flowRating1, 4);
+          var part2flowRating = groupAverage(part2flowRating1, 3); // 3 = number of flow questions
           // round to 2 decimal places
           var part2flowRating = part2flowRating.map(
             function (each_element) {
