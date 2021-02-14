@@ -285,7 +285,7 @@
             <br>
             <input name="part2levelchangescore" id="part2levelchangescore" type="text" value="">
             <br>
-            <input name="part2lastlevel" id="part2lastlevel" type="text" value="">
+            <!-- <input name="part2lastlevel" id="part2lastlevel" type="text" value=""> -->
             <br>
             <input name="part2LinesClearedPerQuestionBlock" id="part2LinesClearedPerQuestionBlock" type="text" value="">
             <br>
@@ -444,7 +444,7 @@
   let part2levelchange = sessionStorage.getItem('part2levelchangeStorage');
   let part2levelchangetimes = sessionStorage.getItem('part2levelchangetimesStorage');
   let part2levelchangescore = sessionStorage.getItem('part2levelchangescoreStorage');
-  let part2lastlevel = sessionStorage.getItem('part2lastlevelStorage');
+  // let part2lastlevel = sessionStorage.getItem('part2lastlevelStorage');
   let part2piecesspawned = sessionStorage.getItem('part2piecesspawnedStorage');
   let part2speedPer20blocks = sessionStorage.getItem('part2speedPer20blocksStorage');
   let part2linesclearedin20blocks = sessionStorage.getItem('part2linesclearedin20blocksStorage');
@@ -550,7 +550,7 @@
   document.getElementById("part2levelchange").value = "part2levelchange: " + part2levelchange;
   document.getElementById("part2levelchangetimes").value = "part2levelchangetimes: " + part2levelchangetimes;
   document.getElementById("part2levelchangescore").value = "part2levelchangescore: " + part2levelchangescore;
-  document.getElementById("part2lastlevel").value = "part2lastlevel: " + part2lastlevel;
+  // document.getElementById("part2lastlevel").value = "part2lastlevel: " + part2lastlevel;
   document.getElementById("part2piecesspawned").value = "part2piecesspawned: " + part2piecesspawned;
   document.getElementById("part2speedPer20blocks").value = "part2speedPer20blocks: " + part2speedPer20blocks;
   document.getElementById("part2linesclearedin20blocks").value = "part2linesclearedin20blocks: " + part2linesclearedin20blocks;
