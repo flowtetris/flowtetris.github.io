@@ -1838,9 +1838,9 @@
                 curShapes.push(curShape)
                 part2catchquestionsresponses.push(rate);
                 if (rate == curShape) {
-                  part2catchquestionscorrect.push("Y")
+                  part2catchquestionscorrect.push("1")
                 } else {
-                  part2catchquestionscorrect.push("N")
+                  part2catchquestionscorrect.push("0")
                 }
                 //console.log("curShapes="+curShapes)
                 //console.log("allanswer3s="+allanswer3s)
@@ -1931,7 +1931,7 @@
 
           var numberofcatchquestionscorrect =
             part2catchquestionscorrect.filter(function (value) {
-              return value === "Y";
+              return value === "1";
             }).length
 
           var part2catchquestionscorrectPercent = (numberofcatchquestionscorrect / part2catchquestionscorrect.length) * 100 + "%";
@@ -1992,17 +1992,17 @@
               return Number(each_element.toFixed(2));
             });
 
-          // All flow ratings 3 and 4 are changed to 'Y', https://stackoverflow.com/questions/16881872/changing-array-value-when-condition-is-met-in-javascript
+          // All flow ratings 3 and 4 are changed to '1', https://stackoverflow.com/questions/16881872/changing-array-value-when-condition-is-met-in-javascript
           var part2flowRating3orAbove = part2flowRating;
-          var limit = 2.99999; // anything above this number is changed to 'Y'
+          var limit = 2.99999; // anything above this number is changed to '1'
 
-          var part2flowRating3orAbove = part2flowRating3orAbove.map(a => a > limit ? 'Y' : a);
+          var part2flowRating3orAbove = part2flowRating3orAbove.map(a => a > limit ? '1' : a);
 
-          // All MW ratings 3 and 4 are changed to 'Y', https://stackoverflow.com/questions/16881872/changing-array-value-when-condition-is-met-in-javascript
+          // All MW ratings 3 and 4 are changed to '1', https://stackoverflow.com/questions/16881872/changing-array-value-when-condition-is-met-in-javascript
           var part2MWRating3orAbove = part2MWRating;
-          var limit = 2.99999; // anything above this number is changed to 'Y'
+          var limit = 2.99999; // anything above this number is changed to '1'
 
-          var part2MWRating3orAbove = part2MWRating3orAbove.map(a => a > limit ? 'Y' : a);
+          var part2MWRating3orAbove = part2MWRating3orAbove.map(a => a > limit ? '1' : a);
 
           // Look at coexistence of flow and mind wandering (flow and mind wandering score BOTH 3 or above)
           var A = part2flowRating3orAbove;
@@ -2012,10 +2012,10 @@
           var len = Math.max(A.length, B.length);
           for (var i = 0; i < len; i++) {
             if (A[i] === B[i]) {
-              part2CoexistenceList.push('Y');
+              part2CoexistenceList.push('1');
             }
             else {
-              part2CoexistenceList.push('N');
+              part2CoexistenceList.push('0');
             }
           }
 
@@ -2025,7 +2025,7 @@
             return count;
           }
 
-          var NumberofCoexistence = getOccurrence(part2CoexistenceList, 'Y')
+          var NumberofCoexistence = getOccurrence(part2CoexistenceList, '1')
 
           var part2Coexistence = ((NumberofCoexistence / part2CoexistenceList.length) * 100) + '%'
 
