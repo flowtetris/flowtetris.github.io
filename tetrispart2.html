@@ -1432,7 +1432,39 @@
     var breaktime = 30000; // 30000
     var repetitions = 4;
     var timeoutsTimes = [5000, 30000, 60000, 90000, 120000]; // the interprobe intervals
-    var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
+    // var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
+    var timeoutsraw1 = [5000, 30000, 60000, 90000, 120000]
+    var timeoutsraw2 = [5000, 30000, 60000, 90000, 120000]
+    var timeoutsraw3 = [5000, 30000, 60000, 90000, 120000]
+    var timeoutsraw4 = [5000, 30000, 60000, 90000, 120000]
+
+    // function to shuffle the arrays 
+    function shuffle(array) {
+      let counter = array.length;
+
+      // While there are elements in the array
+      while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+      }
+      return array;
+    }
+
+    timeouts1 = shuffle(timeoutsraw1);
+    timeouts2 = shuffle(timeoutsraw2);
+    timeouts3 = shuffle(timeoutsraw3);
+    timeouts4 = shuffle(timeoutsraw4);
+
+    var timeouts = timeouts1.concat(timeouts2, timeouts3, timeouts4);
+
     var tocnt1 = [0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
     var tocnt = new Array(repetitions).fill(tocnt1).flat();
 
@@ -1807,7 +1839,7 @@
               else {
                 // ask the previous shape
                 drawMyTextObj("Question " + n + "/5", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
-            }
+              }
               t1 = new Date();
               await waitUserInput(m);
               t2 = new Date();
@@ -2219,16 +2251,12 @@
       exitAssess = true;
     }
 
-
     function setPause() {
       pause = true;
     }
 
-
-
     function getTimeOut() {
       var i = 0;
-      i = Math.floor(Math.random() * timeouts.length)
       return i;
     }
 
