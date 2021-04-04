@@ -2035,7 +2035,7 @@
               function round(x) {               // function to round a number to the nearest number divisble by 25
                 return Math.ceil(x / 25) * 25;
               }
-              GM.TickRate = round(GM.TickRate)
+              GM.TickRate = round(GM.TickRate) - 25;
 
               if (GM.TickRate <= 75) { // Ensure TickRate doesn't go below 25
                 GM.TickRate = 75
@@ -2054,7 +2054,7 @@
               function round(x) {               // function to round a number to the nearest number divisble by 25
                 return Math.ceil(x / 25) * 25;
               }
-              GM.TickRate = round(GM.TickRate)
+              GM.TickRate = round(GM.TickRate) + 25;
 
               // if (GM.TickRate >= 450) {
               //   GM.TickRate = 450
