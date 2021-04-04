@@ -1430,18 +1430,52 @@
 
     // var repetitions = 5;
     var breaktime = 30000; // 30000
-    // var repetitions = 4;
-    // var timeoutsTimes = [5000, 30000, 60000, 90000, 120000]; // the interprobe intervals
+    var repetitions = 4;
+    var timeoutsTimes = [5000, 30000, 60000, 90000, 120000]; // the interprobe intervals
     // var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
     // var tocnt1 = [0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
     // var tocnt = new Array(repetitions).fill(tocnt1).flat();
     // var breakTimeFactor = Math.ceil((repetitions * timeoutsTimes.length) / 3); // 2 breaks in the game
-
+    var timeoutsraw1 = [5000, 30000, 60000, 90000, 120000]
+    var timeoutsraw2 = [5000, 30000, 60000, 90000, 120000]
+    var timeoutsraw3 = [5000, 30000, 60000, 90000, 120000]
+    var timeoutsraw4 = [5000, 30000, 60000, 90000, 120000]
 
     // var timeouts = [5000, 30000, 60000, 90000, 120000, 5000, 30000, 60000, 90000, 120000, 5000, 30000, 60000, 90000, 120000, 5000, 30000, 60000, 90000, 120000, 10000, 10000, 10001, 10001];
-    var timeouts = [10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000];
-    var tocnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // make sure the length of this array matches the length of the number of interprobe intervals
-    var breakTimeFactor = 8;
+    // var timeouts = [10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000];
+    // var tocnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // make sure the length of this array matches the length of the number of interprobe intervals
+    // var breakTimeFactor = 8;
+    // function to shuffle the arrays 
+    function shuffle(array) {
+      let counter = array.length;
+      // While there are elements in the array
+      while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+      }
+      return array;
+    }
+
+    timeouts1 = shuffle(timeoutsraw1);
+    timeouts2 = shuffle(timeoutsraw2);
+    timeouts3 = shuffle(timeoutsraw3);
+    timeouts4 = shuffle(timeoutsraw4);
+
+    var timeouts = timeouts1.concat(timeouts2, timeouts3, timeouts4);
+
+    var tocnt1 = [0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
+    var tocnt = new Array(repetitions).fill(tocnt1).flat();
+
+    var breakTimeFactor = Math.ceil((repetitions * timeoutsTimes.length) / 3); // 2 breaks in the game
+
 
 
     questions = [{
@@ -1739,7 +1773,46 @@
           Init();
           // GM.Level = glevel
           toi = getTimeOut();
-          myInterval = setTimeout(setPause, timeouts[toi]);          
+
+
+          //////
+          var startingTickRate = 450
+
+          currentTimeOut = timeouts[toi];
+          if (currentTimeOut == 10000) {
+            startingTickRate = 475 - (25 * part1transferlevel);
+            TickRatePrevious = startingTickRate;
+
+            GM.TickRate = GM.TickRate - 100; // Speed up TickRate
+
+            if (GM.TickRate <= 25) { // Ensure TickRate doesn't go below 25
+              GM.TickRate = 25
+            }
+            // GM.Level = (475 - GM.TickRate) / 25 // Match Level to TickRate
+
+          } else if (currentTimeOut == 10001) {
+            startingTickRate = 475 - (25 * part1transferlevel);
+            TickRatePrevious = startingTickRate;
+
+            GM.TickRate = GM.TickRate + 100;
+
+            if (GM.TickRate >= 450) {
+              GM.TickRate = 450
+            }
+            // GM.Level = (475 - GM.TickRate) / 25
+            // if (GM.Level < 1) {
+            //   GM.Level = 1
+            // }
+
+            else {
+              GM.TickRate = 475 - (25 * part1transferlevel);
+            }
+          }
+
+          ///////
+          myInterval = setTimeout(setPause, timeouts[toi]);
+
+
           gameOverT1 = new Date()
           // document.getElementById("glevel").value = (glevel);
           console.log("gameNos=" + gameNos)
@@ -1877,63 +1950,7 @@
                 allfups.push(-1);
               }
 
-              //console.log("questions"+m+"="+questions[m].ln1);
-              //console.log("allrates="+allrates);
-              //console.log("allresponses="+allresponses);
-              //console.log("allfups="+allfups);
-              //console.log("allfupresponses="+allfupresponses);
               cnt = cnt + 1;
-//////
-
-              currentTimeOut = timeouts[toi]
-          console.log(currentTimeOut)
-          console.log(GM.TickRate)
-          if (currentTimeOut == 10000) {
-            //if (TickRatePrevious1Change){
-            // GM.TickRate = TickRatePrevious1
-            //TickRatePrevious1Change = false
-            // }
-            TickRatePrevious = GM.TickRate; // save previous TickRate
-            TickRatePreviousChange = true; // save previous TickRate
-            GM.TickRate = GM.TickRate - 300; // Speed up TickRate
-            if (GM.TickRate <= 25) { // Ensure TickRate doesn't go below 25
-              GM.TickRate = 25
-            }
-            GM.Level = (475 - GM.TickRate) / 25 // Match Level to TickRate
-            console.log(currentTimeOut)
-            console.log(GM.TickRate)
-          } else if (currentTimeOut == 10001) {
-            if (TickRatePreviousChange) {
-              GM.TickRate = TickRatePrevious
-              TickRatePrevious1 = false
-            }
-            TickRatePrevious1 = GM.TickRate;
-            TickRatePrevious1Change = true
-            GM.TickRate = GM.TickRate + 100;
-            if (GM.TickRate >= 450) {
-              GM.TickRate = 450
-            }
-            GM.Level = (475 - GM.TickRate) / 25
-            if (GM.Level < 1) {
-              GM.Level = 1
-              console.log(currentTimeOut)
-              console.log(GM.TickRate)
-            }
-            TickRatePrevious1 = GM.TickRate
-            TickRateDown = true;
-          } else {
-            if (TickRatePrevious1Change) {
-              GM.TickRate = TickRatePrevious1
-              TickRatePrevious1Change = false
-            }
-            if (TickRatePreviousChange) {
-              GM.TickRate = TickRatePrevious
-              TickRatePrevious1 = false
-            }
-          }
-
-
-/////
 
 
             } //end while
@@ -1973,7 +1990,45 @@
             //console.log("lineCleareds="+lineCleareds); 
             //console.log("lineCleareds2="+lineCleareds2);
             LinesCleared2 = 0
+
             toi = getTimeOut()
+
+            //////
+
+            currentTimeOut = timeouts[toi]
+
+            TickRatePrevious = GM.TickRate
+
+            if (currentTimeOut == 10000) {
+              // TickRatePrevious = GM.TickRate;
+
+              GM.TickRate = GM.TickRate - 100; // Speed up TickRate
+
+              if (GM.TickRate <= 25) { // Ensure TickRate doesn't go below 25
+                GM.TickRate = 25
+              }
+              // GM.Level = (475 - GM.TickRate) / 25 // Match Level to TickRate
+
+            } else if (currentTimeOut == 10001) {
+              // TickRatePrevious = GM.Tickrate;
+
+              GM.TickRate = GM.TickRate + 100;
+
+              if (GM.TickRate >= 450) {
+                GM.TickRate = 450
+              }
+              // GM.Level = (475 - GM.TickRate) / 25
+              // if (GM.Level < 1) {
+              //  GM.Level = 1
+              // }
+
+              else {
+                GM.TickRate = TickRatePrevious;
+              }
+            }
+
+            /////
+
             myInterval = setTimeout(setPause, timeouts[toi]);
           } // if !exit
         } //end if pause
