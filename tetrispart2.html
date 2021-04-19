@@ -1440,16 +1440,16 @@
     // var timeoutsTimes = [5000, 30000, 60000, 90000, 120000, 10000, 10001]; // the interprobe intervals
     // var tocnt1 = [0, 0, 0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
     // var tocnt = new Array(repetitions).fill(tocnt1).flat();
-    var tocnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    var breakTimeFactor = 5;
+    var tocnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var breakTimeFactor = 6;
     //var breakTimeFactor = Math.ceil((repetitions * timeoutsTimes.length) / 3); // 2 breaks in the game
 
     /// want to randomise interprobe intervals, but to make sure at least interprobe interval in each block
     /// also need to make sure the mock, 10000 and 10001, are not next to each other
 
-    var timeoutsraw1 = [5000, 30000, 60000, 90000, 120000];
-    var timeoutsraw2 = [5000, 30000, 60000, 90000, 120000];
-    var timeoutsraw3 = [5000, 30000, 60000, 90000, 120000];
+    var timeoutsraw1 = [5000, 10000, 30000, 60000, 90000, 120000];
+    var timeoutsraw2 = [5000, 10000, 30000, 60000, 90000, 120000];
+    var timeoutsraw3 = [5000, 10000, 30000, 60000, 90000, 120000];
     // var timeoutsraw4 = [5000, 30000, 60000, 90000, 120000];
     // var mock = [10000, 10000, 10001, 10001]
 
@@ -1996,7 +1996,7 @@
             console.log("timeouts=" + timeouts)
             console.log("part2InterprobeIntervals=" + part2InterprobeIntervals)
             // break time
-            if ((timeouts.length == 10 || timeouts.length == 5) && timeouts.length != 0) {
+            if ((timeouts.length == 12 || timeouts.length == 6) && timeouts.length != 0) {
               part2BreakTimes.push("BreakStart")
               part2BreakTimes.push(Time1())
               part2allMovesResponsesAndDrops.push("BreakStart");
@@ -2027,7 +2027,7 @@
             GM.TickRate = TickRatePrevious;
             GM.Level = LevelPrevious;
 
-            if (currentTimeOut == 10000) {
+            if (currentTimeOut == 9998) {
               // TickRatePrevious = GM.TickRate;
 
               GM.TickRate = GM.TickRate / 2; // Speed up TickRate by 2
@@ -2046,7 +2046,7 @@
 
               // GM.Level = (475 - GM.TickRate) / 25 // Match Level to TickRate
 
-            } else if (currentTimeOut == 10001) {
+            } else if (currentTimeOut == 9999) {
               // TickRatePrevious = GM.Tickrate;
 
               GM.TickRate = GM.TickRate * 2; // Slow down TickRate by 2
@@ -2068,7 +2068,7 @@
               console.log("Level= " + GM.Level);
 
             }
-            else if (currentTimeOut == 5000 || currentTimeOut == 30000 || currentTimeOut == 60000 || currentTimeOut == 90000 || currentTimeOut == 120000) {
+            else if (currentTimeOut == 5000 || currentTimeOut == 10000 || currentTimeOut == 30000 || currentTimeOut == 60000 || currentTimeOut == 90000 || currentTimeOut == 120000) {
               GM.TickRate = TickRatePrevious;
               GM.Level = LevelPrevious;
             }
