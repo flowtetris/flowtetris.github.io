@@ -1440,18 +1440,18 @@
     // var timeoutsTimes = [5000, 30000, 60000, 90000, 120000, 10000, 10001]; // the interprobe intervals
     // var tocnt1 = [0, 0, 0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
     // var tocnt = new Array(repetitions).fill(tocnt1).flat();
-    var tocnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var tocnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var breakTimeFactor = 6;
     //var breakTimeFactor = Math.ceil((repetitions * timeoutsTimes.length) / 3); // 2 breaks in the game
 
     /// want to randomise interprobe intervals, but to make sure at least interprobe interval in each block
     /// also need to make sure the mock, 10000 and 10001, are not next to each other
 
-    var timeoutsraw1 = [5000, 30000, 60000, 90000, 120000];
-    var timeoutsraw2 = [5000, 30000, 60000, 90000, 120000];
-    var timeoutsraw3 = [5000, 30000, 60000, 90000, 120000];
+    var timeoutsraw1 = [5000, 10000, 30000, 60000, 90000, 120000];
+    var timeoutsraw2 = [5000, 10000, 30000, 60000, 90000, 120000];
+    var timeoutsraw3 = [5000, 10000, 30000, 60000, 90000, 120000];
     // var timeoutsraw4 = [5000, 30000, 60000, 90000, 120000];
-    var mock = [10000, 10000, 10001, 10001]
+    // var mock = [10000, 10000, 10001, 10001]
 
     // function to shuffle the arrays 
     function shuffle(array) {
@@ -1472,25 +1472,25 @@
       return array;
     }
 
-    mockshuffled = shuffle(mock); // shuffle the mock array
+    // mockshuffled = shuffle(mock); // shuffle the mock array
 
     timeouts1shuffled = shuffle(timeoutsraw1); // shuffle timeoutsraw1
-    timeouts1shuffledSplit = timeouts1shuffled.splice(0, 1); // sepearate timeouts1shuffled into [1] + [2,3,4,5]
-    timeouts1shuffledWithMock = timeouts1shuffled.concat(mockshuffled[0]); // add the mock into the shuffled array [2,3,4,5]
-    timeouts1shuffledWithMock = shuffle(timeouts1shuffledWithMock); // shuffle this array with the mock inside
-    timeouts1shuffledFinal = timeouts1shuffledSplit.concat(timeouts1shuffledWithMock); // add the [1] to this array
+    // timeouts1shuffledSplit = timeouts1shuffled.splice(0, 1); // sepearate timeouts1shuffled into [1] + [2,3,4,5]
+    // timeouts1shuffledWithMock = timeouts1shuffled.concat(mockshuffled[0]); // add the mock into the shuffled array [2,3,4,5]
+    // timeouts1shuffledWithMock = shuffle(timeouts1shuffledWithMock); // shuffle this array with the mock inside
+    // timeouts1shuffledFinal = timeouts1shuffledSplit.concat(timeouts1shuffledWithMock); // add the [1] to this array
 
     timeouts2shuffled = shuffle(timeoutsraw2);
-    timeouts2shuffledSplit = timeouts2shuffled.splice(0, 1); // sepearate timeouts2shuffled into [1] + [2,3,4,5]
-    timeouts2shuffledWithMock = timeouts2shuffled.concat(mockshuffled[1]); // add the mock into the shuffled array [2,3,4,5]
-    timeouts2shuffledWithMock = shuffle(timeouts2shuffledWithMock); // shuffle this array with the mock inside
-    timeouts2shuffledFinal = timeouts2shuffledSplit.concat(timeouts2shuffledWithMock); // add the [1] to this array
+    // timeouts2shuffledSplit = timeouts2shuffled.splice(0, 1); // sepearate timeouts2shuffled into [1] + [2,3,4,5]
+    // timeouts2shuffledWithMock = timeouts2shuffled.concat(mockshuffled[1]); // add the mock into the shuffled array [2,3,4,5]
+    // timeouts2shuffledWithMock = shuffle(timeouts2shuffledWithMock); // shuffle this array with the mock inside
+    // timeouts2shuffledFinal = timeouts2shuffledSplit.concat(timeouts2shuffledWithMock); // add the [1] to this array
 
     timeouts3shuffled = shuffle(timeoutsraw3);
-    timeouts3shuffledSplit = timeouts3shuffled.splice(0, 1); // sepearate timeouts3shuffled into [1] + [2,3,4,5]
-    timeouts3shuffledWithMock = timeouts3shuffled.concat(mockshuffled[2]); // add the mock into the shuffled array [2,3,4,5]
-    timeouts3shuffledWithMock = shuffle(timeouts3shuffledWithMock); // shuffle this array with the mock inside
-    timeouts3shuffledFinal = timeouts3shuffledSplit.concat(timeouts3shuffledWithMock); // add the [1] to this array
+    // timeouts3shuffledSplit = timeouts3shuffled.splice(0, 1); // sepearate timeouts3shuffled into [1] + [2,3,4,5]
+    // timeouts3shuffledWithMock = timeouts3shuffled.concat(mockshuffled[2]); // add the mock into the shuffled array [2,3,4,5]
+    // timeouts3shuffledWithMock = shuffle(timeouts3shuffledWithMock); // shuffle this array with the mock inside
+    // timeouts3shuffledFinal = timeouts3shuffledSplit.concat(timeouts3shuffledWithMock); // add the [1] to this array
 
     // timeouts4shuffled = shuffle(timeoutsraw4);
     // timeouts4shuffledSplit = timeouts4shuffled.splice(0, 1); // sepearate timeouts4shuffled into [1] + [2,3,4,5]
@@ -1498,13 +1498,13 @@
     // timeouts4shuffledWithMock = shuffle(timeouts4shuffledWithMock); // shuffle this array with the mock inside
     // timeouts4shuffledFinal = timeouts4shuffledSplit.concat(timeouts4shuffledWithMock); // add the [1] to this array
 
-    var timeoutsBeforeLastMockInserted = timeouts1shuffledFinal.concat(timeouts2shuffledFinal, timeouts3shuffledFinal);
+    // var timeoutsBeforeLastMockInserted = timeouts1shuffledFinal.concat(timeouts2shuffledFinal, timeouts3shuffledFinal);
 
-    var RandomNumberAbove1 = Math.floor(Math.random() * (18 - 2 + 1)) + 2; //Random number between 2 and 18 to insert the last mock
+    // var RandomNumberAbove1 = Math.floor(Math.random() * (18 - 2 + 1)) + 2; //Random number between 2 and 18 to insert the last mock
 
-    timeoutsBeforeLastMockInserted.splice(RandomNumberAbove1, 0, mockshuffled[3]);
+    // timeoutsBeforeLastMockInserted.splice(RandomNumberAbove1, 0, mockshuffled[3]);
     
-    var timeouts = timeoutsBeforeLastMockInserted;
+    var timeouts = timeouts1shuffled.concat(timeouts2shuffled, timeouts3shuffled)
 
     questions = [{
       ln1: "Question 2/6",
@@ -2027,7 +2027,7 @@
             GM.TickRate = TickRatePrevious;
             GM.Level = LevelPrevious;
 
-            if (currentTimeOut == 10000) {
+            if (currentTimeOut == 9998) {
               // TickRatePrevious = GM.TickRate;
 
               GM.TickRate = GM.TickRate / 2; // Speed up TickRate by 2
@@ -2046,7 +2046,7 @@
 
               // GM.Level = (475 - GM.TickRate) / 25 // Match Level to TickRate
 
-            } else if (currentTimeOut == 10001) {
+            } else if (currentTimeOut == 9999) {
               // TickRatePrevious = GM.Tickrate;
 
               GM.TickRate = GM.TickRate * 2; // Slow down TickRate by 2
@@ -2068,7 +2068,7 @@
               console.log("Level= " + GM.Level);
 
             }
-            else if (currentTimeOut == 5000 || currentTimeOut == 30000 || currentTimeOut == 60000 || currentTimeOut == 90000 || currentTimeOut == 120000) {
+            else if (currentTimeOut == 5000 || currentTimeOut == 10000 || currentTimeOut == 30000 || currentTimeOut == 60000 || currentTimeOut == 90000 || currentTimeOut == 120000) {
               GM.TickRate = TickRatePrevious;
               GM.Level = LevelPrevious;
             }
