@@ -778,7 +778,7 @@
           }
         }
         part2AverageHeight.push(checkRowsAverage)
-        // console.log(checkRowsAverage)
+        console.log(checkRowsAverage)
 
         for (var i = 0; i < checkRows.length; i++) {
           var hasGap = false,
@@ -835,13 +835,6 @@
       // called when a piece is spawned, advances level if needed
       PieceSpawned: function () {
         //console.log(this.PiecesRemaining--) ;
-        if (currentTimeOut == 5000 || currentTimeOut == 30000 || currentTimeOut == 60000 || currentTimeOut == 90000 || currentTimeOut == 120000) {
-          TickRatePrevious = GM.TickRate;
-          LevelPrevious = GM.Level;
-          console.log(TickRatePrevious)
-          console.log(LevelPrevious)
-        }
-
         this.PiecesRemaining--;
         if (this.PiecesRemaining <= 0 && LinesClearedCounter >= 2) {
           this.AdvanceLevel();
@@ -1435,76 +1428,16 @@
     var gameOverT1;
     var gameOverT2;
 
+    // var repetitions = 5;
     var breaktime = 0; // 30000
-    // var repetitions = 3;
-    // var timeoutsTimes = [5000, 30000, 60000, 90000, 120000, 10000, 10001]; // the interprobe intervals
-    // var tocnt1 = [0, 0, 0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
-    // var tocnt = new Array(repetitions).fill(tocnt1).flat();
-    var tocnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    var breakTimeFactor = 6;
-    //var breakTimeFactor = Math.ceil((repetitions * timeoutsTimes.length) / 3); // 2 breaks in the game
+    var repetitions = 5;
+    var timeoutsTimes = [5000, 10000, 20000, 30000, 40000, 50000]; // the interprobe intervals
+    var timeouts = new Array(repetitions).fill(timeoutsTimes).flat(); // the number of repeats of the interprobe intervals
+    var tocnt1 = [0, 0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
+    var tocnt = new Array(repetitions).fill(tocnt1).flat();
 
-    /// want to randomise interprobe intervals, but to make sure at least interprobe interval in each block
-    /// also need to make sure the mock, 10000 and 10001, are not next to each other
+    var breakTimeFactor = Math.ceil((repetitions * timeoutsTimes.length) / 3); // 2 breaks in the game
 
-    var timeoutsraw1 = [5000, 10000, 30000, 60000, 90000, 120000];
-    var timeoutsraw2 = [5000, 10000, 30000, 60000, 90000, 120000];
-    var timeoutsraw3 = [5000, 10000, 30000, 60000, 90000, 120000];
-    // var timeoutsraw4 = [5000, 30000, 60000, 90000, 120000];
-    // var mock = [10000, 10000, 10001, 10001]
-
-    // function to shuffle the arrays 
-    function shuffle(array) {
-      let counter = array.length;
-      // While there are elements in the array
-      while (counter > 0) {
-        // Pick a random index
-        let index = Math.floor(Math.random() * counter);
-
-        // Decrease counter by 1
-        counter--;
-
-        // And swap the last element with it
-        let temp = array[counter];
-        array[counter] = array[index];
-        array[index] = temp;
-      }
-      return array;
-    }
-
-    // mockshuffled = shuffle(mock); // shuffle the mock array
-
-    timeouts1shuffled = shuffle(timeoutsraw1); // shuffle timeoutsraw1
-    // timeouts1shuffledSplit = timeouts1shuffled.splice(0, 1); // sepearate timeouts1shuffled into [1] + [2,3,4,5]
-    // timeouts1shuffledWithMock = timeouts1shuffled.concat(mockshuffled[0]); // add the mock into the shuffled array [2,3,4,5]
-    // timeouts1shuffledWithMock = shuffle(timeouts1shuffledWithMock); // shuffle this array with the mock inside
-    // timeouts1shuffledFinal = timeouts1shuffledSplit.concat(timeouts1shuffledWithMock); // add the [1] to this array
-
-    timeouts2shuffled = shuffle(timeoutsraw2);
-    // timeouts2shuffledSplit = timeouts2shuffled.splice(0, 1); // sepearate timeouts2shuffled into [1] + [2,3,4,5]
-    // timeouts2shuffledWithMock = timeouts2shuffled.concat(mockshuffled[1]); // add the mock into the shuffled array [2,3,4,5]
-    // timeouts2shuffledWithMock = shuffle(timeouts2shuffledWithMock); // shuffle this array with the mock inside
-    // timeouts2shuffledFinal = timeouts2shuffledSplit.concat(timeouts2shuffledWithMock); // add the [1] to this array
-
-    timeouts3shuffled = shuffle(timeoutsraw3);
-    // timeouts3shuffledSplit = timeouts3shuffled.splice(0, 1); // sepearate timeouts3shuffled into [1] + [2,3,4,5]
-    // timeouts3shuffledWithMock = timeouts3shuffled.concat(mockshuffled[2]); // add the mock into the shuffled array [2,3,4,5]
-    // timeouts3shuffledWithMock = shuffle(timeouts3shuffledWithMock); // shuffle this array with the mock inside
-    // timeouts3shuffledFinal = timeouts3shuffledSplit.concat(timeouts3shuffledWithMock); // add the [1] to this array
-
-    // timeouts4shuffled = shuffle(timeoutsraw4);
-    // timeouts4shuffledSplit = timeouts4shuffled.splice(0, 1); // sepearate timeouts4shuffled into [1] + [2,3,4,5]
-    // timeouts4shuffledWithMock = timeouts4shuffled.concat(mockshuffled[3]); // add the mock into the shuffled array [2,3,4,5]
-    // timeouts4shuffledWithMock = shuffle(timeouts4shuffledWithMock); // shuffle this array with the mock inside
-    // timeouts4shuffledFinal = timeouts4shuffledSplit.concat(timeouts4shuffledWithMock); // add the [1] to this array
-
-    // var timeoutsBeforeLastMockInserted = timeouts1shuffledFinal.concat(timeouts2shuffledFinal, timeouts3shuffledFinal);
-
-    // var RandomNumberAbove1 = Math.floor(Math.random() * (18 - 2 + 1)) + 2; //Random number between 2 and 18 to insert the last mock
-
-    // timeoutsBeforeLastMockInserted.splice(RandomNumberAbove1, 0, mockshuffled[3]);
-    
-    var timeouts = timeouts1shuffled.concat(timeouts2shuffled, timeouts3shuffled)
 
     questions = [{
       ln1: "Question 2/6",
@@ -1647,14 +1580,6 @@
     var part2MWRating = [];
     var part2flowRating = [];
     var part2BreakTimes = [];
-    var TickRateUp = false;
-    var TickRateDown = false;
-    var TickRatePrevious = 475 - (25 * part1transferlevel);
-    var LevelPrevious = part1transferlevel;
-    var TickRatePrevious1 = 0;
-    var TickRatePreviousChange = false;
-    var TickRatePrevious1Change = false;
-    var currentTimeOut = 0;
 
 
     // Get Time and Date
@@ -1802,49 +1727,12 @@
           Init();
           // GM.Level = glevel
           toi = getTimeOut();
-          currentTimeOut = timeouts[toi]
-          /*
-          ////// 
-          var startingTickRate = 450
-
-          currentTimeOut = timeouts[toi];
-          if (currentTimeOut == 10000) {
-            startingTickRate = 475 - (25 * part1transferlevel);
-            TickRatePrevious = startingTickRate;
-
-            GM.TickRate = GM.TickRate - 100; // Speed up TickRate
-
-            if (GM.TickRate <= 25) { // Ensure TickRate doesn't go below 25
-              GM.TickRate = 25
-            }
-            // GM.Level = (475 - GM.TickRate) / 25 // Match Level to TickRate
-
-          } else if (currentTimeOut == 10001) {
-            startingTickRate = 475 - (25 * part1transferlevel);
-            TickRatePrevious = startingTickRate;
-
-            GM.TickRate = GM.TickRate + 100;
-
-            if (GM.TickRate >= 450) {
-              GM.TickRate = 450
-            }
-            // GM.Level = (475 - GM.TickRate) / 25
-            // if (GM.Level < 1) {
-            //   GM.Level = 1
-            // }
-
-            else {
-              GM.TickRate = 475 - (25 * part1transferlevel);
-            }
-          }
-
-          ///////
-          */
-
           myInterval = setTimeout(setPause, timeouts[toi]);
           gameOverT1 = new Date()
           // document.getElementById("glevel").value = (glevel);
+          console.log("gameNos=" + gameNos)
           gameNos.push(gameOverCnt)
+          console.log("gameNos=" + gameNos)
         }
         window.requestAnimationFrame(Loop);
       } // end assess, start play game
@@ -1919,7 +1807,7 @@
               else {
                 // ask the previous shape
                 drawMyTextObj("Question " + n + "/5", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
-              }
+            }
               t1 = new Date();
               await waitUserInput(m);
               t2 = new Date();
@@ -1977,9 +1865,12 @@
                 allfups.push(-1);
               }
 
+              //console.log("questions"+m+"="+questions[m].ln1);
+              //console.log("allrates="+allrates);
+              //console.log("allresponses="+allresponses);
+              //console.log("allfups="+allfups);
+              //console.log("allfupresponses="+allfupresponses);
               cnt = cnt + 1;
-
-
             } //end while
 
             part2InterprobeIntervals.push(timeouts[toi])
@@ -1996,7 +1887,7 @@
             console.log("timeouts=" + timeouts)
             console.log("part2InterprobeIntervals=" + part2InterprobeIntervals)
             // break time
-            if ((timeouts.length == 12 || timeouts.length == 6) && timeouts.length != 0) {
+            if ((timeouts.length) % breakTimeFactor == 0 && timeouts.length != 0) {
               part2BreakTimes.push("BreakStart")
               part2BreakTimes.push(Time1())
               part2allMovesResponsesAndDrops.push("BreakStart");
@@ -2017,65 +1908,8 @@
             //console.log("lineCleareds="+lineCleareds); 
             //console.log("lineCleareds2="+lineCleareds2);
             LinesCleared2 = 0
-
-            toi = getTimeOut();
-
-            //////
-
-            currentTimeOut = timeouts[toi]
-
-            GM.TickRate = TickRatePrevious;
-            GM.Level = LevelPrevious;
-
-            if (currentTimeOut == 9998) {
-              // TickRatePrevious = GM.TickRate;
-
-              GM.TickRate = GM.TickRate / 2; // Speed up TickRate by 2
-
-              function round(x) {               // function to round a number to the nearest number divisble by 25
-                return Math.ceil(x / 25) * 25;
-              }
-              GM.TickRate = round(GM.TickRate) - 25;
-
-              if (GM.TickRate <= 75) { // Ensure TickRate doesn't go below 25
-                GM.TickRate = 75
-              }
-
-              console.log("TickRate= " + GM.TickRate);
-              console.log("Level= " + GM.Level);
-
-              // GM.Level = (475 - GM.TickRate) / 25 // Match Level to TickRate
-
-            } else if (currentTimeOut == 9999) {
-              // TickRatePrevious = GM.Tickrate;
-
-              GM.TickRate = GM.TickRate * 2; // Slow down TickRate by 2
-
-              function round(x) {               // function to round a number to the nearest number divisble by 25
-                return Math.ceil(x / 25) * 25;
-              }
-              GM.TickRate = round(GM.TickRate) + 25;
-
-              // if (GM.TickRate >= 450) {
-              //   GM.TickRate = 450
-              //}
-              // GM.Level = (475 - GM.TickRate) / 25
-              // if (GM.Level < 1) {
-              //  GM.Level = 1
-              // }
-
-              console.log("TickRate= " + GM.TickRate);
-              console.log("Level= " + GM.Level);
-
-            }
-            else if (currentTimeOut == 5000 || currentTimeOut == 10000 || currentTimeOut == 30000 || currentTimeOut == 60000 || currentTimeOut == 90000 || currentTimeOut == 120000) {
-              GM.TickRate = TickRatePrevious;
-              GM.Level = LevelPrevious;
-            }
-            /////
-
+            toi = getTimeOut()
             myInterval = setTimeout(setPause, timeouts[toi]);
-
           } // if !exit
         } //end if pause
 
@@ -2385,12 +2219,16 @@
       exitAssess = true;
     }
 
+
     function setPause() {
       pause = true;
     }
 
+
+
     function getTimeOut() {
       var i = 0;
+      i = Math.floor(Math.random() * timeouts.length)
       return i;
     }
 
