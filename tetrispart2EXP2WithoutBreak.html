@@ -1,0 +1,2679 @@
+<!DOCTYPE html>
+<title>Part 2</title>
+
+<style>
+  input[type=text] {
+    width: 100%;
+  }
+
+  /* body,
+  html {
+    height: 100%;
+    background-position: center;
+    background-size: 100% 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%), url(56.jpg);
+  }
+  */
+
+  /* Next button */
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+
+  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .next {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .round {
+    border-radius: 100%;
+  }
+
+  a {
+    font-size: 27px
+  }
+</style>
+
+
+<html>
+
+<body>
+  <!--
+  <input name="part2allMovesResponsesAndDrops" id="part2allMovesResponsesAndDrops" type="text" value="">
+  <br>
+  <input name="part2allMovesResponsesAndDropsTimes" id="part2allMovesResponsesAndDropsTimes" type="text" value="">
+  <br>
+  <input name="part2catchquestionscorrectPercent" id="part2catchquestionscorrectPercent" type="text" value="">
+  <br>
+  <input name="part2allquestions" id="part2allquestions" type="text" value="">
+  <br>
+  <input name="part2allresponses" id="part2allresponses" type="text" value="">
+  <br>
+  <input name="part2flowRating" id="part2flowRating" type="text" value="">
+  <br>
+  <input name="part2MWRating" id="part2MWRating" type="text" value="">
+  <br>
+  <input name="part2CoexistenceList" id="part2CoexistenceList" type="text" value="">
+  <br>
+  <input name="part2Coexistence" id="part2Coexistence" type="text" value="">
+  <br>
+  <input name="part2allscoreseachdrop" id="part2allscoreseachdrop" type="text" value="">
+  <br>
+  <input name="part2alldroptimes" id="part2alldroptimes" type="text" value="">
+  <br>
+  <input name="part2allscoreseachdropdifference" id="part2allscoreseachdropdifference" type="text" value="">
+  <br>
+  <input name="part2AverageHeight" id="part2AverageHeight" type="text" value="">
+  <br>
+  <input name="part2alltimesbetweendrops" id="part2alltimesbetweendrops" type="text" value="">
+  <br>
+  <input name="part2InterprobeIntervals" id="part2InterprobeIntervals" type="text" value="">
+  <br>
+  <input name="part2allresponsestimesdifference" id="part2allresponsestimesdifference" type="text" value="">
+  <br>
+  <br>
+  <input name="part2levels" id="part2levels" type="text" value="">
+  <br>
+  <input name="part2levelchange" id="part2levelchange" type="text" value="">
+  <br>
+  <input name="part2levelchangetimes" id="part2levelchangetimes" type="text" value="">
+  <br>
+  <input name="part2levelchangescore" id="part2levelchangescore" type="text" value="">
+  <br>
+  <input name="part2lastlevel" id="part2lastlevel" type="text" value="">
+  <br>
+  <input name="part2LinesClearedPerQuestionBlock" id="part2LinesClearedPerQuestionBlock" type="text" value="">
+  <br>
+  <input name="part2CumulativeLinesClearedPerQuestionBlock" id="part2CumulativeLinesClearedPerQuestionBlock" type="text"
+    value="">
+  <br>
+  <input name="part2GameLevelAtQuestionBlock" id="part2GameLevelAtQuestionBlock" type="text" value="">
+  <br>
+  <input name="part2speedPer20blocks" id="part2speedPer20blocks" type="text" value="">
+  <br>
+  <input name="part2linesclearedin20blocks" id="part2linesclearedin20blocks" type="text" value="">
+  <br>
+  <input name="part2linesclearedtotal" id="part2linesclearedtotal" type="text" value="">
+  <br>
+  <input name="part2linesclearedtimes" id="part2linesclearedtimes" type="text" value="">
+  <br>
+  <input name="part2alltimesbetweenlinescleared" id="part2alltimesbetweenlinescleared" type="text" value="">
+  <br>
+  <input name="part2highscore" id="part2highscore" type="text" value="">
+  <br>
+  <input name="part2scores" id="part2scores" type="text" value="">
+  <br>
+  <input name="part2catchquestionscorrect" id="part2catchquestionscorrect" type="text" value="">
+  <br>
+  <input name="part2catchquestionsresponses" id="part2catchquestionsresponses" type="text" value="">
+  <br>
+  <input name="part2allmovesanddrop" id="part2allmovesanddrop" type="text" value="">
+  <br>
+  <input name="part2allmovestimes" id="part2allmovestimes" type="text" value="">
+  <br>
+  <input name="part2allmovesanddroptimes" id="part2allmovesanddroptimes" type="text" value="">
+  <br>
+  <input name="part2allresponsestimes" id="part2allresponsestimes" type="text" value="">
+  <br>
+  <input name="part2InterprobeIntervalsTimes" id="part2InterprobeIntervalsTimes" type="text" value="">
+  <br>
+  <input name="part2piecesspawned" id="part2piecesspawned" type="text" value="">
+  <br>
+  <input name="part2gameovercount" id="part2gameovercount" type="text" value="">
+  <br>
+  <input name="part2gameovertimes" id="part2gameovertimes" type="text" value="">
+  <br>
+  <input name="part2gameovertimesdifference" id="part2gameovertimesdifference" type="text" value="">
+  <br>
+  <input name="part2starttime" id="part2starttime" type="text" value="">
+  <br>
+  <input name="part2starttimeMilliseconds" id="part2starttimeMilliseconds" type="text" value="">
+  <br>
+  <input name="part2endtime" id="part2endtime" type="text" value="">
+  -->
+
+  <!-- Button -->
+  <div id="nextButton" style="display: none; position: absolute; right: 11%; top: 50%;">
+    <a href="3index1.html" class="next round">Next &#8250;</a>
+  </div>
+
+
+  <script>
+    // Randomise the question probes for each participant
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+    }
+
+    // randomise questions for each participants. The catch question is always first.
+    var catchquestion = [3]
+    var randomisedquestionsOriginal = [0, 2, 1, 4]
+    var randomisedquestions1 = shuffle(randomisedquestionsOriginal);
+    //m = [3, 0, 2, 1, 4, 5]
+    var randomisedquestions = catchquestion.concat(randomisedquestions1);
+
+    // Get last level and high score from part 1
+
+    var part1transferlevel = sessionStorage.getItem('part1transferlevelStorage');
+    var part1transferlevel = parseInt(part1transferlevel, 10);
+    if (Number.isNaN(part1transferlevel) == true) {
+      part1transferlevel = 1
+    }
+
+    var part1highscore = sessionStorage.getItem('part1highscoreStorage');
+    var part1highscore = parseInt(part1highscore, 10);
+    if (Number.isNaN(part1highscore) == true) {
+      part1highscore = 0
+    }
+
+    //--------------------------------------------------//
+    //    PAGE OBJECT & LOGIC                           //
+    //--------------------------------------------------//
+
+    var URL = window.location.href
+    var participantID = URL.slice(-5);
+
+    var completionURL = "https://unsw-psy-paid.sona-systems.com/webstudy_credit.aspx?experiment_id=612&credit_token=d6892d7ff76f49c3a1116133948e6a03&survey_code=" + participantID
+
+    var Page = {
+      IsSetup: false, // These are objects.
+
+      body: document.getElementsByTagName('body')[0],
+      cvs: document.createElement('canvas'),
+      ctx: 0,
+
+      unitSize: 0,
+      AreaArr: [],
+
+
+
+      // calculates the unit size, canvas bounds, and canvas positioning
+      WindowChanged: function () {
+
+        // Calulcate the unitSize based on window width and height.
+        // The minimum of these calculations will be used.
+
+        var bodyW = document.documentElement.clientWidth,
+          bodyH = document.documentElement.clientHeight,
+          newUnitW = (bodyW - (bodyW % 80)) / 16,
+          newUnitH = (bodyH - (bodyH % 100)) / 20,
+          newUnitMin = Math.max(Math.min(newUnitW, newUnitH), 20);
+
+        // if the calcUnitMin != unitSize, update unitSize, recalculate
+        // all DrawAreaObjs, and update the canvas element bounds
+
+        this.unitSize = newUnitMin;
+
+        // store Right-most & Bottom-most points for canvas bounds
+        var rightLimit = 0,
+          bottomLimit = 0;
+
+        for (var i = 0; i < Page.AreaArr.length; i++) {
+          Page.AreaArr[i].CalculateBounds();
+
+          var newRightLimit = Page.AreaArr[i].left + Page.AreaArr[i].W,
+            newBottomLimit = Page.AreaArr[i].top + Page.AreaArr[i].H;
+
+          rightLimit = Math.max(newRightLimit, rightLimit);
+          bottomLimit = Math.max(newBottomLimit, bottomLimit);
+        }
+
+        this.cvs.width = rightLimit;
+        this.cvs.height = bottomLimit;
+
+        // left pos uses Game.W because ideally that area is centered
+        var topPos = (bodyH - bottomLimit) / 2,
+          leftPos = (bodyW / 2) - (this.Game.W / 2),
+          rightOffset = bodyW - (leftPos + rightLimit) - this.unitSize * 0.5;
+
+        // if default canvas positioning extends beyond screen, adjust it
+        if (rightOffset < 0) {
+          leftPos = Math.max(this.unitSize * 0.5, leftPos + rightOffset);
+        }
+
+        this.cvs.style.left = leftPos + 'px';
+        this.cvs.style.top = topPos + 'px';
+      },
+
+      // performs the page setup
+      Initialize: function () {
+
+        // if page has not been setup, do initial setup
+        if (this.IsSetup === false) {
+          document.body.appendChild(Page.cvs);
+
+          this.body.style.overflow = 'hidden';
+          this.body.style.backgroundColor = 'rgb(0,0,0)';
+          this.cvs.style.position = 'absolute';
+          this.ctx = this.cvs.getContext('2d');
+
+          this.IsSetup = true;
+        }
+
+        this.WindowChanged();
+
+        // dirty all draw areas
+        for (var i = 0; i < Page.AreaArr.length; i++) {
+          Page.AreaArr[i].IsDirty = true;
+        }
+      },
+
+      // redraws canvas visuals whenever the page is marked as dirty
+      Update: function () {
+        for (var i = 0; i < Page.AreaArr.length; i++) {
+          if (Page.AreaArr[i].IsDirty) {
+            Page.AreaArr[i].Draw();
+            Page.AreaArr[i].IsDirty = false;
+          }
+        }
+      }
+    };
+
+
+    // Definition for Area objects. Bounds are in UNITS
+    function DrawAreaObj(Left, Top, Width, Height, DrawFunction) {
+
+      // bounds in UNITS
+      this.leftBase = Left;
+      this.topBase = Top;
+      this.widthBase = Width;
+      this.heightBase = Height;
+
+      // bounds in PIXELS
+      this.left = 0;
+      this.top = 0;
+      this.W = 0;
+      this.H = 0;
+
+      // dirty flag (clean yourself up flag, you're better than that)
+      this.IsDirty = false;
+
+      // bounds recalculated and area dirtied when unitSize changes
+      this.CalculateBounds = function () {
+        this.left = this.leftBase * Page.unitSize;
+        this.top = this.topBase * Page.unitSize;
+        this.W = this.widthBase * Page.unitSize;
+        this.H = this.heightBase * Page.unitSize;
+
+        this.IsDirty = true;
+      };
+
+      // draw function as passed in by the callee
+      this.Draw = DrawFunction;
+
+      // push this area into the area arr    
+      Page.AreaArr.push(this);
+    }
+
+    //function DrawAreaObj(10.5,2.6,2.5,2.5,function(){
+    function myDrawObject(pc, l, t) {
+      var uDrawSize = Math.floor(Page.unitSize / 2),
+        pcA = pc;
+      // next box background
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
+      Page.ctx.fillRect(this.left, this.top, this.W, this.H);
+
+      // draw the upcoming piece (if one exists)
+      if (pcA !== 0) {
+        Page.ctx.fillStyle = pcA.color;
+
+        var totalL = 0,
+          totalT = 0,
+          countedL = [],
+          countedT = [];
+
+        // calculate average positions of units in order to center
+        for (var i = 0; i < pcA.UO.arr.length; i++) {
+          var curX = pcA.UO.arr[i].x,
+            curY = pcA.UO.arr[i].y;
+
+          if (countedL.indexOf(curX) < 0) {
+            countedL.push(curX);
+            totalL += curX;
+          }
+          if (countedT.indexOf(curY) < 0) {
+            countedT.push(curY);
+            totalT += curY;
+          }
+        }
+
+        var avgL = uDrawSize * (totalL / countedL.length + 0.5),
+          avgT = uDrawSize * (totalT / countedT.length + 0.5),
+          //offsetL = this.left + this.W/2,
+          //offsetT = this.top + this.H/2;
+          //offsetL = 150,
+          //offsetT = 50;
+          offsetL = l,
+          offsetT = t;
+
+        // now draw the upcoming piece, using avg vars to center
+
+        for (var j = 0; j < pcA.UO.arr.length; j++) {
+          var drawL = Math.floor(offsetL - avgL + pcA.UO.arr[j].x * uDrawSize),
+            drawT = Math.floor(offsetT - avgT + pcA.UO.arr[j].y * uDrawSize);
+
+          Page.ctx.fillRect(drawL, drawT, uDrawSize - 1, uDrawSize - 1);
+        }
+
+      }
+    }
+
+
+    Page.Game = new DrawAreaObj(0, 0, 10, 20, function () {
+
+      // unitSize minus a couple pixels of separation
+      var uDrawSize = Page.unitSize - 2,
+        drawL,
+        drawT;
+
+      // redraws the background elements for game area
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
+      Page.ctx.fillRect(this.left, this.top, this.W, this.H);
+
+      // draw the static unit blocks
+      for (var i = 0; i < GM.StaticUnits.length; i++) {
+        for (var j = 0; j < GM.StaticUnits[i].length; j++) {
+
+          // get the unit value for this index pair
+          var uValue = GM.StaticUnits[i][j];
+
+          // if this unit value is not 0, draw the unit
+          if (uValue !== 0) {
+            drawL = i * Page.unitSize + 1;
+            drawT = j * Page.unitSize + 1;
+
+            // fill this square with color based on player alive status        
+            Page.ctx.fillStyle = (GM.IsAlive) ? uValue : 'rgb(34,36,42)';
+            Page.ctx.fillRect(drawL, drawT, uDrawSize, uDrawSize);
+          }
+        }
+      }
+
+      // draw the current active projection and piece (if exists)
+      if (GM.Pc.Cur !== 0 && GM.IsAlive) {
+        var projColor = ColorWithAlpha(GM.Pc.Cur.color, 0.1);
+
+        for (var k = 0; k < GM.Pc.Cur.UO.arr.length; k++) {
+          drawL = (GM.Pc.Cur.x + GM.Pc.Cur.UO.arr[k].x) * Page.unitSize + 1;
+          drawT = (GM.Pc.Cur.y + GM.Pc.Cur.UO.arr[k].y) * Page.unitSize + 1;
+
+          Page.ctx.fillStyle = GM.Pc.Cur.color;
+          Page.ctx.fillRect(drawL, drawT, uDrawSize, uDrawSize);
+
+          // also draw the projection (if one exists)
+          if (GM.IsAlive && GM.Pc.ProjY !== 0) {
+            drawT += GM.Pc.ProjY * Page.unitSize;
+
+            Page.ctx.fillStyle = projColor;
+            Page.ctx.fillRect(drawL, drawT, uDrawSize, uDrawSize);
+          }
+        }
+      }
+
+      // if the player is dead, draw the game over text
+      /* if (!GM.IsAlive && timeouts.length == 0) {
+        document.getElementById('nextButton').style.display = 'block';
+      } 
+      if (!GM.IsAlive) {
+        drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
+      } */
+    });
+
+
+    Page.UpcomingA = new DrawAreaObj(10.5, 2.6, 2.5, 2.5, function () {
+
+      var uDrawSize = Math.floor(Page.unitSize / 2),
+        pcA = GM.Pc.Upcoming[0];
+
+      // next box background
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
+      Page.ctx.fillRect(this.left, this.top, this.W, this.H);
+
+      // draw the upcoming piece (if one exists)
+      if (pcA !== 0) {
+        Page.ctx.fillStyle = pcA.color;
+
+        var totalL = 0,
+          totalT = 0,
+          countedL = [],
+          countedT = [];
+
+        // calculate average positions of units in order to center
+        for (var i = 0; i < pcA.UO.arr.length; i++) {
+          var curX = pcA.UO.arr[i].x,
+            curY = pcA.UO.arr[i].y;
+
+          if (countedL.indexOf(curX) < 0) {
+            countedL.push(curX);
+            totalL += curX;
+          }
+          if (countedT.indexOf(curY) < 0) {
+            countedT.push(curY);
+            totalT += curY;
+          }
+        }
+
+        var avgL = uDrawSize * (totalL / countedL.length + 0.5),
+          avgT = uDrawSize * (totalT / countedT.length + 0.5),
+          offsetL = this.left + this.W / 2,
+          offsetT = this.top + this.H / 2;
+
+        // now draw the upcoming piece, using avg vars to center
+        for (var j = 0; j < pcA.UO.arr.length; j++) {
+          var drawL = Math.floor(offsetL - avgL + pcA.UO.arr[j].x * uDrawSize),
+            drawT = Math.floor(offsetT - avgT + pcA.UO.arr[j].y * uDrawSize);
+
+          Page.ctx.fillRect(drawL, drawT, uDrawSize - 1, uDrawSize - 1);
+        }
+      }
+    });
+
+
+    Page.UpcomingB = new DrawAreaObj(10.5, 5.2, 2.5, 2.5, function () {
+
+      var uDrawSize = Math.floor(Page.unitSize / 2),
+        pcB = GM.Pc.Upcoming[1];
+
+      // next box background
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
+      Page.ctx.fillRect(this.left, this.top, this.W, this.H);
+
+      // draw the upcoming piece (if one exists)
+      if (pcB !== 0) {
+        Page.ctx.fillStyle = pcB.color;
+
+        var totalL = 0,
+          totalT = 0,
+          countedL = [],
+          countedT = [];
+
+        // calculate average positions of units in order to center
+        for (var i = 0; i < pcB.UO.arr.length; i++) {
+          var curX = pcB.UO.arr[i].x,
+            curY = pcB.UO.arr[i].y;
+
+          if (countedL.indexOf(curX) < 0) {
+            countedL.push(curX);
+            totalL += curX;
+          }
+          if (countedT.indexOf(curY) < 0) {
+            countedT.push(curY);
+            totalT += curY;
+          }
+        }
+
+        var avgL = uDrawSize * (totalL / countedL.length + 0.5),
+          avgT = uDrawSize * (totalT / countedT.length + 0.5),
+          offsetL = this.left + this.W / 2,
+          offsetT = this.top + this.H / 2;
+
+        // now draw the upcoming piece, using avg vars to center
+        for (var j = 0; j < pcB.UO.arr.length; j++) {
+          var drawL = Math.floor(offsetL - avgL + pcB.UO.arr[j].x * uDrawSize),
+            drawT = Math.floor(offsetT - avgT + pcB.UO.arr[j].y * uDrawSize);
+
+          Page.ctx.fillRect(drawL, drawT, uDrawSize - 1, uDrawSize - 1);
+        }
+      }
+    });
+
+
+    Page.UpcomingC = new DrawAreaObj(10.5, 7.8, 2.5, 2.5, function () {
+
+      var uDrawSize = Math.floor(Page.unitSize / 2),
+        pcC = GM.Pc.Upcoming[2];
+
+      // next box background
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
+      Page.ctx.fillRect(this.left, this.top, this.W, this.H);
+
+      // draw the upcoming piece (if one exists)
+      if (pcC !== 0) {
+        Page.ctx.fillStyle = pcC.color;
+
+        var totalL = 0,
+          totalT = 0,
+          countedL = [],
+          countedT = [];
+
+        // calculate average positions of units in order to center
+        for (var i = 0; i < pcC.UO.arr.length; i++) {
+          var curX = pcC.UO.arr[i].x,
+            curY = pcC.UO.arr[i].y;
+
+          if (countedL.indexOf(curX) < 0) {
+            countedL.push(curX);
+            totalL += curX;
+          }
+          if (countedT.indexOf(curY) < 0) {
+            countedT.push(curY);
+            totalT += curY;
+          }
+        }
+
+        var avgL = uDrawSize * (totalL / countedL.length + 0.5),
+          avgT = uDrawSize * (totalT / countedT.length + 0.5),
+          offsetL = this.left + this.W / 2,
+          offsetT = this.top + this.H / 2;
+
+        // now draw the upcoming piece, using avg vars to center
+        for (var j = 0; j < pcC.UO.arr.length; j++) {
+          var drawL = Math.floor(offsetL - avgL + pcC.UO.arr[j].x * uDrawSize),
+            drawT = Math.floor(offsetT - avgT + pcC.UO.arr[j].y * uDrawSize);
+
+          Page.ctx.fillRect(drawL, drawT, uDrawSize - 1, uDrawSize - 1);
+        }
+      }
+    });
+
+
+    Page.ScoreBarHigh = new DrawAreaObj(10.5, 0, 4.5, 1, function () {
+
+      // draw the score area back bar
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
+      Page.ctx.fillRect(this.left, this.top, this.W, this.H);
+
+
+      // Draw the trophy symbol
+
+      var miniUnit, left, top, width, height;
+
+      miniUnit = Page.unitSize * 0.01;
+      Page.ctx.fillStyle = 'rgb(255,232,96)';
+
+      // trophy base
+      left = Math.floor(this.left + miniUnit * 33);
+      top = Math.floor(this.top + this.H - miniUnit * 28);
+      width = Math.floor(miniUnit * 30);
+      height = Math.floor(miniUnit * 12);
+      Page.ctx.fillRect(left, top, width, height);
+
+      // trophy trunk
+      left = Math.floor(this.left + miniUnit * 42);
+      top = Math.floor(this.top + this.H - miniUnit * 50);
+      width = Math.floor(miniUnit * 12);
+      height = Math.floor(miniUnit * 32);
+      Page.ctx.fillRect(left, top, width, height);
+
+      // trophy bowl
+      left = Math.floor(this.left + miniUnit * 48);
+      top = Math.floor(this.top + this.H - miniUnit * 68);
+      Page.ctx.arc(left, top, miniUnit * 24, 0, Math.PI);
+      Page.ctx.fill();
+
+      // draw the player's current score
+      text = ("00000000" + GM.ScoreHigh).slice(-7);
+      left = this.left + this.W - 4;
+      top = this.top + Page.unitSize * 0.8;
+      size = Math.floor(Page.unitSize * 0.8) + 0.5;
+
+      DrawText(text, 'rgb(255,232,96)', '500', 'right', size, left, top);
+    });
+
+    Page.ScoreBarCur = new DrawAreaObj(10.5, 1.1, 4.5, 1, function () {
+
+      // draw the score area back bar
+      Page.ctx.fillStyle = 'rgb(48,50,54)';
+      Page.ctx.fillRect(this.left, this.top, this.W, this.H);
+
+      // draw the player's current level
+      var text, left, top, size, miniUnit;
+      miniUnit = Page.unitSize * 0.01;
+
+      text = ('00' + GM.Level).slice(-2);
+      left = this.left + Math.floor(miniUnit * 50);
+      top = this.top + Page.unitSize * 0.8;
+      size = Math.floor(Page.unitSize * 0.5);
+
+      DrawText(text, 'rgb(128,128,128)', '900', 'center', size, left, top);
+
+
+      // draw the player's current score
+      text = ("00000000" + GM.ScoreCur).slice(-7);
+      left = this.left + this.W - 4;
+      top = this.top + Page.unitSize * 0.8;
+      size = Math.floor(Page.unitSize * 0.8) + 0.5;
+
+      DrawText(text, 'rgb(255,255,255)', '500', 'right', size, left, top);
+    });
+
+
+    //--------------------------------------------------//
+    //    GAME MANAGER OBJECT & LOGIC                   //
+    //--------------------------------------------------//
+
+    var LinesCleared = 0
+    var LinesCleared2 = 0
+    var LinesClearedCounter = 0
+
+
+    var GM = {
+
+      //-- VARS ---------*/
+
+      // timers
+      TimeCur: 0, TimeEvent: 0, TickRate: 0,
+
+      // player status & score
+      IsAlive: 0, Level: part1transferlevel, PiecesRemaining: 0,
+
+      // score count and current piece score modifiers
+
+      ScoreHigh: part1highscore, ScoreCur: 0, ScoreBonus: 0, DifficultFlag: 0,
+
+      // array of grid squares
+      StaticUnits: [],
+
+
+
+      /*-- FCNS ---------*/
+
+
+
+      // Set up intial game var values
+      Initialize: function () {
+
+        // reset current piece vars
+        this.Pc.Next = this.Pc.Cur = this.Pc.ProjY = 0;
+
+        // populate the GM's static unit array with 0's (empty)
+        for (var i = 0; i < 10; i++) {
+          this.StaticUnits[i] = [];
+          for (var j = 0; j < 20; j++) {
+            this.StaticUnits[i][j] = 0;
+          }
+        }
+
+        // reset timer
+        this.TimeCur = this.TimeEvent = 0;
+        this.TickRate = 450 - (GM.Level - 1) * 25;
+        if (this.TickRate >= 450) {
+          this.TickRate = 450
+        }
+        if (this.TickRate <= 25) {
+          this.TickRate = 25
+        }
+        var previousTickRate = 0;
+
+        // set up level values for level 1
+        this.PiecesRemainingBase = 20;
+        this.PiecesRemaining = 20;
+        part2levelchangetimes.push(Time1());
+        part2levelchangescore.push(GM.ScoreCur);
+        part2levels.push(this.Level + "new");
+        part2speedPer20blocks.push(this.TickRate + "new");
+        part2levelchange.push("new");
+        // reset the score and set player to alive
+        this.ScoreCur = 0;
+        this.IsAlive = true;
+      },
+
+      // updates time each frame and executing logic if a tick has passed
+      Update: function () {
+        this.TimeCur = new Date().getTime();
+
+        if (this.TimeCur >= this.TimeEvent) {
+
+          if (GM.Pc.Cur === 0 && this.IsAlive) {
+            this.Pc.Generate();
+          }
+          else {
+            this.Pc.DoGravity();
+            this.Pc.ProjY = this.Pc.TryProject();
+            Page.Game.IsDirty = true;
+          }
+
+          this.RefreshTimer();
+        }
+      },
+
+      // reset the tick timer (generates a new TimeEvent target)
+      RefreshTimer: function () {
+        this.TimeEvent = new Date().getTime() + this.TickRate;
+      },
+
+      // check specified rows to see if any can be cleared
+      CheckUnits: function (checkRowsRaw) {
+        var scoreMult = 0,
+          pieceScore = 0,
+          checkRows = [];
+
+        // add the scoreBonus for dropping
+        if (this.ScoreBonus > 0) {
+          pieceScore += this.ScoreBonus;
+        }
+
+        // sort the rows
+        for (var a = 0; a < 20; a++) {
+          if (checkRowsRaw.indexOf(a) >= 0) {
+            checkRows.push(a);
+            // get average of checkRows
+            var total = 0;
+            for (var i = 0; i < checkRows.length; i++) {
+              total += checkRows[i];
+            }
+            var checkRowsAverage = total / checkRows.length;
+          }
+        }
+        part2AverageHeight.push(checkRowsAverage)
+        // console.log(checkRowsAverage)
+
+        for (var i = 0; i < checkRows.length; i++) {
+          var hasGap = false,
+            checkIndex = checkRows[i];
+          for (var j = 0; j < GM.StaticUnits.length; j++) {
+            if (GM.StaticUnits[j][checkIndex] === 0) {
+              hasGap = true;
+              break;
+            }
+          }
+
+          if (hasGap === false) {
+            LinesCleared = LinesCleared + 1;
+            part2linesclearedtotalcounter.push(LinesCleared);
+            part2linesclearedtimes.push(Time1());
+            part2linesclearedtimesmilliseconds.push(new Date().getTime());
+            LinesCleared2 = LinesCleared2 + 1;
+            LinesClearedCounter = LinesClearedCounter + 1
+            for (var k = 0; k < GM.StaticUnits.length; k++) {
+              GM.StaticUnits[k].splice(checkIndex, 1);
+              GM.StaticUnits[k].unshift(0);
+            }
+
+            // console.log(LinesCleared)
+            //console.log(LinesClearedCounter);
+
+
+            pieceScore += 100 + 200 * scoreMult;
+            if (scoreMult > 2) {
+              pieceScore += 100;
+            }
+            scoreMult++;
+
+          }
+        }
+
+        if (this.DifficultFlag === 1) {
+          pieceScore = Math.floor(pieceScore * 1.5);
+          this.DifficultFlag = 0;
+        }
+
+        if (pieceScore > 0) {
+          this.ScoreCur += pieceScore;
+          Page.ScoreBarCur.IsDirty = true;
+
+          this.ScoreBonus = 0;
+
+          if (scoreMult > 3) {
+            this.DifficultFlag = 1;
+          }
+        }
+      },
+
+      // called when a piece is spawned, advances level if needed
+      PieceSpawned: function () {
+        //console.log(this.PiecesRemaining--) ;
+        if (currentTimeOut == 5000 || currentTimeOut == 30000 || currentTimeOut == 60000 || currentTimeOut == 90000 || currentTimeOut == 120000) {
+          TickRatePrevious = GM.TickRate;
+          LevelPrevious = GM.Level;
+          console.log(TickRatePrevious)
+          console.log(LevelPrevious)
+        }
+
+        this.PiecesRemaining--;
+        if (this.PiecesRemaining <= 0 && LinesClearedCounter >= 2) {
+          this.AdvanceLevel();
+        } else if (this.PiecesRemaining <= 0 && LinesClearedCounter == 1) {
+          this.SameLevel();
+        } else if (this.PiecesRemaining <= 0 && LinesClearedCounter == 0) {
+          this.DecreaseLevel();
+        }
+        part2piecesspawned++;
+        part2allmovesanddrop.push("drop");
+        part2allMovesResponsesAndDrops.push("drop");
+        part2allMovesResponsesAndDropsTimes.push(Time1());
+        part2alldroptimes.push(Time1());
+        part2alldroptimesmilliseconds.push(new Date().getTime());
+        part2allmovesanddroptimes.push(Time1());
+        part2allscoreseachdrop.push(GM.ScoreCur)
+      },
+
+
+
+      // advance level, recalculate TickRate, reset pieces remaining
+      AdvanceLevel: function () {
+        GM.Level++;
+        part2linesclearedin20blocks.push(LinesClearedCounter)
+        LinesClearedCounter = 0;
+        // previousTickRate = this.TickRate;
+        //console.log(this.TickRate = this.TickRate - 25);
+        this.TickRate = this.TickRate - 25;
+        this.PiecesRemaining = this.PiecesRemainingBase;
+
+        Page.ScoreBarCur.IsDirty = true;
+        part2levels.push(this.Level);
+        part2levelchange.push("up");
+        part2levelchangetimes.push(Time1());
+        part2levelchangescore.push(GM.ScoreCur);
+        part2speedPer20blocks.push(this.TickRate);
+        console.log(this.TickRate);
+      },
+
+      // decrease level, recalculate TickRate, reset pieces remaining
+      DecreaseLevel: function () {
+        if (GM.Level != 1) {
+          console.log("level=" + this.Level)
+          GM.Level--;
+          part2linesclearedin20blocks.push(LinesClearedCounter)
+          LinesClearedCounter = 0;
+          //console.log(this.TickRate = previousTickRate);
+          this.TickRate = this.TickRate + 25;
+          this.PiecesRemaining = this.PiecesRemainingBase;
+          Page.ScoreBarCur.IsDirty = true;
+          part2levels.push(this.Level);
+          part2levelchange.push("down");
+          part2levelchangetimes.push(Time1());
+          part2levelchangescore.push(GM.ScoreCur);
+          part2speedPer20blocks.push(this.TickRate);
+          console.log(this.TickRate);
+        } else {
+          this.SameLevel();
+          //this.Level = 1;
+        }
+        //GM.Level = this.Level;
+      },
+
+
+      // stay same level, recalculate TickRate, reset pieces remaining
+      SameLevel: function () {
+        this.PiecesRemaining = this.PiecesRemainingBase;
+        part2linesclearedin20blocks.push(LinesClearedCounter)
+        LinesClearedCounter = 0;
+        Page.ScoreBarCur.IsDirty = true;
+        part2levels.push(this.Level);
+        part2levelchange.push("same");
+        part2levelchangetimes.push(Time1());
+        part2levelchangescore.push(GM.ScoreCur);
+        part2speedPer20blocks.push(this.TickRate);
+        console.log(this.TickRate);
+      },
+
+      GameOver: function () {
+        Page.Game.IsDirty = Page.ScoreBarCur.IsDirty = true;
+
+        part2scores.push(this.ScoreCur);
+        part2gameovertimes.push(Time1());
+
+        if (this.ScoreCur > this.ScoreHigh) {
+          this.ScoreHigh = this.ScoreCur;
+          Page.ScoreBarHigh.IsDirty = true;
+        }
+
+        this.IsAlive = false;
+      }
+    };
+
+    //--------------------------------------------------//
+    //    PIECE OBJECT BUILDER                          //
+    //--------------------------------------------------//
+
+    // PcObj is used to create new piece object instances based on the
+    // passed in parameters. PcObj is called by predefined templates
+
+    GM.PcObj = function (color, rotCount, units) {
+      this.x = 5;
+      this.y = 0;
+      this.color = color;
+      this.UO = {};
+
+      // rotate this piece by advancing to next unit obj of linked list
+      this.Rotate = function () {
+        this.UO = this.UO.nextUO;
+      };
+
+      // set up the piece unit object linked list to define rotations
+      this.SetUO = function (rotCount, units) {
+        var linkedListUO = [];
+
+        linkedListUO[0] = { nextUO: 0, arr: [] };
+        linkedListUO[0].arr = units;
+
+        for (var i = 0; i < rotCount; i++) {
+          var nextI = (i + 1 < rotCount) ? i + 1 : 0;
+          linkedListUO[i] = { nextUO: 0, arr: [] };
+
+          if (i > 0) {
+            linkedListUO[i - 1].nextUO = linkedListUO[i];
+          }
+
+          for (var j = 0; j < units.length; j++) {
+            var unX,
+              unY;
+
+            if (i === 0) {
+              unX = units[j].x;
+              unY = units[j].y;
+            }
+            else {
+              unX = linkedListUO[i - 1].arr[j].y * -1;
+              unY = linkedListUO[i - 1].arr[j].x;
+            }
+
+            linkedListUO[i].arr[j] = { x: unX, y: unY };
+          }
+        }
+
+        linkedListUO[rotCount - 1].nextUO = linkedListUO[0];
+        this.UO = linkedListUO[0];
+      };
+      this.SetUO(rotCount, units);
+    };
+
+
+    //--------------------------------------------------//
+    //    PIECE TYPE TEMPLATES                          //
+    //--------------------------------------------------//
+
+    // Templates create a new piece object instance based on
+    // their color, rotation count, and unit block definitions.
+
+    // O - Square piece definition
+    GM.O = function () {
+      return new GM.PcObj('rgb(255,232,51)', 1,
+        [{ x: -1, y: 0 },
+        { x: 0, y: 0 },
+        { x: -1, y: 1 },
+        { x: 0, y: 1 }]);
+    };
+
+    // I - Line piece definition
+    GM.I = function () {
+      return new GM.PcObj('rgb(51,255,209)', 2,
+        [{ x: -2, y: 0 },
+        { x: -1, y: 0 },
+        { x: 0, y: 0 },
+        { x: 1, y: 0 }]);
+    };
+
+    // S - Right facing zigzag piece definition
+    GM.S = function () {
+      return new GM.PcObj('rgb(106,255,51)', 2,
+        [{ x: 0, y: 0 },
+        { x: 1, y: 0 },
+        { x: -1, y: 1 },
+        { x: 0, y: 1 }]);
+    };
+
+    // Z - Left facing zigzag piece definition
+    GM.Z = function () {
+      return new GM.PcObj('rgb(255,51,83)', 2,
+        [{ x: -1, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 1 },
+        { x: 1, y: 1 }]);
+    };
+
+    // L - Right facing angle piece definition
+    GM.L = function () {
+      return new GM.PcObj('rgb(255,129,51)', 4,
+        [{ x: -1, y: 0 },
+        { x: 0, y: 0 },
+        { x: 1, y: 0 },
+        { x: -1, y: -1 }]);
+    };
+
+    // J - Left facing angle piece definition
+    GM.J = function () {
+      return new GM.PcObj('rgb(64,100,255)', 4,
+        [{ x: -1, y: 0 },
+        { x: 0, y: 0 },
+        { x: 1, y: 0 },
+        { x: 1, y: -1 }]);
+    };
+
+    // T - Hat shaped piece definition
+    GM.T = function () {
+      return new GM.PcObj('rgb(160,62,255)', 4,
+        [{ x: -1, y: 0 },
+        { x: 0, y: 0 },
+        { x: 1, y: 0 },
+        { x: 0, y: -1 }]);
+    };
+
+
+    //--------------------------------------------------//
+    //    ACTIVE PIECE CONTROLLER                       //
+    //--------------------------------------------------//
+
+    // Controls the generation, movement, and placement of piece
+    // objects. Monitors the current piece and upcoming piece
+
+    GM.Pc = {
+
+      //-- VARS ---------*/
+
+      // current piece, projected Y pos of cur piece  
+      Cur: 0, ProjY: 0,
+
+      // upcoming pieces
+      Upcoming: [0, 0, 0],
+
+
+      //-- FCNS ---------*/
+
+      // push upcoming piece to current & randomize new upcoming piece
+      Generate: function () {
+
+        // push upcoming piece to current and push down other upcomings
+        this.Cur = this.Upcoming[0];
+        this.Upcoming[0] = this.Upcoming[1];
+        this.Upcoming[1] = this.Upcoming[2];
+
+        curShape = upcomingShape[0]
+        upcomingShape[0] = upcomingShape[1]
+        upcomingShape[1] = upcomingShape[2]
+        // check if the player lost
+        if (this.Cur !== 0) {
+          var spawnCollisions = this.CheckCollisions(0, 0, 0);
+          if (spawnCollisions > 0) {
+            GM.GameOver();
+            this.Freeze();
+          }
+        }
+
+        // if player is alive, generate random upcoming piece
+        if (GM.IsAlive !== 0) {
+          var randInt = Math.floor(Math.random() * 7);
+
+          switch (randInt) {
+            case 0: this.Upcoming[2] = GM.O(); break;
+            case 1: this.Upcoming[2] = GM.I(); break;
+            case 2: this.Upcoming[2] = GM.S(); break;
+            case 3: this.Upcoming[2] = GM.Z(); break;
+            case 4: this.Upcoming[2] = GM.L(); break;
+            case 5: this.Upcoming[2] = GM.J(); break;
+            case 6: this.Upcoming[2] = GM.T(); break;
+            default: break;
+          }
+          upcomingShape[2] = randInt + 1;
+          // if a current piece was set, inform the GM
+          if (this.Cur !== 0) {
+            GM.PieceSpawned();
+            Page.Game.IsDirty = true;
+          }
+
+          Page.UpcomingA.IsDirty = Page.UpcomingB.IsDirty =
+            Page.UpcomingC.IsDirty = true;
+        }
+      },
+
+      // freeze the current piece's position and rotation
+      Freeze: function () {
+
+        if (GM.IsAlive) {
+          var affectedRows = [];
+
+          for (var i = 0; i < this.Cur.UO.arr.length; i++) {
+            var staticX = this.Cur.x + this.Cur.UO.arr[i].x,
+              staticY = this.Cur.y + this.Cur.UO.arr[i].y;
+
+            if (staticY >= 0 && staticY <= GM.StaticUnits[0].length) {
+              GM.StaticUnits[staticX][staticY] = this.Cur.color;
+            }
+
+            if (affectedRows.indexOf(staticY) < 0) {
+              affectedRows.push(staticY);
+            }
+          }
+
+          GM.CheckUnits(affectedRows);
+          this.Generate();
+        }
+      },
+
+      // apply gravity to the current piece, checking for collisions
+      DoGravity: function () {
+        if (this.Cur !== 0) {
+          var collisions = this.CheckCollisions(0, 0, 1);
+
+          if (collisions === 0) {
+            this.Cur.y++;
+          }
+          else {
+            this.Freeze();
+          }
+        }
+        GM.RefreshTimer();
+      },
+
+      // attempt to rotate the current piece, returns bool
+      TryRotate: function () {
+        if (this.Cur !== 0) {
+          var collisions = this.CheckCollisions(1, 0, 0);
+
+          if (collisions === 0) {
+            this.Cur.Rotate();
+            return true;
+          }
+        }
+        return false;
+      },
+
+      // attempt to move current piece base on given XY, returns bool
+      TryMove: function (moveX, moveY) {
+        if (this.Cur !== 0) {
+          var collisions = this.CheckCollisions(0, moveX, moveY);
+
+          if (collisions === 0) {
+            this.Cur.x += moveX;
+            this.Cur.y += moveY;
+
+            if (moveY > 0) {
+              GM.RefreshTimer();
+              GM.ScoreBonus++;
+            }
+            return true;
+          }
+        }
+        return false;
+      },
+
+      // attempt to drop the current piece until it collides, returns bool
+      TryDrop: function () {
+        var squaresDropped = 0;
+
+        if (this.Cur !== 0) {
+          while (this.TryMove(0, 1) === true && squaresDropped < 22) {
+            squaresDropped++;
+          }
+        }
+
+        if (squaresDropped > 0) {
+          GM.ScoreBonus += Math.round(2 * squaresDropped / 4);
+          this.Freeze();
+          return true;
+        }
+        else {
+          return false;
+        }
+      },
+
+      // attempt to find (and return) projected drop point of current piece
+      TryProject: function () {
+        var squaresDropped = 0;
+
+        if (this.Cur !== 0) {
+          while (this.CheckCollisions(0, 0, squaresDropped) === 0 &&
+            squaresDropped < 22) {
+            squaresDropped++;
+          }
+        }
+        return squaresDropped - 1;
+      },
+
+      // return collision count OR -1 if test piece out of bounds
+      CheckCollisions: function (doRot, offsetX, offsetY) {
+        var unitArr,
+          collisionCount = 0;
+
+        if (doRot === 1) {
+          unitArr = this.Cur.UO.nextUO.arr;
+        }
+        else {
+          unitArr = this.Cur.UO.arr;
+        }
+
+        for (var i = 0; i < unitArr.length; i++) {
+          var testX = this.Cur.x + unitArr[i].x + offsetX,
+            testY = this.Cur.y + unitArr[i].y + offsetY,
+            limitX = GM.StaticUnits.length,
+            limitY = GM.StaticUnits[0].length;
+
+
+          if (testX < 0 || testX >= limitX || testY >= limitY) {
+            return -1;
+          }
+          else if (testY > 0) {
+            if (GM.StaticUnits[testX][testY] !== 0) {
+              collisionCount++;
+            }
+          }
+        }
+        return collisionCount;
+      }
+    };
+
+
+    //--------------------------------------------------//
+    //    EVENT LISTENERS                               //
+    //--------------------------------------------------//
+
+    // Event for keyboard calls the corresponding manipulation functions
+    // in GM.Pc based on user inputs. If manipulation is successful,
+    // the page is marked as dirty.
+
+    xfunc = document.addEventListener('keydown', function (evt) {
+      var key = event.keyCode || event.which;
+
+      if (GM.IsAlive) {
+        switch (key) {
+
+          // Up arrow OR W = rotate    
+          case 38:
+          case 87:
+            Page.Game.IsDirty = GM.Pc.TryRotate();
+            if (!assess) {
+              part2allmovesanddrop.push("U");
+              part2allmovestimes.push(Time1());
+              part2allmovesanddroptimes.push(Time1());
+              part2allMovesResponsesAndDrops.push("U");
+              part2allMovesResponsesAndDropsTimes.push(Time1());
+            }
+            else {
+              allmovespregame.push("U");
+              allmovestimespregame.push(new Date().getTime());
+            }
+            break;
+
+          // Left arrow OR A = move left
+          case 37:
+          case 65:
+            if (!assess) {
+              part2allmovesanddrop.push("L");
+              part2allmovestimes.push(Time1());
+              part2allmovesanddroptimes.push(Time1());
+              part2allMovesResponsesAndDrops.push("L");
+              part2allMovesResponsesAndDropsTimes.push(Time1());
+            }
+            else {
+              allmovespregame.push("L");
+              allmovestimespregame.push(new Date().getTime());
+            }
+            Page.Game.IsDirty = GM.Pc.TryMove(-1, 0);
+            break;
+
+          // Right arrow OR D = move right  
+          case 39:
+          case 68:
+            if (!assess) {
+              part2allmovesanddrop.push("R");
+              part2allmovestimes.push(Time1());
+              part2allmovesanddroptimes.push(Time1());
+              part2allMovesResponsesAndDrops.push("R");
+              part2allMovesResponsesAndDropsTimes.push(Time1());
+            }
+            else {
+              allmovespregame.push("R");
+              allmovestimespregame.push(new Date().getTime());
+            }
+            Page.Game.IsDirty = GM.Pc.TryMove(1, 0);
+            break;
+
+          // Down arrow OR S = move down  
+          case 40:
+          case 83:
+            if (!assess) {
+              part2allmovesanddrop.push("D");
+              part2allmovestimes.push(Time1());
+              part2allmovesanddroptimes.push(Time1());
+              part2allMovesResponsesAndDrops.push("D");
+              part2allMovesResponsesAndDropsTimes.push(Time1());
+            }
+            else {
+              allmovespregame.push("D");
+              allmovestimespregame.push(new Date().getTime());
+            }
+            Page.Game.IsDirty = GM.Pc.TryMove(0, 1);
+            break;
+
+          // Spacebar to drop the current piece
+          case 32:
+            if (!assess) {
+              part2allmovesanddrop.push("S");
+              part2allmovestimes.push(Time1());
+              part2allmovesanddroptimes.push(Time1());
+              part2allMovesResponsesAndDrops.push("S");
+              part2allMovesResponsesAndDropsTimes.push(Time1());
+            }
+            else {
+              allmovespregame.push("S");
+              allmovestimespregame.push(new Date().getTime());
+            }
+            Page.Game.IsDirty = GM.Pc.TryDrop();
+            break;
+
+          // Pause game
+          case 80:
+            // togglePause();
+            pause = true;
+            break;
+          case 49:
+          case 50:
+          case 51:
+          case 52:
+            rate = key - 48
+            break;
+          case 97:
+          case 98:
+          case 99:
+          case 100:
+            rate = key - 96
+            break
+          default: break;
+        }
+
+        //if board was dirtied, cast fresh projection for current piece
+        if (Page.Game.IsDirty) {
+          GM.Pc.ProjY = GM.Pc.TryProject();
+        }
+      }
+
+      // if player not alive, reset the game
+      else {
+        //jk
+        if (!exit) {
+          // glevel = GM.Level
+          Init();
+          // GM.Level = glevel
+        } else {
+
+        }
+      }
+
+    }, false);
+
+
+    // Window resize event calls Page function to update the canvas
+    // size/position, area bounds within the canvas, and the unitSize
+
+    window.onresize = function (event) {
+      Page.WindowChanged();
+    };
+
+
+    //--------------------------------------------------//
+    //    INITIALAZATION AND GAME LOOP                  //
+    //--------------------------------------------------//
+
+    // Called on page load / game reset, Init fcn initializes
+    // the Page and GM objects, then starts the main game loop.
+
+    //var pause=0;
+    var xfunc
+    var pause = false;
+    var userInput;
+    var myInterval;
+    var gameOverTimeout = false;
+    var rate = 0
+    var questions = [];
+    var rates = [];
+    var fups = [];
+    var gameOverCnt = 0;
+    var gameNos = [];
+    var gameOverT1;
+    var gameOverT2;
+
+    var breaktime = 0; // 30000
+    // var repetitions = 3;
+    // var timeoutsTimes = [5000, 30000, 60000, 90000, 120000, 10000, 10001]; // the interprobe intervals
+    // var tocnt1 = [0, 0, 0, 0, 0, 0, 0]; // make sure the length of this array matches the length of timeoutsTimes
+    // var tocnt = new Array(repetitions).fill(tocnt1).flat();
+    var tocnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var breakTimeFactor = 6;
+    //var breakTimeFactor = Math.ceil((repetitions * timeoutsTimes.length) / 3); // 2 breaks in the game
+
+    /// want to randomise interprobe intervals, but to make sure at least interprobe interval in each block
+    /// also need to make sure the mock, 10000 and 10001, are not next to each other
+
+    var timeoutsraw1 = [5000, 10000, 30000, 60000, 90000, 120000];
+    var timeoutsraw2 = [5000, 10000, 30000, 60000, 90000, 120000];
+    var timeoutsraw3 = [5000, 10000, 30000, 60000, 90000, 120000];
+    // var timeoutsraw4 = [5000, 30000, 60000, 90000, 120000];
+    // var mock = [10000, 10000, 10001, 10001]
+
+    // function to shuffle the arrays 
+    function shuffle(array) {
+      let counter = array.length;
+      // While there are elements in the array
+      while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+      }
+      return array;
+    }
+
+    // mockshuffled = shuffle(mock); // shuffle the mock array
+
+    timeouts1shuffled = shuffle(timeoutsraw1); // shuffle timeoutsraw1
+    // timeouts1shuffledSplit = timeouts1shuffled.splice(0, 1); // sepearate timeouts1shuffled into [1] + [2,3,4,5]
+    // timeouts1shuffledWithMock = timeouts1shuffled.concat(mockshuffled[0]); // add the mock into the shuffled array [2,3,4,5]
+    // timeouts1shuffledWithMock = shuffle(timeouts1shuffledWithMock); // shuffle this array with the mock inside
+    // timeouts1shuffledFinal = timeouts1shuffledSplit.concat(timeouts1shuffledWithMock); // add the [1] to this array
+
+    timeouts2shuffled = shuffle(timeoutsraw2);
+    // timeouts2shuffledSplit = timeouts2shuffled.splice(0, 1); // sepearate timeouts2shuffled into [1] + [2,3,4,5]
+    // timeouts2shuffledWithMock = timeouts2shuffled.concat(mockshuffled[1]); // add the mock into the shuffled array [2,3,4,5]
+    // timeouts2shuffledWithMock = shuffle(timeouts2shuffledWithMock); // shuffle this array with the mock inside
+    // timeouts2shuffledFinal = timeouts2shuffledSplit.concat(timeouts2shuffledWithMock); // add the [1] to this array
+
+    timeouts3shuffled = shuffle(timeoutsraw3);
+    // timeouts3shuffledSplit = timeouts3shuffled.splice(0, 1); // sepearate timeouts3shuffled into [1] + [2,3,4,5]
+    // timeouts3shuffledWithMock = timeouts3shuffled.concat(mockshuffled[2]); // add the mock into the shuffled array [2,3,4,5]
+    // timeouts3shuffledWithMock = shuffle(timeouts3shuffledWithMock); // shuffle this array with the mock inside
+    // timeouts3shuffledFinal = timeouts3shuffledSplit.concat(timeouts3shuffledWithMock); // add the [1] to this array
+
+    // timeouts4shuffled = shuffle(timeoutsraw4);
+    // timeouts4shuffledSplit = timeouts4shuffled.splice(0, 1); // sepearate timeouts4shuffled into [1] + [2,3,4,5]
+    // timeouts4shuffledWithMock = timeouts4shuffled.concat(mockshuffled[3]); // add the mock into the shuffled array [2,3,4,5]
+    // timeouts4shuffledWithMock = shuffle(timeouts4shuffledWithMock); // shuffle this array with the mock inside
+    // timeouts4shuffledFinal = timeouts4shuffledSplit.concat(timeouts4shuffledWithMock); // add the [1] to this array
+
+    // var timeoutsBeforeLastMockInserted = timeouts1shuffledFinal.concat(timeouts2shuffledFinal, timeouts3shuffledFinal);
+
+    // var RandomNumberAbove1 = Math.floor(Math.random() * (18 - 2 + 1)) + 2; //Random number between 2 and 18 to insert the last mock
+
+    // timeoutsBeforeLastMockInserted.splice(RandomNumberAbove1, 0, mockshuffled[3]);
+    
+    var timeouts = timeouts1shuffled.concat(timeouts2shuffled, timeouts3shuffled)
+
+    questions = [{
+      ln1: "Question 2/6",
+      ln2: "Just now, while playing Tetris:",
+      ln3: "",
+      ln4: "I was focused on the game",
+      ln5: "1  ------------------------  4",
+      ln6: "Disagree                              Agree",
+    },
+    /* 
+    fk:1,
+      fup1:"Was this",
+            fup2:"intentional or unintentional?",
+            fup3:"1  ---------------  4",
+      fup4:"Unintentional             Intentional"},
+    */
+    {
+      ln1: "Question 4/6",
+      ln2: "Just now, while playing Tetris:",
+      ln3: "I felt the right amount",
+      ln4: "of challenge",
+      ln5: "1  ------------------------  4",
+      ln6: "Disagree                             Agree",
+      fk: 0,
+      fup1: "",
+      fup2: ""
+    },
+    {
+      ln1: "Question 3/6",
+      ln2: "Just now, while playing Tetris:",
+      ln3: "My thoughts and movements",
+      ln4: "felt fluid and smooth",
+      ln5: "1  ------------------------  4",
+      ln6: "Disagree                              Agree",
+      fk: 0,
+      fup1: "",
+      fup2: ""
+    },
+
+    {
+      ln1: "Question 1/6",
+      ln2: "Just now, while playing Tetris:",
+      ln3: "What was the shape of the",
+      ln4: "currently falling Tetris block?",
+      ln5: "",
+      ln6: "",
+      fk: 0,
+      fup1: "",
+      fup2: ""
+    },
+    /* 
+    {
+      ln1: "Question 5/6",
+      ln2: "Just now, while playing Tetris:",
+      ln3: "",
+      ln4: "I was enjoying the game",
+      ln5: "1  ------------------------  4",
+      ln6: "Disagree                             Agree",
+      fk: 0,
+      fup1: "",
+      fup2: ""
+    },
+    */
+    {
+      ln1: "Question 6/6",
+      ln2: "Just now, while playing Tetris:",
+      ln3: "",
+      ln4: "I was mind wandering",
+      ln5: "1  ------------------------  4",
+      ln6: "Disagree                             Agree",
+      fk: 0,
+      fup1: "",
+      fup2: ""
+
+      ///WHEN ADDING A QUESTION, make sure to change var gQns and these lines below
+      //len = gQns[g].length
+      //  // to randomise the questions: 
+      //  // n = Math.floor(Math.random() * len)
+      // //console.log("n="+n);
+      // // m = gQns[g][n]
+      //  m = [3, 0, 2, 1, 4, 5]
+      //  m = m[i - 1]
+    },
+    ]
+    //{ln1:"What shape was the last block", ln2:"qn4 ln2"}]
+
+
+    //var gQns = [[0,1,2],[3,4,5],[6,7],[8,9]]
+    //var gQns = [[0],[1],[2],[3],[4],[5],[6],[7],[8],[9]]
+    var gQns = [[0, 1, 2, 3, 4]]
+    var part2CumulativeLinesClearedPerQuestionBlock = [];
+    var part2GameLevelAtQuestionBlock = [];
+    var part2LinesClearedPerQuestionBlock = [];
+    var groups = [];
+    var askeds = [];
+    var toi;
+    var part2allquestions = [];
+    var part2allresponses = [];
+    var part2allMovesResponsesAndDrops = [];
+    var part2allMovesResponsesAndDropsTimes = [];
+    var allfups = [];
+    var part2InterprobeIntervals = [];
+    var part2InterprobeIntervalsTimes = [];
+    var part2allresponsestimes = [];
+    var part2allresponsestimesdifference = [];
+    var allfupresponses = [];
+    var part2gameovertimesdifference = []
+    var exit = false;
+    var assess = true;
+    var exitAssess = false
+    var displayDone = false
+    var assessGameCnt = 0
+    var assessLevelSum = 0
+    var allmoves = [];
+    var allmovestimes = [];
+    var part2allmovesanddrop = [];
+    var part2allmovestimes = [];
+    var part2alldroptimes = [];
+    var part2alldroptimesmilliseconds = [];
+    var part2allmovesanddroptimes = [];
+    var part2alltimesbetweendrops = [];
+    var part2levels = [];
+    var part2levelchange = [];
+    var part2levelchangetimes = [];
+    var part2levelchangescore = [];
+    var part2piecesspawned = 0;
+    var part2speedPer20blocks = [];
+    var part2linesclearedin20blocks = [];
+    var part2linesclearedtotalcounter = [];
+    var part2linesclearedtimes = [];
+    var part2linesclearedtimesmilliseconds = [];
+    var part2alltimesbetweenlinescleared = [];
+    var part2scores = [];
+    var part2allscoreseachdrop = [];
+    var part2gameovertimes = [];
+    var part2starttime = [];
+    var part2starttimeMilliseconds = [];
+    var part2AverageHeight = [];
+    var part2flowRating1 = [];
+    var part2MWRating = [];
+    var part2flowRating = [];
+    var part2BreakTimes = [];
+    var TickRateUp = false;
+    var TickRateDown = false;
+    var TickRatePrevious = 475 - (25 * part1transferlevel);
+    var LevelPrevious = part1transferlevel;
+    var TickRatePrevious1 = 0;
+    var TickRatePreviousChange = false;
+    var TickRatePrevious1Change = false;
+    var currentTimeOut = 0;
+
+
+    // Get Time and Date
+
+    function Time() {
+
+      var datetime = new Date();
+
+      // adjust 0 before single digit date
+      var date = ("0" + datetime.getDate()).slice(-2);
+
+      // current month
+      var month = ("0" + (datetime.getMonth() + 1)).slice(-2);
+
+      // current year
+      var year = datetime.getFullYear();
+
+      // current hours
+      var hours = ("0" + datetime.getHours()).slice(-2);
+
+      // current minutes
+      var minutes = ("0" + datetime.getMinutes()).slice(-2);
+
+      // current seconds
+      var seconds = ("0" + datetime.getSeconds()).slice(-2);
+
+      // current milliseconds
+      var milliseconds = ("0" + "0" + datetime.getMilliseconds()).slice(-3);
+
+      // prints date & time in HH:MM:SS:MS format
+      var currentTime = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
+
+      return currentTime;
+    }
+
+    function Time1() {
+
+      var datetime = new Date();
+
+      // adjust 0 before single digit date
+      var date = ("0" + datetime.getDate()).slice(-2);
+
+      // current month
+      var month = ("0" + (datetime.getMonth() + 1)).slice(-2);
+
+      // current year
+      var year = datetime.getFullYear();
+
+      // current hours
+      var hours = (datetime.getHours())
+
+      // current minutes
+      var minutes = (datetime.getMinutes());
+
+      // current seconds
+      var seconds = (datetime.getSeconds());
+
+      // current milliseconds
+      var milliseconds = (datetime.getMilliseconds());
+
+      // prints date & time in HH:MM:SS:MS format
+      var TimeSinceGameStartMilliseconds = (3600000 * hours + 60000 * minutes + 1000 * seconds + milliseconds);
+
+      return TimeSinceGameStartMilliseconds;
+    }
+
+    /*
+    O - 1
+    I - 2
+    S - 3
+    Z - 4
+    L - 5
+    J - 6
+    T - 7
+    */
+    var curShape
+    var curShapes = []
+    var upcomingShape = []
+    var part2catchquestionscorrect = []
+    var part2catchquestionsresponses = []
+
+    function Init() {
+
+      // initialize the page object
+      Page.Initialize();
+      // initialize the GM object
+      GM.Initialize();
+
+      //toi=getTimeOut();
+      //myInterval=setTimeout(setPause, timeouts[toi]);
+
+
+    }
+
+    Init();
+
+    // Main game loop. Updates GM object to check if tick can be
+    // performed. Then, if the page is dirty, performs a Draw.
+
+    async function Loop() {
+      // assessing game level
+      if (assess) {
+        if (!displayDone) {
+          /* drawMyText("Part 1","Press spacebar to start","","");
+          await waitUserInputSpace(); */
+          displayDone = true;
+          myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 0);
+        }
+        /* Page.Update(); */
+
+        // only need to update GM if the player is alive
+        if (GM.IsAlive) {
+          GM.Update();
+        } else {
+          // assess game over due to GameOver		
+          GM.Level = GM.Level - 3;
+          if (GM.Level < 1) {
+            GM.Level = 1
+          }
+          assessGameCnt++;
+          assessLevelSum = assessLevelSum + GM.Level
+          // glevel = GM.Level
+          Init();
+          // GM.Level = glevel
+          // document.getElementById("glevel").value = "startGameLevel," + glevel;
+
+        }
+        if (!exitAssess) {
+          //window.requestAnimationFrame(Loop);
+        } else {
+          // assess game over due to time out
+          window.clearTimeout(myGameAssessTo);
+
+          assess = false
+          if (assessGameCnt > 0) {
+            GM.Level = Math.floor(assessLevelSum / assessGameCnt)
+          }
+          drawMyText("", "", "", "Press spacebar to start", "", "");
+          await waitUserInputSpace();
+          part2starttime.push(Time());
+          part2starttimeMilliseconds.push(Time1())
+          // myGameOverTimeout = setTimeout(setGameOverTimeout, 25 * 60000);
+          // glevel = GM.Level
+
+          Init();
+          // GM.Level = glevel
+          toi = getTimeOut();
+          currentTimeOut = timeouts[toi]
+          /*
+          ////// 
+          var startingTickRate = 450
+
+          currentTimeOut = timeouts[toi];
+          if (currentTimeOut == 10000) {
+            startingTickRate = 475 - (25 * part1transferlevel);
+            TickRatePrevious = startingTickRate;
+
+            GM.TickRate = GM.TickRate - 100; // Speed up TickRate
+
+            if (GM.TickRate <= 25) { // Ensure TickRate doesn't go below 25
+              GM.TickRate = 25
+            }
+            // GM.Level = (475 - GM.TickRate) / 25 // Match Level to TickRate
+
+          } else if (currentTimeOut == 10001) {
+            startingTickRate = 475 - (25 * part1transferlevel);
+            TickRatePrevious = startingTickRate;
+
+            GM.TickRate = GM.TickRate + 100;
+
+            if (GM.TickRate >= 450) {
+              GM.TickRate = 450
+            }
+            // GM.Level = (475 - GM.TickRate) / 25
+            // if (GM.Level < 1) {
+            //   GM.Level = 1
+            // }
+
+            else {
+              GM.TickRate = 475 - (25 * part1transferlevel);
+            }
+          }
+
+          ///////
+          */
+
+          myInterval = setTimeout(setPause, timeouts[toi]);
+          gameOverT1 = new Date()
+          // document.getElementById("glevel").value = (glevel);
+          gameNos.push(gameOverCnt)
+        }
+        window.requestAnimationFrame(Loop);
+      } // end assess, start play game
+      else {
+        // start play game
+        if (!pause) {
+
+          Page.Update();
+
+          // only need to update GM if the player is alive
+          if (GM.IsAlive) {
+            GM.Update();
+          } else {
+            //game over by player 
+            //window.clearTimeout(myInterval);
+            GM.Level = GM.Level - 3;
+            if (GM.Level < 1) {
+              GM.Level = 1
+            }
+            gameOverCnt++;
+            gameNos.push(gameOverCnt)
+            gameOverT2 = new Date()
+            d = (gameOverT2 - gameOverT1) / 1000;
+            part2gameovertimesdifference.push(d)
+
+            //console.log("gameOverCnt="+gameOverCnt);
+            //console.log("gameOverTimes="+gameOverTimes)
+            if (timeouts.length > 0) {
+              //console.log("**1**timeouts length="+timeouts.length)
+              /* await sleep(30000)   */
+              // glevel = GM.Level
+              Init();
+              // GM.Level = glevel
+              gameOverT1 = new Date()
+            } else {
+              // game over by timeout
+              //console.log("**2*timeouts length="+timeouts.length)
+              //alert ("game over")
+              //pause = false
+              exit = true
+              window.clearTimeout(myGameOverTimeout)
+            }
+
+          }
+        } // end if !pause
+        else { // begin if pause
+          console.log("curShape=" + curShape);
+          if (timeouts.length == 0) {
+            pause = true;
+            GM.IsAlive = false
+            exit = true
+            //if (!exit) {
+            //  window.requestAnimationFrame(Loop);
+            // } else {
+            //    
+            // }
+          }
+          if (!exit) {
+            g = getNextGroup()
+            cnt = 0;
+            var n = 0
+            while (cnt < gQns[g].length) {
+              m = getNextQuestion(g)
+              // skip question 3 if it is not the first question
+              //if (m==3 && cnt != 0) {
+              //	continue;
+              //}	
+              n++
+              if (m != 3) {
+                drawMyText("Question " + n + "/5", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
+              }
+              else {
+                // ask the previous shape
+                drawMyTextObj("Question " + n + "/5", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
+              }
+              t1 = new Date();
+              await waitUserInput(m);
+              t2 = new Date();
+              d = (t2 - t1)
+              part2allresponsestimes.push(Time1());
+              part2allresponsestimesdifference.push(d);
+              //"rate="+rate;
+              //console.log("qn response time="+d);
+              rates.push(rate);
+              part2allresponses.push(rate);
+              // Calculate flow and MW rating score for each interprobe interval
+              if (m == 0) {
+                part2flowRating1.push(rate);
+              }
+              if (m == 1) {
+                part2flowRating1.push(rate);
+              }
+              if (m == 2) {
+                part2flowRating1.push(rate);
+              }
+              if (m == 4) {
+                part2MWRating.push(rate);
+              }
+
+              part2allMovesResponsesAndDrops.push(rate);
+              part2allMovesResponsesAndDropsTimes.push(Time1());
+              if (m == 3) {
+                curShapes.push(curShape)
+                part2catchquestionsresponses.push(rate);
+                if (rate == curShape) {
+                  part2catchquestionscorrect.push("Y")
+                } else {
+                  part2catchquestionscorrect.push("N")
+                }
+                //console.log("curShapes="+curShapes)
+                //console.log("allanswer3s="+allanswer3s)
+                //console.log("allcorrects3="+allcorrects3)
+              }
+
+              if (questions[m].fk == rate && questions[m].fk != 0) {
+                drawMyText(questions[m].fup1, questions[m].fup2, questions[m].fup3, questions[m].fup4);
+                t1 = new Date();
+                await waitUserInput(m);
+                t2 = new Date();
+                d = t2 - t1
+                //console.log("fup response time="+d);
+                allfupresponses.push(d);
+                //console.log("fu rate="+rate);
+                fups.push(rate);
+                //console.log("fups="+fups);
+                allfups.push(rate);
+
+              } else {
+                fups.push(-1);
+                allfups.push(-1);
+              }
+
+              cnt = cnt + 1;
+
+
+            } //end while
+
+            part2InterprobeIntervals.push(timeouts[toi])
+            part2InterprobeIntervalsTimes.push(Time1())
+
+            tocnt[toi] += 1;
+            console.log("tocnt=" + tocnt);
+
+            if (tocnt[toi] >= 1) {
+              timeouts.splice(toi, 1)
+              tocnt.splice(toi, 1)
+            }
+            console.log("tocnt=" + tocnt)
+            console.log("timeouts=" + timeouts)
+            console.log("part2InterprobeIntervals=" + part2InterprobeIntervals)
+            // break time
+            if ((timeouts.length == 12 || timeouts.length == 6) && timeouts.length != 0) {
+              part2BreakTimes.push("BreakStart")
+              part2BreakTimes.push(Time1())
+              part2allMovesResponsesAndDrops.push("BreakStart");
+              part2allMovesResponsesAndDropsTimes.push(Time1());
+              // drawMyTextbreak("Please have a short break", "The game will resume in:","seconds","");
+              showCountdownBySec(breaktime);
+              await sleep(breaktime);
+              part2BreakTimes.push("BreakEnd")
+              part2BreakTimes.push(Time1())
+              part2allMovesResponsesAndDrops.push("BreakEnd");
+              part2allMovesResponsesAndDropsTimes.push(Time1());
+            }
+
+            pause = false;
+            part2CumulativeLinesClearedPerQuestionBlock.push(LinesCleared);
+            part2GameLevelAtQuestionBlock.push(GM.Level);
+            part2LinesClearedPerQuestionBlock.push(LinesCleared2);
+            //console.log("lineCleareds="+lineCleareds); 
+            //console.log("lineCleareds2="+lineCleareds2);
+            LinesCleared2 = 0
+
+            toi = getTimeOut();
+
+            //////
+
+            currentTimeOut = timeouts[toi]
+
+            GM.TickRate = TickRatePrevious;
+            GM.Level = LevelPrevious;
+
+            if (currentTimeOut == 9998) {
+              // TickRatePrevious = GM.TickRate;
+
+              GM.TickRate = GM.TickRate / 2; // Speed up TickRate by 2
+
+              function round(x) {               // function to round a number to the nearest number divisble by 25
+                return Math.ceil(x / 25) * 25;
+              }
+              GM.TickRate = round(GM.TickRate) - 25;
+
+              if (GM.TickRate <= 75) { // Ensure TickRate doesn't go below 25
+                GM.TickRate = 75
+              }
+
+              console.log("TickRate= " + GM.TickRate);
+              console.log("Level= " + GM.Level);
+
+              // GM.Level = (475 - GM.TickRate) / 25 // Match Level to TickRate
+
+            } else if (currentTimeOut == 9999) {
+              // TickRatePrevious = GM.Tickrate;
+
+              GM.TickRate = GM.TickRate * 2; // Slow down TickRate by 2
+
+              function round(x) {               // function to round a number to the nearest number divisble by 25
+                return Math.ceil(x / 25) * 25;
+              }
+              GM.TickRate = round(GM.TickRate) + 25;
+
+              // if (GM.TickRate >= 450) {
+              //   GM.TickRate = 450
+              //}
+              // GM.Level = (475 - GM.TickRate) / 25
+              // if (GM.Level < 1) {
+              //  GM.Level = 1
+              // }
+
+              console.log("TickRate= " + GM.TickRate);
+              console.log("Level= " + GM.Level);
+
+            }
+            else if (currentTimeOut == 5000 || currentTimeOut == 10000 || currentTimeOut == 30000 || currentTimeOut == 60000 || currentTimeOut == 90000 || currentTimeOut == 120000) {
+              GM.TickRate = TickRatePrevious;
+              GM.Level = LevelPrevious;
+            }
+            /////
+
+            myInterval = setTimeout(setPause, timeouts[toi]);
+
+          } // if !exit
+        } //end if pause
+
+
+        if (!exit) {
+          window.requestAnimationFrame(Loop);
+        } else {
+          if (GM.ScoreHigh == 0) {
+            GM.ScoreHigh = GM.ScoreCur
+          }
+          part2scores.push(GM.ScoreCur);
+          var part2lastlevel = part2levels[part2levels.length - 1]
+          var part2lastlevel = part2lastlevel.toString();
+          var part2lastlevel = part2lastlevel.charAt(0);
+
+          var part2highscore = GM.ScoreHigh;
+          var part2linesclearedtotal = part2linesclearedtotalcounter.length;
+          var part2gameovercount = part2gameovertimes.length;
+
+          var numberofcatchquestionscorrect =
+            part2catchquestionscorrect.filter(function (value) {
+              return value === "Y";
+            }).length
+
+          var part2catchquestionscorrectPercent = (numberofcatchquestionscorrect / part2catchquestionscorrect.length) * 100 + "%";
+
+          function DifferenceBetweenElements(array) {
+            var newA = [];
+            for (var i = 1; i < array.length; i++)  newA.push(array[i] - array[i - 1])
+            return newA;
+          }
+          var part2alltimesbetweendrops = DifferenceBetweenElements(part2alldroptimesmilliseconds);
+          var part2alltimesbetweendrops = part2alltimesbetweendrops.map(function (element) {
+            return element
+          });
+          var part2alltimesbetweenlinescleared = DifferenceBetweenElements(part2linesclearedtimesmilliseconds);
+          var part2alltimesbetweenlinescleared = part2alltimesbetweenlinescleared.map(function (element) {
+            return element
+          });
+          var part2allscoreseachdropdifference = DifferenceBetweenElements(part2allscoreseachdrop);
+          var part2allscoreseachdropdifference = part2allscoreseachdropdifference.map(function (element) {
+            return element
+          });
+
+          var part2endtime = Time();
+
+          // identify what each question is
+          for (var i = 0; i < part2allquestions.length; i++) {
+            if (part2allquestions[i] == 0)
+              part2allquestions[i] = "Flow1";
+            if (part2allquestions[i] == 1)
+              part2allquestions[i] = "Flow3";
+            if (part2allquestions[i] == 2)
+              part2allquestions[i] = "Flow2";
+            if (part2allquestions[i] == 3)
+              part2allquestions[i] = "catch";
+            if (part2allquestions[i] == 4)
+              part2allquestions[i] = "MW";
+          }
+
+          // Calculate average flow rating score at each interprobe interval
+          function groupAverage(arr, n) {
+            var result = [];
+            for (var i = 0; i < arr.length;) {
+              var sum = 0;
+              for (var j = 0; j < n; j++) {
+                // Check if value is numeric. If not use default value as 0
+                sum += +arr[i++] || 0
+              }
+              result.push(sum / n);
+            }
+            return result
+          }
+
+          // Calculate average flow rating score at each interprobe interval
+          var part2flowRating = groupAverage(part2flowRating1, 3); // 3 = number of flow questions
+          // round to 2 decimal places
+          var part2flowRating = part2flowRating.map(
+            function (each_element) {
+              return Number(each_element.toFixed(2));
+            });
+
+          // All flow ratings 3 and 4 are changed to 'Y', https://stackoverflow.com/questions/16881872/changing-array-value-when-condition-is-met-in-javascript
+          var part2flowRating3orAbove = part2flowRating;
+          var limit = 2.99999; // anything above this number is changed to 'Y'
+
+          var part2flowRating3orAbove = part2flowRating3orAbove.map(a => a > limit ? 'Y' : a);
+
+          // All MW ratings 3 and 4 are changed to 'Y', https://stackoverflow.com/questions/16881872/changing-array-value-when-condition-is-met-in-javascript
+          var part2MWRating3orAbove = part2MWRating;
+          var limit = 2.99999; // anything above this number is changed to 'Y'
+
+          var part2MWRating3orAbove = part2MWRating3orAbove.map(a => a > limit ? 'Y' : a);
+
+          // Look at coexistence of flow and mind wandering (flow and mind wandering score BOTH 3 or above)
+          var A = part2flowRating3orAbove;
+          var B = part2MWRating3orAbove;
+
+          var part2CoexistenceList = [];
+          var len = Math.max(A.length, B.length);
+          for (var i = 0; i < len; i++) {
+            if (A[i] === B[i]) {
+              part2CoexistenceList.push('Y');
+            }
+            else {
+              part2CoexistenceList.push('N');
+            }
+          }
+
+          function getOccurrence(array, value) {
+            var count = 0;
+            array.forEach((v) => (v === value && count++));
+            return count;
+          }
+
+          var NumberofCoexistence = getOccurrence(part2CoexistenceList, 'Y')
+
+          var part2Coexistence = ((NumberofCoexistence / part2CoexistenceList.length) * 100) + '%'
+
+          // Times in milliseconds since start of game
+          part2allmovesanddroptimes = part2allmovesanddroptimes.map(x => x - part2starttimeMilliseconds[0] + 1);
+          part2alldroptimes = part2alldroptimes.map(x => x - part2starttimeMilliseconds[0] + 1);
+          part2allmovestimes = part2allmovestimes.map(x => x - part2starttimeMilliseconds[0] + 1);
+          part2linesclearedtimes = part2linesclearedtimes.map(x => x - part2starttimeMilliseconds[0] + 1);
+          part2allresponsestimes = part2allresponsestimes.map(x => x - part2starttimeMilliseconds[0] + 1);
+          part2allMovesResponsesAndDropsTimes = part2allMovesResponsesAndDropsTimes.map(x => x - part2starttimeMilliseconds[0] + 1);
+          part2InterprobeIntervalsTimes = part2InterprobeIntervalsTimes.map(x => x - part2starttimeMilliseconds[0] + 1);
+
+          // Store in session storage
+          sessionStorage.setItem('part2allmovesanddropStorage', part2allmovesanddrop);
+          sessionStorage.setItem('part2allmovestimesStorage', part2allmovestimes);
+          sessionStorage.setItem('part2allmovesanddroptimesStorage', part2allmovesanddroptimes);
+          sessionStorage.setItem('part2alldroptimesStorage', part2alldroptimes);
+          sessionStorage.setItem('part2alltimesbetweendropsStorage', part2alltimesbetweendrops);
+          sessionStorage.setItem('part2levelsStorage', part2levels);
+          sessionStorage.setItem('part2levelchangeStorage', part2levelchange);
+          sessionStorage.setItem('part2levelchangetimesStorage', part2levelchangetimes);
+          sessionStorage.setItem('part2levelchangescoreStorage', part2levelchangescore);
+          sessionStorage.setItem('part2lastlevelStorage', part2lastlevel);
+          sessionStorage.setItem('part2piecesspawnedStorage', part2piecesspawned);
+          sessionStorage.setItem('part2speedPer20blocksStorage', part2speedPer20blocks);
+          sessionStorage.setItem('part2linesclearedin20blocksStorage', part2linesclearedin20blocks);
+          sessionStorage.setItem('part2linesclearedtotalStorage', part2linesclearedtotal);
+          sessionStorage.setItem('part2linesclearedtimesStorage', part2linesclearedtimes);
+          sessionStorage.setItem('part2alltimesbetweenlinesclearedStorage', part2alltimesbetweenlinescleared);
+          sessionStorage.setItem('part2scoresStorage', part2scores);
+          sessionStorage.setItem('part2allscoreseachdropStorage', part2allscoreseachdrop);
+          sessionStorage.setItem('part2allscoreseachdropdifferenceStorage', part2allscoreseachdropdifference);
+          sessionStorage.setItem('part2highscoreStorage', part2highscore);
+          sessionStorage.setItem('part2gameovercountStorage', part2gameovercount);
+          sessionStorage.setItem('part2gameovertimesStorage', part2gameovertimes);
+          sessionStorage.setItem('part2starttimeStorage', part2starttime);
+          sessionStorage.setItem('part2starttimeMillisecondsStorage', part2starttimeMilliseconds);
+          sessionStorage.setItem('part2endtimeStorage', part2endtime);
+
+          sessionStorage.setItem('part2allquestionsStorage', part2allquestions);
+          sessionStorage.setItem('part2allresponsesStorage', part2allresponses);
+          sessionStorage.setItem('part2allresponsestimesStorage', part2allresponsestimes);
+          sessionStorage.setItem('part2allresponsestimesdifferenceStorage', part2allresponsestimesdifference);
+          sessionStorage.setItem('part2allMovesResponsesAndDropsStorage', part2allMovesResponsesAndDrops);
+          sessionStorage.setItem('part2allMovesResponsesAndDropsTimesStorage', part2allMovesResponsesAndDropsTimes);
+          sessionStorage.setItem('part2catchquestionscorrectStorage', part2catchquestionscorrect);
+          sessionStorage.setItem('part2catchquestionsresponsesStorage', part2catchquestionsresponses);
+          sessionStorage.setItem('part2catchquestionscorrectPercentStorage', part2catchquestionscorrectPercent);
+          sessionStorage.setItem('part2CumulativeLinesClearedPerQuestionBlockStorage', part2CumulativeLinesClearedPerQuestionBlock);
+          sessionStorage.setItem('part2GameLevelAtQuestionBlockStorage', part2GameLevelAtQuestionBlock);
+          sessionStorage.setItem('part2LinesClearedPerQuestionBlockStorage', part2LinesClearedPerQuestionBlock);
+          sessionStorage.setItem('part2gameovertimesdifferenceStorage', part2gameovertimesdifference);
+          sessionStorage.setItem('part2InterprobeIntervalsStorage', part2InterprobeIntervals);
+          sessionStorage.setItem('part2InterprobeIntervalsTimesStorage', part2InterprobeIntervalsTimes);
+          sessionStorage.setItem('part2AverageHeightStorage', part2AverageHeight);
+          sessionStorage.setItem('part2flowRatingStorage', part2flowRating);
+          sessionStorage.setItem('part2MWRatingStorage', part2MWRating);
+          sessionStorage.setItem('part2CoexistenceListStorage', part2CoexistenceList);
+          sessionStorage.setItem('part2CoexistenceStorage', part2Coexistence);
+          sessionStorage.setItem('part2BreakTimesStorage', part2BreakTimes);
+
+          /*
+          document.getElementById("part2allmovesanddrop").value = "part2allmovesanddrop: " + part2allmovesanddrop;
+          document.getElementById("part2allmovestimes").value = "part2allmovestimes: " + part2allmovestimes;
+          document.getElementById("part2allmovesanddroptimes").value = "part2allmovesanddroptimes: " + part2allmovesanddroptimes;
+          document.getElementById("part2alldroptimes").value = "part2alldroptimes: " + part2alldroptimes;
+          document.getElementById("part2alltimesbetweendrops").value = "part2alltimesbetweendrops: " + part2alltimesbetweendrops;
+          document.getElementById("part2levels").value = "part2levels: " + part2levels;
+          document.getElementById("part2levelchange").value = "part2levelchange: " + part2levelchange;
+          document.getElementById("part2levelchangetimes").value = "part2levelchangetimes: " + part2levelchangetimes;
+          document.getElementById("part2levelchangescore").value = "part2levelchangescore: " + part2levelchangescore;
+          document.getElementById("part2lastlevel").value = "part2lastlevel: " + part2lastlevel;
+          document.getElementById("part2piecesspawned").value = "part2piecesspawned: " + part2piecesspawned;
+          document.getElementById("part2speedPer20blocks").value = "part2speedPer20blocks: " + part2speedPer20blocks;
+          document.getElementById("part2linesclearedin20blocks").value = "part2linesclearedin20blocks: " + part2linesclearedin20blocks;
+          document.getElementById("part2linesclearedtotal").value = "part2linesclearedtotal: " + part2linesclearedtotal;
+          document.getElementById("part2linesclearedtimes").value = "part2linesclearedtimes: " + part2linesclearedtimes;
+          document.getElementById("part2alltimesbetweenlinescleared").value = "part2alltimesbetweenlinescleared: " + part2alltimesbetweenlinescleared;
+          document.getElementById("part2scores").value = "part2scores: " + part2scores;
+          document.getElementById("part2allscoreseachdrop").value = "part2allscoreseachdrop: " + part2allscoreseachdrop;
+          document.getElementById("part2allscoreseachdropdifference").value = "part2allscoreseachdropdifference: " + part2allscoreseachdropdifference;
+          document.getElementById("part2highscore").value = "part2highscore: " + part2highscore;
+          document.getElementById("part2gameovercount").value = "part2gameovercount: " + part2gameovercount;
+          document.getElementById("part2gameovertimes").value = "part2gameovertimes: " + part2gameovertimes;
+          document.getElementById("part2starttime").value = "part2starttime: " + part2starttime;
+          document.getElementById("part2starttimeMilliseconds").value = "part2starttimeMilliseconds: " + part2starttimeMilliseconds;
+          document.getElementById("part2endtime").value = "part2endtime: " + part2endtime;
+
+          document.getElementById("part2allquestions").value = "part2allquestions: " + part2allquestions;
+          document.getElementById("part2allresponses").value = "part2allresponses: " + part2allresponses;
+          document.getElementById("part2allresponsestimes").value = "part2allresponsestimes: " + part2allresponsestimes;
+          document.getElementById("part2allresponsestimesdifference").value = "part2allresponsestimesdifference: " + part2allresponsestimesdifference;
+          document.getElementById("part2allMovesResponsesAndDrops").value = "part2allMovesResponsesAndDrops: " + part2allMovesResponsesAndDrops;
+          document.getElementById("part2allMovesResponsesAndDropsTimes").value = "part2allMovesResponsesAndDropsTimes: " + part2allMovesResponsesAndDropsTimes;
+          document.getElementById("part2catchquestionscorrect").value = "part2catchquestionscorrect: " + part2catchquestionscorrect;
+          document.getElementById("part2catchquestionsresponses").value = "part2catchquestionsresponses: " + part2catchquestionsresponses;
+          document.getElementById("part2catchquestionscorrectPercent").value = "part2catchquestionscorrectPercent: " + part2catchquestionscorrectPercent;
+          document.getElementById("part2CumulativeLinesClearedPerQuestionBlock").value = "part2CumulativeLinesClearedPerQuestionBlock: " + part2CumulativeLinesClearedPerQuestionBlock;
+          document.getElementById("part2GameLevelAtQuestionBlock").value = "part2GameLevelAtQuestionBlock: " + part2GameLevelAtQuestionBlock;
+          document.getElementById("part2LinesClearedPerQuestionBlock").value = "part2LinesClearedPerQuestionBlock: " + part2LinesClearedPerQuestionBlock;
+          document.getElementById("part2gameovertimesdifference").value = "part2gameovertimesdifference: " + part2gameovertimesdifference;
+          document.getElementById("part2InterprobeIntervals").value = "part2InterprobeIntervals: " + part2InterprobeIntervals;
+          document.getElementById("part2InterprobeIntervalsTimes").value = "part2InterprobeIntervalsTimes: " + part2InterprobeIntervalsTimes;
+          document.getElementById("part2AverageHeight").value = "part2AverageHeight: " + part2AverageHeight;
+          document.getElementById("part2flowRating").value = "part2flowRating: " + part2flowRating;
+          document.getElementById("part2MWRating").value = "part2MWRating: " + part2MWRating;
+          document.getElementById("part2CoexistenceList").value = "part2CoexistenceList: " + part2CoexistenceList;
+          document.getElementById("part2Coexistence").value = "part2Coexistence: " + part2Coexistence;
+          */
+
+          drawMyTextend("Good job!", "End of Part 2", "", "Click Next to continue");
+          document.getElementById('nextButton').style.display = 'block';
+          //document.removeEventListener('keydown');
+          xfunc = document.removeEventListener('keydown', () => {
+            console.log("remove listener y")
+          });
+          //y1.document.removeEventListener('keydown',()=>{
+          //  console.log("remove listener y1")
+          //});
+          //y2.document.removeEventListener('keydown',()=>{
+          //  console.log("remove listener y1")
+          //});
+
+          //for (key in getEventListeners(document)) {
+          //  getEventListeners(document)[key].forEach(function(c) {
+          //    c.remove()
+          //  })  
+          //}   
+          //document.getElementById("gameNos").value = "gameNos,"+gameNos; 		  		
+          // save survey data
+          //window.localStorage.setItem('allquestions', allquestions);
+          //doLog(allquestions)
+          //saveFile(allquestions)
+        } // else exit 
+      } // end else (not assess i.e. play game
+    } // end Loop()
+
+
+    // myGameAssessTo = setTimeout(setGameAssessTimeout, 1 * 60000);
+
+    Loop();
+
+    //--------------------------------------------------//
+    //    HELPER FUNCTIONS                              //
+    //--------------------------------------------------//
+    /*
+    function doLog(somedata) {
+      $.ajax({
+          url: "file:///C:/js/data/survey.txt",
+          //data, an url-like string for easy access serverside
+          data : somedata,
+          cache: false,
+          async: true,
+          type: 'post',
+          timeout : 5000
+      });
+    }
+    */
+
+    /*
+    function saveFile(somedata) {
+    var data = new FormData();
+    data.append("data" , somedata);
+    var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+    xhr.open( 'post', '/', true );
+    
+    xhr.send(data);
+    }
+    */
+
+    function DrawText(text, color, weight, alignment, size, left, top) {
+      Page.ctx.font = weight + ' ' + size + 'px "Jura", sans-serif';
+      Page.ctx.textAlign = alignment;
+      Page.ctx.fillStyle = color;
+      Page.ctx.fillText(text, left, top);
+    }
+
+
+    function ColorWithAlpha(color, alpha) {
+      var retColor = 'rgba' + color.substring(3, color.length - 1);
+      retColor += ',' + alpha + ')';
+      return retColor;
+    }
+
+    function setGameOverTimeout() {
+      gameOverTimeout = true;
+      exit = true
+    }
+
+    function setGameAssessTimeout() {
+      exitAssess = true;
+    }
+
+    function setPause() {
+      pause = true;
+    }
+
+    function getTimeOut() {
+      var i = 0;
+      return i;
+    }
+
+    function getNextGroup() {
+      var i = 0
+      do {
+        i = i + 1
+        g = Math.floor(Math.random() * gQns.length)
+
+      }
+      while (groups.includes(g) && groups.length < gQns.length && i < 100)
+      if (groups.length < gQns.length) {
+        groups.push(g);
+      } else {
+        groups.length = 0;
+        askeds.length = 0
+        groups.push(g);
+      }
+      "groups.length=" + groups.length + " gQns.length=" + gQns.length;
+      return g;
+    }
+
+
+    function getNextQuestion(g) {
+      var i = 0
+      do {
+        i = i + 1;
+
+        //console.log("first element="+gQns[g][0]);
+        //console.log("length"+gQns[g].length);
+
+        len = gQns[g].length
+        // to randomise the questions: 
+        // n = Math.floor(Math.random() * len)
+        //console.log("n="+n);
+        // m = gQns[g][n]
+
+        m = randomisedquestions
+        m = m[i - 1];
+
+        // var question = "Question " + m[4]; // ensure question numbers on the screen are correct
+
+        //console.log("i="+i+" m="+m);
+      }
+      while (askeds.includes(m) && askeds.length < len)
+      askeds.push(m);
+      part2allquestions.push(m);
+      "curr question m=" + m;
+      "askeds=" + askeds;
+      console.log("part2allquestions=" + part2allquestions);
+
+      /*
+         if (groups.length>=gQns[9].length) {	   
+         askeds.length = 0	   
+         
+         
+         console.log("askeds="+askeds);	
+         console.log("allquestions="+allquestions);	   
+         console.log("part2allresponses="+allrates);
+      }
+  */
+      return m;
+    }
+
+    function drawMyText(ln1, ln2, ln3, ln4, ln5, ln6) {
+      //if (exit) return;
+
+
+      var uDrawSize = Page.unitSize - 2;
+      this.W = 10 * Page.unitSize;
+      this.H = 20 * Page.unitSize;
+      //this.left = 0 * Page.unitSize;
+      //this.top = 0 * Page.unitSize;
+      Page.ctx.fillStyle = "rgba(48, 50, 54, 1)";
+      Page.ctx.fillRect(0, 0, this.W, this.H);
+      //Page.ctx.fillStyle = 'rgb(28,30,34)';
+      //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
+
+      DrawText(ln1, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.8, this.W / 2, this.H / 3.7);
+      DrawText(ln2, 'rgb(255,255,255)', '100', 'center', uDrawSize / 1.8, this.W / 2, this.H / 3.1);
+      DrawText(ln3, 'rgb(255,255,255)', '400', 'center', uDrawSize / 1.4, this.W / 2, this.H / 2.3);
+      DrawText(ln4, 'rgb(255,255,255)', '400', 'center', uDrawSize / 1.4, this.W / 2, this.H / 2.05);
+      DrawText(ln5, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.4, this.W / 2, this.H / 1.75);
+      DrawText(ln6, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.7, this.W / 2, this.H / 1.6);
+
+
+    }
+
+    function drawMyTextObj(ln1, ln2, ln3, ln4, ln5, ln6) {
+      //if (exit) return;
+      var uDrawSize = Page.unitSize - 2;
+      this.W = 10 * Page.unitSize;
+      this.H = 20 * Page.unitSize;
+      //this.left = 0 * Page.unitSize;
+      //this.top = 0 * Page.unitSize;
+      Page.ctx.fillStyle = "rgba(48, 50, 54, 1)";
+      Page.ctx.fillRect(0, 0, this.W, this.H);
+      //Page.ctx.fillStyle = 'rgb(28,30,34)';
+      //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
+
+
+      DrawText('1', 'rgb(255,255,255)', '500', 'left', uDrawSize / 1.3, this.W / 5.5, this.H / 2)
+      new myDrawObject(GM.O(), this.W / 2.8, this.H / 2.05);
+
+      DrawText('2', 'rgb(255,255,255)', '500', 'left', uDrawSize / 1.3, this.W / 1.77, this.H / 2);
+      new myDrawObject(GM.I(), this.W / 1.3, this.H / 2.05);
+
+      DrawText('3', 'rgb(255,255,255)', '500', 'left', uDrawSize / 1.3, this.W / 5.5, this.H / 1.7);
+      new myDrawObject(GM.S(), this.W / 2.75, this.H / 1.75);
+
+      DrawText('4', 'rgb(255,255,255)', '500', 'left', uDrawSize / 1.3, this.W / 1.77, this.H / 1.7);
+      new myDrawObject(GM.Z(), this.W / 1.3, this.H / 1.75);
+
+      DrawText('5', 'rgb(255,255,255)', '500', 'left', uDrawSize / 1.3, this.W / 5.5, this.H / 1.48);
+      new myDrawObject(GM.L(), this.W / 2.75, this.H / 1.53);
+
+      DrawText('6', 'rgb(255,255,255)', '500', 'left', uDrawSize / 1.3, this.W / 1.77, this.H / 1.48);
+      new myDrawObject(GM.J(), this.W / 1.3, this.H / 1.53);
+
+      DrawText('7', 'rgb(255,255,255)', '500', 'left', uDrawSize / 1.3, this.W / 2.85, this.H / 1.33);
+      new myDrawObject(GM.T(), this.W / 1.9, this.H / 1.33);
+
+
+      DrawText(ln1, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.8, this.W / 2, this.H / 4.7);
+      DrawText(ln2, 'rgb(255,255,255)', '100', 'center', uDrawSize / 1.8, this.W / 2, this.H / 3.9);
+      DrawText(ln3, 'rgb(255,255,255)', '400', 'center', uDrawSize / 1.4, this.W / 2, this.H / 2.9);
+      DrawText(ln4, 'rgb(255,255,255)', '400', 'center', uDrawSize / 1.4, this.W / 2, this.H / 2.5);
+      DrawText(ln5, 'rgb(255,255,255)', '400', 'center', uDrawSize / 1.4, this.W / 2, this.H / 1.6);
+      DrawText(ln6, 'rgb(255,255,255)', '400', 'center', uDrawSize / 1.4, this.W / 2, this.H / 1.15);
+
+    }
+
+
+    function waitUserInput(m) {
+      var endkey
+      if (!GM.IsAlive) {
+        return
+      }
+      if (m == 3) { endkey = 6 } else { endkey = 3 }
+      return new Promise(resolve =>
+        y2 = document.addEventListener('keydown', (event) => {
+          if ((event.keyCode >= 49 && event.keyCode <= 49 + endkey) || (event.keyCode >= 97 && event.keyCode <= 97 + endkey)) {
+
+
+            if (event.keyCode <= 49 + endkey && event.keyCode >= 49) {
+              rate = event.keyCode - 48
+              //console.log("keycode=rate="+rate);		  
+            }
+            if (event.keyCode <= 97 + endkey && event.keyCode >= 97) {
+              rate = event.keyCode - 96
+              //console.log("keycode=rate="+rate);		  
+            }
+
+
+            resolve();
+          }
+        })
+      )
+    }
+
+    function waitUserInputSpace() {
+      if (!GM.IsAlive) {
+        return
+      }
+      return new Promise(resolve =>
+        y1 = document.addEventListener('keydown', (event) => {
+          if (event.keyCode == 32) {
+
+
+            resolve();
+          }
+        })
+      )
+    }
+
+
+    const sleeps = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds))
+
+
+    const sleep = (milliseconds) => new Promise(resolve => countdownBySec(resolve, milliseconds))
+
+
+    var sleepInterval
+
+    function countdownBySec(resolve, milliseconds) {
+
+
+      sleepTimeout = setTimeout(resolve, milliseconds + 1000);
+      //sleepInterval = setInterval(showCountdownBySec(milliseconds),1000);
+      showCountdownBySec(milliseconds)
+
+    }
+
+
+    function drawGameOverReady(ln1, ln2) {
+
+
+      var uDrawSize = Page.unitSize - 2;
+      this.W = 10 * Page.unitSize;
+      this.H = 20 * Page.unitSize;
+
+      //  Page.ctx.fillStyle = "rgba(28, 30, 34, 0.95)";
+      Page.ctx.fillStyle = "rgba(48, 50, 54, 1)";
+      Page.ctx.fillRect(0, 0, this.W, this.H);
+      //Page.ctx.fillStyle = 'rgb(28,30,34)';
+      //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
+
+      DrawText(ln1, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1, this.W / 2, this.H / 2);
+      DrawText(ln2, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1, this.W / 2, this.H / 1.75);
+    }
+
+
+    function showCountdownBySec(milliseconds) {
+
+      var timerVar = setInterval(countTimer, 1000);
+      var sec = 0;
+      var count = milliseconds / 1000;
+
+      //console.log("timeVar="+timerVar);
+      //console.log("milliseconds="+milliseconds);
+      function countTimer() {
+        //if (sec >= milliseconds/1000) {
+        if (count <= 0) {
+          //console.log("clearInerval");
+          //clearInterval(sleepInterval)
+          clearInterval(timerVar)
+
+          return
+        }
+        // drawGameOverReady("Ready?", pad(count--))
+        drawMyTextbreak("Please have a short break", "The game will resume in:", pad(count--) + " seconds", "");
+        //,"minutes: "+ parseInt(sec/60,10))
+      }
+
+      //function pad ( val ) { return val > 9 ? val : "0" + val; }
+      function pad(val) {
+        return val > 9 ? val : val;
+      }
+    }
+
+    function drawMyTextend(ln1, ln2, ln3, ln4) {
+      //if (exit) return;
+
+
+      var uDrawSize = Page.unitSize - 2;
+      this.W = 10 * Page.unitSize;
+      this.H = 20 * Page.unitSize;
+      //this.left = 0 * Page.unitSize;
+      //this.top = 0 * Page.unitSize;
+      Page.ctx.fillStyle = "rgba(48, 50, 54, 1)";
+      Page.ctx.fillRect(0, 5, this.W, this.H);
+      //Page.ctx.fillStyle = 'rgb(28,30,34)';
+      //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
+
+
+      DrawText(ln1, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1, this.W / 2, this.H / 2.3);
+      DrawText(ln2, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1.3, this.W / 2, this.H / 2.0);
+      DrawText(ln3, 'rgb(255,255,255)', '500', 'center', uDrawSize / 1.3, this.W / 2, this.H / 1.7);
+      DrawText(ln4, 'rgb(255,255,255)', '100', 'center', uDrawSize / 1.3, this.W / 2, this.H / 1.55);
+
+    }
+
+    function drawMyTextbreak(ln1, ln2, ln3, ln4) {
+      //if (exit) return;
+
+
+      var uDrawSize = Page.unitSize - 2;
+      this.W = 10 * Page.unitSize;
+      this.H = 20 * Page.unitSize;
+      //this.left = 0 * Page.unitSize;
+      //this.top = 0 * Page.unitSize;
+      Page.ctx.fillStyle = "rgba(48, 50, 54, 1)";
+      Page.ctx.fillRect(0, 5, this.W, this.H);
+      //Page.ctx.fillStyle = 'rgb(28,30,34)';
+      //Page.ctx.fillRect(10,10,this.W/2,this.H/2.2);
+
+
+      DrawText(ln1, 'rgb(255,255,255)', '400', 'center', uDrawSize / 1.3, this.W / 2, this.H / 2.3);
+      DrawText(ln2, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.4, this.W / 2, this.H / 2.0);
+      DrawText(ln3, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.4, this.W / 2, this.H / 1.75);
+      DrawText(ln4, 'rgb(255,255,255)', '200', 'center', uDrawSize / 1.4, this.W / 2, this.H / 1.55);
+    }
+  </script>
+</body>
+
+</html>
