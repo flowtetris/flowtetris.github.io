@@ -778,7 +778,7 @@
           }
         }
         part2AverageHeight.push(checkRowsAverage)
-        console.log(checkRowsAverage)
+        // console.log(checkRowsAverage)
 
         for (var i = 0; i < checkRows.length; i++) {
           var hasGap = false,
@@ -807,11 +807,13 @@
 
 
             pieceScore += 100 + 200 * scoreMult;
+
             if (scoreMult > 2) {
               pieceScore += 100;
             }
             scoreMult++;
-
+            console.log(scoreMult);
+            console.log(pieceScore);
           }
         }
 
@@ -851,6 +853,9 @@
         part2alldroptimesmilliseconds.push(new Date().getTime());
         part2allmovesanddroptimes.push(Time1());
         part2allscoreseachdrop.push(GM.ScoreCur)
+
+        console.log(part2alldroptimes);
+        console.log(part2alldroptimes.map(x => x - part2starttimeMilliseconds[0] + 1));
       },
 
 
@@ -1186,6 +1191,7 @@
             if (moveY > 0) {
               GM.RefreshTimer();
               GM.ScoreBonus++;
+              console.log(GM.ScoreBonus)
             }
             return true;
           }
@@ -1200,11 +1206,13 @@
         if (this.Cur !== 0) {
           while (this.TryMove(0, 1) === true && squaresDropped < 22) {
             squaresDropped++;
+            console.log(squaresDropped)
           }
         }
 
         if (squaresDropped > 0) {
           GM.ScoreBonus += Math.round(2 * squaresDropped / 4);
+          console.log(GM.ScoreBonus)
           this.Freeze();
           return true;
         }
@@ -1541,6 +1549,7 @@
     var allfups = [];
     var part2InterprobeIntervals = [];
     var part2InterprobeIntervalsTimes = [];
+    var part2InterprobeIntervalsPopUpTimes = [];
     var part2allresponsestimes = [];
     var part2allresponsestimesdifference = [];
     var allfupresponses = [];
@@ -1724,15 +1733,17 @@
           // myGameOverTimeout = setTimeout(setGameOverTimeout, 25 * 60000);
           // glevel = GM.Level
 
+          console.log(part2starttimeMilliseconds);
+
           Init();
           // GM.Level = glevel
           toi = getTimeOut();
           myInterval = setTimeout(setPause, timeouts[toi]);
           gameOverT1 = new Date()
           // document.getElementById("glevel").value = (glevel);
-          console.log("gameNos=" + gameNos)
+          // console.log("gameNos=" + gameNos)
           gameNos.push(gameOverCnt)
-          console.log("gameNos=" + gameNos)
+          // console.log("gameNos=" + gameNos)
         }
         window.requestAnimationFrame(Loop);
       } // end assess, start play game
@@ -1779,7 +1790,7 @@
           }
         } // end if !pause
         else { // begin if pause
-          console.log("curShape=" + curShape);
+          // console.log("curShape=" + curShape);
           if (timeouts.length == 0) {
             pause = true;
             GM.IsAlive = false
@@ -1794,6 +1805,10 @@
             g = getNextGroup()
             cnt = 0;
             var n = 0
+            part2InterprobeIntervalsPopUpTimes.push(Time1());
+            console.log(part2InterprobeIntervalsPopUpTimes);
+            console.log(part2InterprobeIntervalsPopUpTimes.map(x => x - part2starttimeMilliseconds[0] + 1));
+
             while (cnt < gQns[g].length) {
               m = getNextQuestion(g)
               // skip question 3 if it is not the first question
@@ -1805,13 +1820,16 @@
                 drawMyText("Question " + n + "/5", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
               }
               else {
-                // ask the previous shape
+                // ask the previous shape 
                 drawMyTextObj("Question " + n + "/5", questions[m].ln2, questions[m].ln3, questions[m].ln4, questions[m].ln5, questions[m].ln6);
             }
               t1 = new Date();
+              // console.log(t1);
               await waitUserInput(m);
               t2 = new Date();
+              // console.log(t2);
               d = (t2 - t1)
+              // console.log(d)
               part2allresponsestimes.push(Time1());
               part2allresponsestimesdifference.push(d);
               //"rate="+rate;
@@ -1877,15 +1895,15 @@
             part2InterprobeIntervalsTimes.push(Time1())
 
             tocnt[toi] += 1;
-            console.log("tocnt=" + tocnt);
+            // console.log("tocnt=" + tocnt);
 
             if (tocnt[toi] >= 1) {
               timeouts.splice(toi, 1)
               tocnt.splice(toi, 1)
             }
-            console.log("tocnt=" + tocnt)
-            console.log("timeouts=" + timeouts)
-            console.log("part2InterprobeIntervals=" + part2InterprobeIntervals)
+            // console.log("tocnt=" + tocnt)
+            // console.log("timeouts=" + timeouts)
+            // console.log("part2InterprobeIntervals=" + part2InterprobeIntervals)
             // break time
             if ((timeouts.length) % breakTimeFactor == 0 && timeouts.length != 0) {
               part2BreakTimes.push("BreakStart")
@@ -2278,7 +2296,7 @@
       part2allquestions.push(m);
       "curr question m=" + m;
       "askeds=" + askeds;
-      console.log("part2allquestions=" + part2allquestions);
+      // console.log("part2allquestions=" + part2allquestions);
 
       /*
          if (groups.length>=gQns[9].length) {	   
